@@ -6,21 +6,21 @@
 <xsl:strip-space elements="*"/>
 <xsl:template match="//t:repository/t:namespace/t:class[@name=$class]"> 
 <xsl:message><xsl:value-of select="path()"/></xsl:message>
-	<!--<xsl:result-document href="{$class}.txt" method="text"> -->
+<xsl:result-document href="{$class}.txt" method="text">
 &lt;class name="<xsl:value-of select="@name"/>"&gt;
 <xsl:apply-templates select="t:constructor" mode="constructorList">
 <xsl:with-param name="class" select="$class"/>
-</xsl:apply-templates>&lt;/class&gt;
+</xsl:apply-templates>
 <xsl:apply-templates select="t:function" mode="functionList">
 <xsl:with-param name="class" select="$class"/>
-</xsl:apply-templates>&lt;/class&gt;
+</xsl:apply-templates>
 <xsl:apply-templates select="t:virtual-method" mode="vmList">
 <xsl:with-param name="class" select="$class"/>
-</xsl:apply-templates>&lt;/class&gt;
+</xsl:apply-templates>
 <xsl:apply-templates select="t:method" mode="mList">
 <xsl:with-param name="class" select="$class"/>
 </xsl:apply-templates>&lt;/class&gt;
-	<!-- </xsl:result-document> -->
+</xsl:result-document>
 </xsl:template>
 
 <xsl:template match="t:constructor" mode="constructorList">
