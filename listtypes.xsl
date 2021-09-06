@@ -4,10 +4,21 @@
 <xsl:mode on-no-match="shallow-skip"/>
 <xsl:output method="text" indent="no"/>
 <xsl:strip-space elements="*"/>
-<xsl:template match="//t:repository/t:namespace/t:class[@name=$class]"> 
-<xsl:message><xsl:value-of select="path()"/></xsl:message>
+
+
+<xsl:template match="//t:class[@name=$class]//t:type">
+<xsl:value-of select="@name"/> -- <xsl:value-of select="@c:type"/><xsl:text>
+</xsl:text>
+
+</xsl:template>
+
+<!--
 <xsl:result-document href="{$class}.txt" method="text">
-&lt;class name="<xsl:value-of select="@name"/>" cid="<xsl:value-of select="@c:type"/>" parent="<xsl:value-of select="@parent"/>"&gt;
+
+
+
+
+&lt;class name="<xsl:value-of select="@name"/>"&gt;
 <xsl:apply-templates select="t:constructor" mode="constructorList">
 <xsl:with-param name="class" select="$class"/>
 </xsl:apply-templates>
@@ -35,6 +46,6 @@
 <xsl:template match="t:method" mode="mList">
 	<xsl:param name="class"/>  &lt;method render="0" name="<xsl:value-of select="@name"/>" cid="<xsl:value-of select="@c:identifier"/>"/&gt;
 </xsl:template>
-
+-->
 <xsl:template match="text()"></xsl:template>
 </xsl:stylesheet>
