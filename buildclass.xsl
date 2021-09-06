@@ -28,7 +28,7 @@
 <xsl:param name="root" />
 /*
   C Function Name: <xsl:variable name="cid" select="@cid"/><xsl:value-of select="$cid"/>
-  Returns: <xsl:value-of select="$root//t:constructor[@c:identifier=$cid]/t:return-value/t:type/@c:type"/>
+  Returns: <xsl:value-of select="$root//t:constructor[@c:identifier=$cid]/t:return-value/t:type/@c:type"/> (<xsl:call-template name="pony-comment"><xsl:with-param name="type" select="$root//t:constructor[@c:identifier=$cid]/t:return-value/t:type/@c:type"/></xsl:call-template>)
   */
 
 <xsl:variable name="pname"><xsl:choose><xsl:when test="@name='new'">create</xsl:when><xsl:otherwise><xsl:value-of select="@name"/></xsl:otherwise></xsl:choose></xsl:variable>    new <xsl:value-of select="$pname"/>() =>
@@ -43,7 +43,7 @@
 <xsl:variable name="paramcomment"><xsl:apply-templates select="$root//t:method[@c:identifier=$cid]/t:parameters/t:parameter" mode="comment"/></xsl:variable>
 /*
   C Function Name: <xsl:value-of select="$cid"/>
-  Returns:         <xsl:value-of select="$returntype"/>
+  Returns:         <xsl:value-of select="$returntype"/> (<xsl:call-template name="pony-comment"><xsl:with-param name="type" select="$returntype"/></xsl:call-template>)
   Instance Param:  <xsl:value-of select="$instname"/>
   Params:          <xsl:value-of select="$paramcomment"/>
   */
@@ -52,11 +52,20 @@
       None // That'll do for now
 </xsl:template>
 
-
-<xsl:template match="t:parameter" mode="comment"><xsl:value-of select="@name"/>: <xsl:value-of select="t:type/@c:type"/>
+<xsl:template match="t:parameter" mode="comment"><xsl:value-of select="@name"/>: <xsl:call-template name="pony-comment"><xsl:with-param name="type" select="t:type/@c:type"/></xsl:call-template>
 </xsl:template>
 
-
+<xsl:include href="types.xsl"/>
+<!--
+<xsl:template name="pony">
+<xsl:param name="type"/>
+<xsl:choose>
+<xsl:when test="$type='foo'">bar</xsl:when>
+<xsl:when test="$type='const char*'">String</xsl:when>
+<xsl:otherwise>oof</xsl:otherwise>
+</xsl:choose>
+</xsl:template>
+-->
 
 
 
