@@ -1,3 +1,4 @@
+use @gtk_window_new[Pointer[Widget]]()
 
 /*
   Class:  Window
@@ -5,17 +6,19 @@
   Parent: Widget (Widget)
 */
 
-  class Window is (WindowInterface & WidgetInterface)
-    new donotcall() =>
-      None
+class GtkWindow is (WindowInterface & WidgetInterface)
+  var obj: Pointer[Widget] = Pointer[Widget]
+
+  new donotcall() =>
+    None
 
 /*
   C Function Name: gtk_window_new
   Returns: GtkWidget* (Pointer[GtkWidget])
   */
 
-    new create() =>
-      None // That'll do for now
-
+  new create() =>
+    @gtk_window_new()
+    None // That'll do for now
 
 interface WindowInterface

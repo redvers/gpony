@@ -5,9 +5,10 @@
   Parent:  ()
 */
 
-  class Object is (ObjectInterface)
-    new donotcall() =>
-      None
+class GObject is ObjectInterface
+  var obj: Pointer[Object] = Pointer[Object]
 
+  new donotcall() =>
+    None
 
 interface ObjectInterface

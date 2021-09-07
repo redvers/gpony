@@ -5,9 +5,10 @@
   Parent: GObject.InitiallyUnowned (Object)
 */
 
-  class Widget is (WidgetInterface & ObjectInterface)
-    new donotcall() =>
-      None
+class GtkWidget is (WidgetInterface & ObjectInterface)
+  var obj: Pointer[Object] = Pointer[Object]
 
+  new donotcall() =>
+    None
 
 interface WidgetInterface

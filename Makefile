@@ -1,3 +1,6 @@
+all:
+	ponyc .
+
 buildclass:
 	saxon-he src.xml buildclass.xsl class=Window
 	saxon-he src.xml buildclass.xsl class=Widget

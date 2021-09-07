@@ -10,20 +10,21 @@
 <xsl:variable name="root" select="."/>
 <xsl:variable name="filename" select="concat($class, '.txt')"/>
 <xsl:variable name="fi" select="document($filename)"/>
+<xsl:variable name="pparent"><xsl:call-template name="pony-parent"><xsl:with-param name="parent" select="$fi/class/@parent"/></xsl:call-template></xsl:variable>
 <xsl:result-document href="{$fi/class/@cid}.pony" method="text">
 /*
   Class:  <xsl:value-of select="$fi/class/@name"/>
   CName:  <xsl:value-of select="$fi/class/@cid"/>
-  Parent: <xsl:value-of select="$fi/class/@parent"/> (<xsl:call-template name="pony-parent"><xsl:with-param name="parent" select="$fi/class/@parent"/></xsl:call-template>)
+  Parent: <xsl:value-of select="$fi/class/@parent"/> (<xsl:value-of select="$pparent"/>)
 */
 
-  class <xsl:value-of select="$fi/class/@name"/> is (<xsl:value-of select="$fi/class/@name"/>Interface &#38; <xsl:value-of select="$fi/class/@parent"/><xsl:text>)
-    new donotcall() =>
-      None
-</xsl:text>
+<xsl:choose><xsl:when test="$fi/class/@parent=''">class <xsl:value-of select="$fi/class/@name"/> is <xsl:value-of select="$fi/class/@name"/>Interface</xsl:when>
+<xsl:otherwise>class <xsl:value-of select="$fi/class/@name"/> is (<xsl:value-of select="$fi/class/@name"/>Interface &#38; <xsl:value-of select="$pparent"/>Interface)</xsl:otherwise></xsl:choose>
+  var obj: Pointer[<xsl:value-of select="$pparent"/>] = Pointer[<xsl:value-of select="$pparent"/>]
 
+  new donotcall() =>
+    None
 <xsl:apply-templates select="$fi/class/constructor[@render='1']" mode="constructorFn"><xsl:with-param name="root" select="$root"/></xsl:apply-templates>
-
 interface <xsl:value-of select="$fi/class/@name"/>Interface
 <xsl:apply-templates select="$fi/class/method[@render='1']" mode="methodFn"><xsl:with-param name="root" select="$root"/></xsl:apply-templates>
 
@@ -38,8 +39,9 @@ interface <xsl:value-of select="$fi/class/@name"/>Interface
   Returns: <xsl:value-of select="$root//t:constructor[@c:identifier=$cid]/t:return-value/t:type/@c:type"/> (<xsl:call-template name="pony-comment"><xsl:with-param name="type" select="$root//t:constructor[@c:identifier=$cid]/t:return-value/t:type/@c:type"/></xsl:call-template>)
   */
 
-<xsl:variable name="pname"><xsl:choose><xsl:when test="@name='new'">create</xsl:when><xsl:otherwise><xsl:value-of select="@name"/></xsl:otherwise></xsl:choose></xsl:variable>    new <xsl:value-of select="$pname"/>() =>
-      None // That'll do for now
+<xsl:variable name="pname"><xsl:choose><xsl:when test="@name='new'">create</xsl:when><xsl:otherwise><xsl:value-of select="@name"/></xsl:otherwise></xsl:choose></xsl:variable>  new <xsl:value-of select="$pname"/>() =>
+    @<xsl:value-of select="@cid"/>()
+    None // That'll do for now
 </xsl:template>
 
 <xsl:template match="method" mode="methodFn">
