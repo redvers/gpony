@@ -23,18 +23,31 @@ actor Main
   new create(env: Env) =>
     env.out.print("oof")
 
+    var numbers: Array[U8] = Array[U8].init(U8(42), 1)
+    try
+      let s: U8 = numbers.apply(0)?
+      @printf("testing array: %d\n".cstring(), s)
+    end
+
+    let callback = @{(instance: Pointer[GtkWidget], data: Pointer[U8] ref): None =>
+                       var s: Array[U8] = Array[U8].from_cpointer(data, 1)
+                       try
+                         let q: U8 = s.apply(0)?
+                         @printf("Hello World %d\n".cstring(), q)
+                         @printf("Hello World %d\n".cstring(), s)
+                       end
+                   }
+
     @gtk_init()
     var window: GtkWindow = GtkWindow.create()
     var button: GtkButton = GtkButton.new_with_label("Hello World")
     window.set_child(button)
     window.show()
-//  fun ss(foo: Pointer[Object]) =>
- //   None
-
+    button.signal_connect_data("clicked", callback, numbers.cpointer())
+//    button.signal_connect_data("clicked", @{(): None => @printf("Hello World\n".cstring())}, numbers.cpointer())
 
 
   while (@g_list_model_get_n_items(@gtk_window_get_toplevels()) > 0) do
     @g_main_context_iteration(Pointer[GMainContext], I32(1))
   end
-
 
