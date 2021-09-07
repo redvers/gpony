@@ -4,23 +4,30 @@
 <xsl:mode on-no-match="shallow-skip"/>
 <xsl:output method="text" indent="no"/>
 <xsl:strip-space elements="*"/>
+<xsl:include href="types.xsl"/>
+<xsl:include href="ponyparents.xsl"/>
 <xsl:template match="/gpony"> 
 <xsl:variable name="root" select="."/>
 <xsl:variable name="filename" select="concat($class, '.txt')"/>
 <xsl:variable name="fi" select="document($filename)"/>
+<xsl:result-document href="{$fi/class/@cid}.pony" method="text">
 /*
   Class:  <xsl:value-of select="$fi/class/@name"/>
   CName:  <xsl:value-of select="$fi/class/@cid"/>
-  Parent: <xsl:value-of select="$fi/class/@parent"/>
+  Parent: <xsl:value-of select="$fi/class/@parent"/> (<xsl:call-template name="pony-parent"><xsl:with-param name="parent" select="$fi/class/@parent"/></xsl:call-template>)
 */
 
-  class <xsl:value-of select="$fi/class/@name"/> is <xsl:value-of select="$fi/class/@parent"/><xsl:text>
+  class <xsl:value-of select="$fi/class/@name"/> is (<xsl:value-of select="$fi/class/@name"/>Interface &#38; <xsl:value-of select="$fi/class/@parent"/><xsl:text>)
+    new donotcall() =>
+      None
 </xsl:text>
 
 <xsl:apply-templates select="$fi/class/constructor[@render='1']" mode="constructorFn"><xsl:with-param name="root" select="$root"/></xsl:apply-templates>
+
+interface <xsl:value-of select="$fi/class/@name"/>Interface
 <xsl:apply-templates select="$fi/class/method[@render='1']" mode="methodFn"><xsl:with-param name="root" select="$root"/></xsl:apply-templates>
 
-//end constructors
+</xsl:result-document>
 </xsl:template>
 
 
@@ -55,7 +62,6 @@
 <xsl:template match="t:parameter" mode="comment"><xsl:value-of select="@name"/>: <xsl:call-template name="pony-comment"><xsl:with-param name="type" select="t:type/@c:type"/></xsl:call-template>
 </xsl:template>
 
-<xsl:include href="types.xsl"/>
 <!--
 <xsl:template name="pony">
 <xsl:param name="type"/>

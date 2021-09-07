@@ -1,0 +1,31 @@
+
+<ns="GObject">
+  <class render="0" name="Binding" parent="Object"/>
+  <class render="0" name="InitiallyUnowned" parent="Object"/>
+  <class render="1" name="Object" parent=""/>
+  <class render="0" name="ParamSpec" parent=""/>
+  <class render="0" name="ParamSpecBoolean" parent="ParamSpec"/>
+  <class render="0" name="ParamSpecBoxed" parent="ParamSpec"/>
+  <class render="0" name="ParamSpecChar" parent="ParamSpec"/>
+  <class render="0" name="ParamSpecDouble" parent="ParamSpec"/>
+  <class render="0" name="ParamSpecEnum" parent="ParamSpec"/>
+  <class render="0" name="ParamSpecFlags" parent="ParamSpec"/>
+  <class render="0" name="ParamSpecFloat" parent="ParamSpec"/>
+  <class render="0" name="ParamSpecGType" parent="ParamSpec"/>
+  <class render="0" name="ParamSpecInt" parent="ParamSpec"/>
+  <class render="0" name="ParamSpecInt64" parent="ParamSpec"/>
+  <class render="0" name="ParamSpecLong" parent="ParamSpec"/>
+  <class render="0" name="ParamSpecObject" parent="ParamSpec"/>
+  <class render="0" name="ParamSpecOverride" parent="ParamSpec"/>
+  <class render="0" name="ParamSpecParam" parent="ParamSpec"/>
+  <class render="0" name="ParamSpecPointer" parent="ParamSpec"/>
+  <class render="0" name="ParamSpecString" parent="ParamSpec"/>
+  <class render="0" name="ParamSpecUChar" parent="ParamSpec"/>
+  <class render="0" name="ParamSpecUInt" parent="ParamSpec"/>
+  <class render="0" name="ParamSpecUInt64" parent="ParamSpec"/>
+  <class render="0" name="ParamSpecULong" parent="ParamSpec"/>
+  <class render="0" name="ParamSpecUnichar" parent="ParamSpec"/>
+  <class render="0" name="ParamSpecValueArray" parent="ParamSpec"/>
+  <class render="0" name="ParamSpecVariant" parent="ParamSpec"/>
+  <class render="0" name="TypeModule" parent="Object"/>
+</ns>
