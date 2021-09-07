@@ -11,16 +11,18 @@
 <xsl:variable name="filename" select="concat($class, '.txt')"/>
 <xsl:variable name="fi" select="document($filename)"/>
 <xsl:variable name="pparent"><xsl:call-template name="pony-parent"><xsl:with-param name="parent" select="$fi/class/@parent"/></xsl:call-template></xsl:variable>
+<xsl:variable name="pret"><xsl:call-template name="pony-comment"><xsl:with-param name="type" select="$fi/class/@returntype"/></xsl:call-template></xsl:variable>
 <xsl:result-document href="{$fi/class/@cid}.pony" method="text">
 /*
   Class:  <xsl:value-of select="$fi/class/@name"/>
   CName:  <xsl:value-of select="$fi/class/@cid"/>
   Parent: <xsl:value-of select="$fi/class/@parent"/> (<xsl:value-of select="$pparent"/>)
+  GObject:<xsl:value-of select="$fi/class/@returntype"/> (<xsl:value-of select="$pret"/>)
 */
 
-<xsl:choose><xsl:when test="$fi/class/@parent=''">class <xsl:value-of select="$fi/class/@name"/> is <xsl:value-of select="$fi/class/@name"/>Interface</xsl:when>
-<xsl:otherwise>class <xsl:value-of select="$fi/class/@name"/> is (<xsl:value-of select="$fi/class/@name"/>Interface &#38; <xsl:value-of select="$pparent"/>Interface)</xsl:otherwise></xsl:choose>
-  var obj: Pointer[<xsl:value-of select="$pparent"/>] = Pointer[<xsl:value-of select="$pparent"/>]
+<xsl:choose><xsl:when test="$fi/class/@parent=''">class <xsl:value-of select="$fi/class/@cid"/> is <xsl:value-of select="$fi/class/@name"/>Interface</xsl:when>
+<xsl:otherwise>class <xsl:value-of select="$fi/class/@cid"/> is (<xsl:value-of select="$fi/class/@name"/>Interface &#38; <xsl:value-of select="$pparent"/>Interface)</xsl:otherwise></xsl:choose>
+  var obj: <xsl:value-of select="$pret"/> = <xsl:value-of select="$pret"/>
 
   new donotcall() =>
     None

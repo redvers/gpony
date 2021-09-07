@@ -1,0 +1,35 @@
+
+<ns="Gsk">
+  <class render="0" name="BlendNode" parent="RenderNode"/>
+  <class render="0" name="BlurNode" parent="RenderNode"/>
+  <class render="0" name="BorderNode" parent="RenderNode"/>
+  <class render="0" name="BroadwayRenderer" parent="Renderer"/>
+  <class render="0" name="CairoNode" parent="RenderNode"/>
+  <class render="0" name="CairoRenderer" parent="Renderer"/>
+  <class render="0" name="ClipNode" parent="RenderNode"/>
+  <class render="0" name="ColorMatrixNode" parent="RenderNode"/>
+  <class render="0" name="ColorNode" parent="RenderNode"/>
+  <class render="0" name="ConicGradientNode" parent="RenderNode"/>
+  <class render="0" name="ContainerNode" parent="RenderNode"/>
+  <class render="0" name="CrossFadeNode" parent="RenderNode"/>
+  <class render="0" name="DebugNode" parent="RenderNode"/>
+  <class render="0" name="GLRenderer" parent="Renderer"/>
+  <class render="0" name="GLShader" parent="GObject.Object"/>
+  <class render="0" name="GLShaderNode" parent="RenderNode"/>
+  <class render="0" name="InsetShadowNode" parent="RenderNode"/>
+  <class render="0" name="LinearGradientNode" parent="RenderNode"/>
+  <class render="0" name="NglRenderer" parent="Renderer"/>
+  <class render="0" name="OpacityNode" parent="RenderNode"/>
+  <class render="0" name="OutsetShadowNode" parent="RenderNode"/>
+  <class render="0" name="RadialGradientNode" parent="RenderNode"/>
+  <class render="0" name="RenderNode" parent=""/>
+  <class render="0" name="Renderer" parent="GObject.Object"/>
+  <class render="0" name="RepeatNode" parent="RenderNode"/>
+  <class render="0" name="RepeatingLinearGradientNode" parent="RenderNode"/>
+  <class render="0" name="RepeatingRadialGradientNode" parent="RenderNode"/>
+  <class render="0" name="RoundedClipNode" parent="RenderNode"/>
+  <class render="0" name="ShadowNode" parent="RenderNode"/>
+  <class render="0" name="TextNode" parent="RenderNode"/>
+  <class render="0" name="TextureNode" parent="RenderNode"/>
+  <class render="0" name="TransformNode" parent="RenderNode"/>
+</ns>

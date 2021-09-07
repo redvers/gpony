@@ -1,5 +1,5 @@
 
-<class name="Window" cid="GtkWindow" parent="Widget">
+<class name="Window" cid="GtkWindow" parent="Widget" returntype="GtkWidget*">
   <constructor render="1" name="new" cid="gtk_window_new"/>
   <function render="0" name="get_default_icon_name" cid="gtk_window_get_default_icon_name"/>
   <function render="0" name="get_toplevels" cid="gtk_window_get_toplevels"/>
@@ -44,7 +44,7 @@
   <method render="0" name="present" cid="gtk_window_present"/>
   <method render="0" name="present_with_time" cid="gtk_window_present_with_time"/>
   <method render="0" name="set_application" cid="gtk_window_set_application"/>
-  <method render="0" name="set_child" cid="gtk_window_set_child"/>
+  <method render="1" name="set_child" cid="gtk_window_set_child"/>
   <method render="0" name="set_decorated" cid="gtk_window_set_decorated"/>
   <method render="0" name="set_default_size" cid="gtk_window_set_default_size"/>
   <method render="0" name="set_default_widget" cid="gtk_window_set_default_widget"/>

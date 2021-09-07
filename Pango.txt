@@ -1,0 +1,16 @@
+
+<ns="Pango">
+  <class render="0" name="Context" parent="GObject.Object"/>
+  <class render="0" name="Coverage" parent="GObject.Object"/>
+  <class render="0" name="Engine" parent="GObject.Object"/>
+  <class render="0" name="EngineLang" parent="Engine"/>
+  <class render="0" name="EngineShape" parent="Engine"/>
+  <class render="0" name="Font" parent="GObject.Object"/>
+  <class render="0" name="FontFace" parent="GObject.Object"/>
+  <class render="0" name="FontFamily" parent="GObject.Object"/>
+  <class render="0" name="FontMap" parent="GObject.Object"/>
+  <class render="0" name="Fontset" parent="GObject.Object"/>
+  <class render="0" name="FontsetSimple" parent="Fontset"/>
+  <class render="0" name="Layout" parent="GObject.Object"/>
+  <class render="0" name="Renderer" parent="GObject.Object"/>
+</ns>

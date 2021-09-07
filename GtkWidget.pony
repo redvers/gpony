@@ -1,14 +1,9 @@
+use @gtk_widget_show[None](widget: Pointer[GtkWidget] val)
 
-/*
-  Class:  Widget
-  CName:  GtkWidget
-  Parent: GObject.InitiallyUnowned (Object)
-*/
-
-class GtkWidget is (WidgetInterface & ObjectInterface)
-  var obj: Pointer[Object] = Pointer[Object]
-
-  new donotcall() =>
-    None
-
+type GtkWidget is (GtkWindow | GtkButton)
 interface WidgetInterface
+  fun getobj(): Pointer[GtkWidget] val
+  fun show() =>
+    @gtk_widget_show(getobj())
+
+

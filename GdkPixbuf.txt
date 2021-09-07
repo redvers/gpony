@@ -1,0 +1,10 @@
+
+<ns="GdkPixbuf">
+  <class render="0" name="Pixbuf" parent="GObject.Object"/>
+  <class render="0" name="PixbufAnimation" parent="GObject.Object"/>
+  <class render="0" name="PixbufAnimationIter" parent="GObject.Object"/>
+  <class render="0" name="PixbufLoader" parent="GObject.Object"/>
+  <class render="0" name="PixbufNonAnim" parent="PixbufAnimation"/>
+  <class render="0" name="PixbufSimpleAnim" parent="PixbufAnimation"/>
+  <class render="0" name="PixbufSimpleAnimIter" parent="PixbufAnimationIter"/>
+</ns>

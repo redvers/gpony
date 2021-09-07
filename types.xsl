@@ -8,6 +8,7 @@
 <xsl:param name="type"/>
 <xsl:choose>
 	<xsl:when test="$type='void'">None</xsl:when>
+	<xsl:when test="$type='gpointer'">Pointer[None]</xsl:when>
 	<xsl:when test="$type='int'">I32</xsl:when>
 	<xsl:when test="$type='guint32'">U32</xsl:when>
 	<xsl:when test="$type='char'">U8</xsl:when>

@@ -1,6 +1,6 @@
 
-<class name="Widget" cid="GtkWidget" parent="GObject.InitiallyUnowned">
-  <function render="1" name="get_default_direction" cid="gtk_widget_get_default_direction"/>
+<class name="Widget" cid="GtkWidget" parent="GObject.InitiallyUnowned" returntype="GObject*">
+  <function render="0" name="get_default_direction" cid="gtk_widget_get_default_direction"/>
   <function render="0" name="set_default_direction" cid="gtk_widget_set_default_direction"/>
   <virtual-method render="0" name="compute_expand"/>
   <virtual-method render="0" name="contains"/>

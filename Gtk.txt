@@ -23,7 +23,7 @@
   <class render="0" name="Builder" parent="GObject.Object"/>
   <class render="0" name="BuilderCScope" parent="GObject.Object"/>
   <class render="0" name="BuilderListItemFactory" parent="ListItemFactory"/>
-  <class render="0" name="Button" parent="Widget"/>
+  <class render="1" name="Button" parent="Widget"/>
   <class render="0" name="CClosureExpression" parent="Expression"/>
   <class render="0" name="Calendar" parent="Widget"/>
   <class render="0" name="CallbackAction" parent="ShortcutAction"/>

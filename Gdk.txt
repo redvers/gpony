@@ -1,0 +1,41 @@
+
+<ns="Gdk">
+  <class render="0" name="AppLaunchContext" parent="Gio.AppLaunchContext"/>
+  <class render="0" name="ButtonEvent" parent="Event"/>
+  <class render="0" name="CairoContext" parent="DrawContext"/>
+  <class render="0" name="Clipboard" parent="GObject.Object"/>
+  <class render="0" name="ContentDeserializer" parent="GObject.Object"/>
+  <class render="0" name="ContentProvider" parent="GObject.Object"/>
+  <class render="0" name="ContentSerializer" parent="GObject.Object"/>
+  <class render="0" name="CrossingEvent" parent="Event"/>
+  <class render="0" name="Cursor" parent="GObject.Object"/>
+  <class render="0" name="DNDEvent" parent="Event"/>
+  <class render="0" name="DeleteEvent" parent="Event"/>
+  <class render="0" name="Device" parent="GObject.Object"/>
+  <class render="0" name="DeviceTool" parent="GObject.Object"/>
+  <class render="0" name="Display" parent="GObject.Object"/>
+  <class render="0" name="DisplayManager" parent="GObject.Object"/>
+  <class render="0" name="Drag" parent="GObject.Object"/>
+  <class render="0" name="DrawContext" parent="GObject.Object"/>
+  <class render="0" name="Drop" parent="GObject.Object"/>
+  <class render="0" name="Event" parent=""/>
+  <class render="0" name="FocusEvent" parent="Event"/>
+  <class render="0" name="FrameClock" parent="GObject.Object"/>
+  <class render="0" name="GLContext" parent="DrawContext"/>
+  <class render="0" name="GLTexture" parent="Texture"/>
+  <class render="0" name="GrabBrokenEvent" parent="Event"/>
+  <class render="0" name="KeyEvent" parent="Event"/>
+  <class render="0" name="MemoryTexture" parent="Texture"/>
+  <class render="0" name="Monitor" parent="GObject.Object"/>
+  <class render="0" name="MotionEvent" parent="Event"/>
+  <class render="0" name="PadEvent" parent="Event"/>
+  <class render="0" name="ProximityEvent" parent="Event"/>
+  <class render="0" name="ScrollEvent" parent="Event"/>
+  <class render="0" name="Seat" parent="GObject.Object"/>
+  <class render="0" name="Snapshot" parent="GObject.Object"/>
+  <class render="0" name="Surface" parent="GObject.Object"/>
+  <class render="0" name="Texture" parent="GObject.Object"/>
+  <class render="0" name="TouchEvent" parent="Event"/>
+  <class render="0" name="TouchpadEvent" parent="Event"/>
+  <class render="0" name="VulkanContext" parent="DrawContext"/>
+</ns>

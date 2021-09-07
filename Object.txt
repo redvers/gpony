@@ -1,5 +1,5 @@
 
-<class name="Object" cid="GObject" parent="">
+<class name="Object" cid="GObject" parent="" returntype="gpointer">
   <constructor render="0" name="new" cid="g_object_new"/>
   <constructor render="0" name="new_valist" cid="g_object_new_valist"/>
   <constructor render="0" name="new_with_properties" cid="g_object_new_with_properties"/>
