@@ -1,6 +1,6 @@
-#all:
-#	ponyc .
-#	./gpony
+all:
+	ponyc -d .
+	./gpony
 
 buildclass:
 	saxon-he src.xml buildclass.xsl class=Window

@@ -15,6 +15,7 @@ use "lib:graphene-1.0"
 use "lib:gio-2.0"
 use "lib:gobject-2.0"
 use "lib:glib-2.0"
+use "debug"
 
 primitive GMainContext
 primitive GListModel
@@ -41,8 +42,14 @@ actor Main
     @gtk_init()
     var window: GtkWindow = GtkWindow.create()
     var button: GtkButton = GtkButton.new_with_label("Hello World")
-   window.set_child(button)
+    window.set_child(button)
+    window.set_title("My example Window!")
+    var s = String.from_cstring(window.get_title())
+    Debug.out(s)
     window.show()
+
+
+
     button.signal_connect_data("clicked", callback, numbers.cpointer())
 
   while (@g_list_model_get_n_items(@gtk_window_get_toplevels()) > 0) do
