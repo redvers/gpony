@@ -1,6 +1,6 @@
 
 <class name="Application" cid="GApplication" parent="GObject.Object" returntype="GApplication*">
-  <constructor render="0" name="new" cid="g_application_new"/>
+  <constructor render="1" name="new" cid="g_application_new"/>
   <function render="0" name="get_default" cid="g_application_get_default"/>
   <function render="0" name="id_is_valid" cid="g_application_id_is_valid"/>
   <virtual-method render="0" name="activate"/>

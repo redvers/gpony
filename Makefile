@@ -3,9 +3,10 @@ all:
 	./gpony
 
 buildclass:
-#	saxon-he src.xml buildclass.xsl ns=Gtk class=Application
-	saxon-he src.xml buildclass.xsl ns=Gtk class=Window
-	saxon-he src.xml buildclass.xsl ns=Gtk class=Button
+	saxon-he src.xml buildclass.xsl ns=Gtk class=Application
+	saxon-he src.xml buildclass.xsl ns=Gio class=Application
+#	saxon-he src.xml buildclass.xsl ns=Gtk class=Window
+#	saxon-he src.xml buildclass.xsl ns=Gtk class=Button
 
 ######  NEVER ENABLE class=Widget - it's not a class
 ######  It's abstract!

@@ -1,6 +1,6 @@
 
 <class name="Application" cid="GtkApplication" parent="Gio.Application" returntype="GtkApplication*">
-  <constructor render="0" name="new" cid="gtk_application_new"/>
+  <constructor render="1" name="new" cid="gtk_application_new"/>
   <virtual-method render="0" name="window_added"/>
   <virtual-method render="0" name="window_removed"/>
   <method render="0" name="add_window" cid="gtk_application_add_window"/>

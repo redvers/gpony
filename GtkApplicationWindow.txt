@@ -1,6 +1,6 @@
 
 <class name="ApplicationWindow" cid="GtkApplicationWindow" parent="Window" returntype="GtkWidget*">
-  <constructor render="0" name="new" cid="gtk_application_window_new"/>
+  <constructor render="1" name="new" cid="gtk_application_window_new"/>
   <method render="0" name="get_help_overlay" cid="gtk_application_window_get_help_overlay"/>
   <method render="0" name="get_id" cid="gtk_application_window_get_id"/>
   <method render="0" name="get_show_menubar" cid="gtk_application_window_get_show_menubar"/>

@@ -6,8 +6,8 @@
   GObject:gpointer (Pointer[None])
 */
 
-class GObject is ObjectInterface
+class GObject is GObjectInterface
   new donotcall() =>
     None
 
-interface ObjectInterface
+interface GObjectInterface

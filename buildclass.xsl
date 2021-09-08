@@ -13,11 +13,11 @@
 <xsl:include href="use.xsl"/>
 
 
-<xsl:template match="/gpony/t:namespace[@name=$ns]"> 
+<xsl:template match="/gpony/t:repository/t:namespace[@name=$ns]"> 
 <xsl:variable name="root" select="."/>
 <xsl:variable name="filename" select="concat($ns, $class, '.txt')"/>
 <xsl:variable name="fi" select="document($filename)"/>
-<xsl:variable name="pparent"><xsl:call-template name="pony-parent"><xsl:with-param name="parent" select="$fi/class/@parent"/></xsl:call-template></xsl:variable>
+<xsl:variable name="pparent"><xsl:call-template name="pony-parent"><xsl:with-param name="parent" select="$fi/class/@parent"/><xsl:with-param name="ns" select="$ns"/></xsl:call-template></xsl:variable>
 <xsl:variable name="pret"><xsl:call-template name="pony-typing"><xsl:with-param name="type" select="$fi/class/@returntype"/></xsl:call-template></xsl:variable>
 <xsl:result-document href="{$fi/class/@cid}.pony" method="text">
 <!-- Use Statements -->
@@ -30,12 +30,12 @@
   GObject:<xsl:value-of select="$fi/class/@returntype"/> (<xsl:value-of select="$pret"/>)
 */
 
-<xsl:choose><xsl:when test="$fi/class/@parent=''">class val <xsl:value-of select="$fi/class/@cid"/> is <xsl:value-of select="$fi/class/@name"/>Interface</xsl:when>
-<xsl:otherwise>class val <xsl:value-of select="$fi/class/@cid"/> is (<xsl:value-of select="$fi/class/@name"/>Interface &#38; <xsl:value-of select="$pparent"/>Interface)</xsl:otherwise></xsl:choose>
+<xsl:choose><xsl:when test="$fi/class/@parent=''">class val <xsl:value-of select="$fi/class/@cid"/> is <xsl:value-of select="$fi/class/@cid"/>Interface</xsl:when>
+<xsl:otherwise>class val <xsl:value-of select="$fi/class/@cid"/> is (<xsl:value-of select="$fi/class/@cid"/>Interface &#38; <xsl:value-of select="$pparent"/>Interface)</xsl:otherwise></xsl:choose>
   var obj: <xsl:value-of select="$pret"/> val
   fun getobj(): <xsl:value-of select="$pret"/> val => obj
 <xsl:apply-templates select="$fi/class/constructor[@render='1']" mode="constructorFn"><xsl:with-param name="root" select="$root"/></xsl:apply-templates>
-interface <xsl:value-of select="$fi/class/@name"/>Interface
+interface <xsl:value-of select="$fi/class/@cid"/>Interface
   fun getobj(): <xsl:value-of select="$pret"/> val
 
 <xsl:apply-templates select="$fi/class/method[@render='1']" mode="methodFn"><xsl:with-param name="root" select="$root"/></xsl:apply-templates>
