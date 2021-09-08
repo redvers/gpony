@@ -38,7 +38,7 @@
   <method render="0" name="quit" cid="g_application_quit"/>
   <method render="0" name="register" cid="g_application_register"/>
   <method render="0" name="release" cid="g_application_release"/>
-  <method render="0" name="run" cid="g_application_run"/>
+  <method render="1" name="run" cid="g_application_run"/>
   <method render="0" name="send_notification" cid="g_application_send_notification"/>
   <method render="0" name="set_action_group" cid="g_application_set_action_group"/>
   <method render="0" name="set_application_id" cid="g_application_set_application_id"/>

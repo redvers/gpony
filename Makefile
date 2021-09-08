@@ -3,8 +3,9 @@ all:
 	./gpony
 
 buildclass:
-	saxon-he src.xml buildclass.xsl ns=Gtk class=Application
-	saxon-he src.xml buildclass.xsl ns=Gio class=Application
+	saxon-he src.xml buildclass.xsl ns=Gtk class=ApplicationWindow
+#	saxon-he src.xml buildclass.xsl ns=Gtk class=Application
+#	saxon-he src.xml buildclass.xsl ns=Gio class=Application
 #	saxon-he src.xml buildclass.xsl ns=Gtk class=Window
 #	saxon-he src.xml buildclass.xsl ns=Gtk class=Button
 
@@ -15,9 +16,9 @@ buildclass:
 
 class:
 #	saxon-he src.xml class.xsl class=Window
-	saxon-he src.xml class.xsl ns=Gtk class=Application
-	saxon-he src.xml class.xsl ns=Gio class=Application
-	saxon-he src.xml class.xsl ns=Gtk class=ApplicationWindow
+#	saxon-he src.xml class.xsl ns=Gtk class=Application
+#	saxon-he src.xml class.xsl ns=Gio class=Application
+#	saxon-he src.xml class.xsl ns=Gtk class=ApplicationWindow
 #	saxon-he src.xml class.xsl class=Object
 #	saxon-he src.xml class.xsl class=Button
 

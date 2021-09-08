@@ -6,8 +6,5 @@
   GObject:gpointer (Pointer[None])
 */
 
-class GObject is GObjectInterface
-  new donotcall() =>
-    None
-
-interface GObjectInterface
+interface GObjectInterface is (GInterface)
+  fun getobj(): Pointer[GtkWidget] val

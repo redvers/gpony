@@ -1,7 +1,3 @@
-use @gtk_window_get_toplevels[Pointer[GListModel]]()
-use @g_list_model_get_n_items[U32](list: Pointer[GListModel])
-use @g_main_context_iteration[I32](context: Pointer[GMainContext] tag, mayblock: I32)
-use @gtk_init[None]()
 use "lib:gtk-4"
 use "lib:glib-2.0"
 use "lib:pangocairo-1.0"
@@ -17,43 +13,36 @@ use "lib:gobject-2.0"
 use "lib:glib-2.0"
 use "debug"
 
-primitive GMainContext
-primitive GListModel
-
 type GApplicationFlags is I32
+
 actor Main
   new create(env: Env) =>
     env.out.print("oof")
 
-    var numbers: Array[U8] = Array[U8].init(U8(42), 1)
-    try
-      let s: U8 = numbers.apply(0)?
-      @printf("testing array: %d\n".cstring(), s)
-    end
-
-    let callback = @{(instance: Pointer[GtkWidget], data: Pointer[U8] ref): None =>
-                       var s: Array[U8] = Array[U8].from_cpointer(data, 1)
-                       try
-                         let q: U8 = s.apply(0)?
-                         @printf("Hello World %d\n".cstring(), q)
-                         @printf("Hello World %d\n".cstring(), s)
-                       end
-                   }
-
-    @gtk_init()
-    var window: GtkWindow = GtkWindow.create()
-    var button: GtkButton = GtkButton.new_with_label("Hello World")
-    window.set_child(button)
-    window.set_title("My example Window!")
-    var s = String.from_cstring(window.get_title())
-    Debug.out(s)
-    window.show()
+    let callback = @{(app: Pointer[GApplication], data: Pointer[None]): I32 =>
+										  @printf("UI Creation Callback!\n".cstring())
+										}
 
 
 
-    button.signal_connect_data("clicked", callback, numbers.cpointer())
 
-  while (@g_list_model_get_n_items(@gtk_window_get_toplevels()) > 0) do
-    @g_main_context_iteration(Pointer[GMainContext], I32(1))
-  end
+    var app: GtkApplication = GtkApplication("me.infect.red", I32(0)) //G_APPLICATION_FLAGS_NONE
+		app.signal_connect_data("activate", callback, Pointer[U8])
+    var status: I32 = app.run(I32(0), Pointer[None])
 
+
+/*
+
+
+static void
+activate (GtkApplication* app,
+          gpointer        user_data)
+{
+  GtkWidget *window;
+
+  window = gtk_application_window_new (app);
+  gtk_window_set_title (GTK_WINDOW (window), "Window");
+  gtk_window_set_default_size (GTK_WINDOW (window), 200, 200);
+  gtk_widget_show (window);
+}
+*/
