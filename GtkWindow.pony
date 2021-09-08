@@ -1,11 +1,11 @@
 use @gtk_window_new[Pointer[GtkWidget] val]()
-use @gtk_window_close[None val](window: Pointer[GtkWidget] val)
-use @gtk_window_destroy[None val](window: Pointer[GtkWidget] val)
-use @gtk_window_fullscreen[None val](window: Pointer[GtkWidget] val)
-use @gtk_window_maximize[None val](window: Pointer[GtkWidget] val)
-use @gtk_window_minimize[None val](window: Pointer[GtkWidget] val)
-use @gtk_window_set_child[None val](window: Pointer[GtkWidget] val, child: Pointer[GtkWidget] val)
-use @gtk_window_set_hide_on_close[None val](window: Pointer[GtkWidget] val, setting: U8)
+use @gtk_window_close[None val](myself: Pointer[GtkWidget] val)
+use @gtk_window_destroy[None val](myself: Pointer[GtkWidget] val)
+use @gtk_window_fullscreen[None val](myself: Pointer[GtkWidget] val)
+use @gtk_window_maximize[None val](myself: Pointer[GtkWidget] val)
+use @gtk_window_minimize[None val](myself: Pointer[GtkWidget] val)
+use @gtk_window_set_child[None val](myself: Pointer[GtkWidget] val, child: Pointer[GtkWidget] val)
+use @gtk_window_set_hide_on_close[None val](myself: Pointer[GtkWidget] val, setting: U8)
 
 /*
   Class:  Window

@@ -7,7 +7,7 @@
 <xsl:template match="method" mode="methodUse">
 <xsl:param name="root" />
 <xsl:variable name="cid" select="@cid"/>
-<xsl:variable name="args" select="$root//t:method[@c:identifier=$cid]/t:parameters/*"/>use @<xsl:value-of select="$cid"/>[<xsl:call-template name="pony-typing"><xsl:with-param name="type" select="$root//t:method[@c:identifier=$cid]/t:return-value/t:type/@c:type"/></xsl:call-template> val](<xsl:call-template name="useparams"><xsl:with-param name="p" select="$args"/></xsl:call-template>)
+<xsl:variable name="args" select="$root//t:method[@c:identifier=$cid]/t:parameters/t:parameter"/>use @<xsl:value-of select="$cid"/>[<xsl:call-template name="pony-typing"><xsl:with-param name="type" select="$root//t:method[@c:identifier=$cid]/t:return-value/t:type/@c:type"/></xsl:call-template> val](myself: Pointer[GtkWidget] val<xsl:variable name="up"><xsl:call-template name="useparams"><xsl:with-param name="p" select="$args"/></xsl:call-template></xsl:variable><xsl:if test="$up!=''">, <xsl:value-of select="$up"/></xsl:if>)
 </xsl:template>
 
 <xsl:template match="method" mode="methodFn">
