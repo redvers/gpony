@@ -1,9 +1,9 @@
 
 <class name="Button" cid="GtkButton" parent="Widget" returntype="GtkWidget*">
-  <constructor render="0" name="new" cid="gtk_button_new"/>
-  <constructor render="0" name="new_from_icon_name" cid="gtk_button_new_from_icon_name"/>
-  <constructor render="0" name="new_with_label" cid="gtk_button_new_with_label"/>
-  <constructor render="0" name="new_with_mnemonic" cid="gtk_button_new_with_mnemonic"/>
+  <constructor render="1" name="new" cid="gtk_button_new"/>
+  <constructor render="1" name="new_from_icon_name" cid="gtk_button_new_from_icon_name"/>
+  <constructor render="1" name="new_with_label" cid="gtk_button_new_with_label"/>
+  <constructor render="1" name="new_with_mnemonic" cid="gtk_button_new_with_mnemonic"/>
   <virtual-method render="0" name="activate"/>
   <virtual-method render="0" name="clicked"/>
   <method render="0" name="get_child" cid="gtk_button_get_child"/>

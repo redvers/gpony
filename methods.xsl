@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="3.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:t="http://www.gtk.org/introspection/core/1.0" xmlns:c="http://www.gtk.org/introspection/c/1.0" xmlns:glib="http://www.gtk.org/introspection/glib/1.0">
+<xsl:mode on-no-match="shallow-skip"/>
+<xsl:output method="text" indent="no"/>
+<xsl:strip-space elements="*"/>
+
+<xsl:template match="method" mode="methodUse">
+<xsl:param name="root" />
+<xsl:variable name="cid" select="@cid"/>
+<xsl:variable name="args" select="$root//t:method[@c:identifier=$cid]/t:parameters/*"/>use @<xsl:value-of select="$cid"/>[<xsl:call-template name="pony-typing"><xsl:with-param name="type" select="$root//t:method[@c:identifier=$cid]/t:return-value/t:type/@c:type"/></xsl:call-template> val](<xsl:call-template name="useparams"><xsl:with-param name="p" select="$args"/></xsl:call-template>)
+</xsl:template>
+
+
+
+
+
+
+
+<xsl:template match="method" mode="methodFn">
+<xsl:param name="root" />
+<xsl:variable name="cid" select="@cid"/>
+<xsl:variable name="returntype" select="$root//t:method[@c:identifier=$cid]/t:return-value/t:type/@c:type"/>
+<xsl:variable name="instname" select="$root//t:method[@c:identifier=$cid]/t:parameters/t:instance-parameter/@name"/>
+<xsl:variable name="paramcomment"><xsl:apply-templates select="$root//t:method[@c:identifier=$cid]/t:parameters/t:parameter" mode="comment"/></xsl:variable>
+/*
+  C Function Name: <xsl:value-of select="$cid"/>
+  Returns:         <xsl:value-of select="$returntype"/> (<xsl:call-template name="pony-typing"><xsl:with-param name="type" select="$returntype"/></xsl:call-template>)
+  Instance Param:  <xsl:value-of select="$instname"/>
+  Params:          <xsl:value-of select="$paramcomment"/>
+  */
+
+    fun <xsl:value-of select="@name"/>() =>
+      None // That'll do for now
+</xsl:template>
+</xsl:stylesheet>
+

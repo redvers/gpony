@@ -1,15 +1,15 @@
-all:
-	ponyc .
-	./gpony
+#all:
+#	ponyc .
+#	./gpony
 
 buildclass:
 	saxon-he src.xml buildclass.xsl class=Window
-	saxon-he src.xml buildclass.xsl class=Widget
-	saxon-he src.xml buildclass.xsl class=Object
+#	saxon-he src.xml buildclass.xsl class=Widget
+#	saxon-he src.xml buildclass.xsl class=Object
 	saxon-he src.xml buildclass.xsl class=Button
 #
-#class:
-#	saxon-he src.xml class.xsl class=Window
+class:
+	saxon-he src.xml class.xsl class=Window
 #	saxon-he src.xml class.xsl class=Widget
 #	saxon-he src.xml class.xsl class=Object
 #	saxon-he src.xml class.xsl class=Button

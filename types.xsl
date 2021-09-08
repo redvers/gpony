@@ -4,7 +4,7 @@
 <xsl:output method="text" indent="no"/>
 <xsl:strip-space elements="*"/>
 
-<xsl:template name="pony-comment">
+<xsl:template name="pony-typing">
 <xsl:param name="type"/>
 <xsl:choose>
 	<xsl:when test="$type='void'">None</xsl:when>
@@ -13,8 +13,8 @@
 	<xsl:when test="$type='guint32'">U32</xsl:when>
 	<xsl:when test="$type='char'">U8</xsl:when>
 	<xsl:when test="$type='gboolean'">U8</xsl:when>
-	<xsl:when test="starts-with($type, 'const')"><xsl:call-template name="pony-comment"><xsl:with-param name="type" select="substring($type, 7, string-length($type) - 1)"/></xsl:call-template></xsl:when>
-	<xsl:when test="ends-with($type, '*')">Pointer[<xsl:call-template name="pony-comment"><xsl:with-param name="type" select="substring($type, 1, string-length($type) - 1)"/></xsl:call-template>]</xsl:when>
+	<xsl:when test="starts-with($type, 'const')"><xsl:call-template name="pony-typing"><xsl:with-param name="type" select="substring($type, 7, string-length($type) - 1)"/></xsl:call-template></xsl:when>
+	<xsl:when test="ends-with($type, '*')">Pointer[<xsl:call-template name="pony-typing"><xsl:with-param name="type" select="substring($type, 1, string-length($type) - 1)"/></xsl:call-template>]</xsl:when>
 	<xsl:otherwise><xsl:value-of select="$type"/></xsl:otherwise>
 </xsl:choose>
 </xsl:template>
