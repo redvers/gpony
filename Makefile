@@ -4,13 +4,15 @@
 
 buildclass:
 	saxon-he src.xml buildclass.xsl class=Window
-#	saxon-he src.xml buildclass.xsl class=Widget
 #	saxon-he src.xml buildclass.xsl class=Object
 	saxon-he src.xml buildclass.xsl class=Button
-#
+
+######  NEVER ENABLE class=Widget - it's not a class
+######  It's abstract!
+######	saxon-he src.xml buildclass.xsl class=Widget
+
 class:
 	saxon-he src.xml class.xsl class=Window
-#	saxon-he src.xml class.xsl class=Widget
 #	saxon-he src.xml class.xsl class=Object
 #	saxon-he src.xml class.xsl class=Button
 

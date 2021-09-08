@@ -6,18 +6,18 @@
   <function render="0" name="list_toplevels" cid="gtk_window_list_toplevels"/>
   <function render="0" name="set_auto_startup_notification" cid="gtk_window_set_auto_startup_notification"/>
   <function render="0" name="set_default_icon_name" cid="gtk_window_set_default_icon_name"/>
-  <function render="0" name="set_interactive_debugging" cid="gtk_window_set_interactive_debugging"/>
+  <function render="1" name="set_interactive_debugging" cid="gtk_window_set_interactive_debugging"/>
   <virtual-method render="0" name="activate_default"/>
   <virtual-method render="0" name="activate_focus"/>
   <virtual-method render="0" name="close_request"/>
   <virtual-method render="0" name="enable_debugging"/>
   <virtual-method render="0" name="keys_changed"/>
-  <method render="0" name="close" cid="gtk_window_close"/>
-  <method render="0" name="destroy" cid="gtk_window_destroy"/>
-  <method render="0" name="fullscreen" cid="gtk_window_fullscreen"/>
+  <method render="1" name="close" cid="gtk_window_close"/>
+  <method render="1" name="destroy" cid="gtk_window_destroy"/>
+  <method render="1" name="fullscreen" cid="gtk_window_fullscreen"/>
   <method render="0" name="fullscreen_on_monitor" cid="gtk_window_fullscreen_on_monitor"/>
   <method render="0" name="get_application" cid="gtk_window_get_application"/>
-  <method render="1" name="get_child" cid="gtk_window_get_child"/>
+  <method render="0" name="get_child" cid="gtk_window_get_child"/>
   <method render="0" name="get_decorated" cid="gtk_window_get_decorated"/>
   <method render="0" name="get_default_size" cid="gtk_window_get_default_size"/>
   <method render="0" name="get_default_widget" cid="gtk_window_get_default_widget"/>
@@ -39,14 +39,14 @@
   <method render="0" name="is_active" cid="gtk_window_is_active"/>
   <method render="0" name="is_fullscreen" cid="gtk_window_is_fullscreen"/>
   <method render="0" name="is_maximized" cid="gtk_window_is_maximized"/>
-  <method render="0" name="maximize" cid="gtk_window_maximize"/>
-  <method render="0" name="minimize" cid="gtk_window_minimize"/>
+  <method render="1" name="maximize" cid="gtk_window_maximize"/>
+  <method render="1" name="minimize" cid="gtk_window_minimize"/>
   <method render="0" name="present" cid="gtk_window_present"/>
   <method render="0" name="present_with_time" cid="gtk_window_present_with_time"/>
   <method render="0" name="set_application" cid="gtk_window_set_application"/>
   <method render="1" name="set_child" cid="gtk_window_set_child"/>
   <method render="0" name="set_decorated" cid="gtk_window_set_decorated"/>
-  <method render="1" name="set_default_size" cid="gtk_window_set_default_size"/>
+  <method render="0" name="set_default_size" cid="gtk_window_set_default_size"/>
   <method render="0" name="set_default_widget" cid="gtk_window_set_default_widget"/>
   <method render="0" name="set_deletable" cid="gtk_window_set_deletable"/>
   <method render="0" name="set_destroy_with_parent" cid="gtk_window_set_destroy_with_parent"/>
@@ -54,7 +54,7 @@
   <method render="0" name="set_focus" cid="gtk_window_set_focus"/>
   <method render="0" name="set_focus_visible" cid="gtk_window_set_focus_visible"/>
   <method render="0" name="set_handle_menubar_accel" cid="gtk_window_set_handle_menubar_accel"/>
-  <method render="0" name="set_hide_on_close" cid="gtk_window_set_hide_on_close"/>
+  <method render="1" name="set_hide_on_close" cid="gtk_window_set_hide_on_close"/>
   <method render="0" name="set_icon_name" cid="gtk_window_set_icon_name"/>
   <method render="0" name="set_mnemonics_visible" cid="gtk_window_set_mnemonics_visible"/>
   <method render="0" name="set_modal" cid="gtk_window_set_modal"/>

@@ -41,11 +41,9 @@ actor Main
     @gtk_init()
     var window: GtkWindow = GtkWindow.create()
     var button: GtkButton = GtkButton.new_with_label("Hello World")
-    window.set_child(button)
+   window.set_child(button)
     window.show()
     button.signal_connect_data("clicked", callback, numbers.cpointer())
-//    button.signal_connect_data("clicked", @{(): None => @printf("Hello World\n".cstring())}, numbers.cpointer())
-
 
   while (@g_list_model_get_n_items(@gtk_window_get_toplevels()) > 0) do
     @g_main_context_iteration(Pointer[GMainContext], I32(1))

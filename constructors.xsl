@@ -17,9 +17,8 @@
   Returns: <xsl:value-of select="$root//t:constructor[@c:identifier=$cid]/t:return-value/t:type/@c:type"/> (<xsl:call-template name="pony-typing"><xsl:with-param name="type" select="$root//t:constructor[@c:identifier=$cid]/t:return-value/t:type/@c:type"/></xsl:call-template>)
   */
 
-<xsl:variable name="pname"><xsl:choose><xsl:when test="@name='new'">create</xsl:when><xsl:otherwise><xsl:value-of select="@name"/></xsl:otherwise></xsl:choose></xsl:variable>  new val <xsl:value-of select="$pname"/>() =>
-<xsl:variable name="args" select="$root//t:constructor[@c:identifier=$cid]/t:parameters/t:parameter|t:instance-parameter"/>
-obj = @<xsl:value-of select="@cid"/>() <!--<xsl:call-template name="parameter"><xsl:with-param name="p" select="$args"/></xsl:call-template>)-->
+  <xsl:variable name="pname"><xsl:choose><xsl:when test="@name='new'">create</xsl:when><xsl:otherwise><xsl:value-of select="@name"/></xsl:otherwise></xsl:choose></xsl:variable>  new val <xsl:value-of select="$pname"/>(<xsl:call-template name="funparams"><xsl:with-param name="p" select="$root//t:constructor[@c:identifier=$cid]/t:parameters/t:parameter"/></xsl:call-template>) =>
+  <xsl:variable name="args" select="$root//t:constructor[@c:identifier=$cid]/t:parameters/t:parameter"/>    obj = @<xsl:value-of select="@cid"/>(<xsl:call-template name="funffiparms"><xsl:with-param name="p" select="$args"/></xsl:call-template>)
 </xsl:template>
 </xsl:stylesheet>
 
