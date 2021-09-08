@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="3.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:t="http://www.gtk.org/introspection/core/1.0" xmlns:c="http://www.gtk.org/introspection/c/1.0" xmlns:glib="http://www.gtk.org/introspection/glib/1.0">
 <xsl:param name="class" />
+<xsl:param name="ns" />
 <xsl:mode on-no-match="shallow-skip"/>
 <xsl:output method="text" indent="no"/>
 <xsl:strip-space elements="*"/>
@@ -12,9 +13,9 @@
 <xsl:include href="use.xsl"/>
 
 
-<xsl:template match="/gpony"> 
+<xsl:template match="/gpony/t:namespace[@name=$ns]"> 
 <xsl:variable name="root" select="."/>
-<xsl:variable name="filename" select="concat($class, '.txt')"/>
+<xsl:variable name="filename" select="concat($ns, $class, '.txt')"/>
 <xsl:variable name="fi" select="document($filename)"/>
 <xsl:variable name="pparent"><xsl:call-template name="pony-parent"><xsl:with-param name="parent" select="$fi/class/@parent"/></xsl:call-template></xsl:variable>
 <xsl:variable name="pret"><xsl:call-template name="pony-typing"><xsl:with-param name="type" select="$fi/class/@returntype"/></xsl:call-template></xsl:variable>

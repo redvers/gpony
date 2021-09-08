@@ -1,0 +1,19 @@
+
+<class name="Button" cid="GtkButton" parent="Widget" returntype="GtkWidget*">
+  <constructor render="1" name="new" cid="gtk_button_new"/>
+  <constructor render="1" name="new_from_icon_name" cid="gtk_button_new_from_icon_name"/>
+  <constructor render="1" name="new_with_label" cid="gtk_button_new_with_label"/>
+  <constructor render="1" name="new_with_mnemonic" cid="gtk_button_new_with_mnemonic"/>
+  <virtual-method render="0" name="activate"/>
+  <virtual-method render="0" name="clicked"/>
+  <method render="1" name="get_child" cid="gtk_button_get_child"/>
+  <method render="1" name="get_has_frame" cid="gtk_button_get_has_frame"/>
+  <method render="1" name="get_icon_name" cid="gtk_button_get_icon_name"/>
+  <method render="1" name="get_label" cid="gtk_button_get_label"/>
+  <method render="1" name="get_use_underline" cid="gtk_button_get_use_underline"/>
+  <method render="1" name="set_child" cid="gtk_button_set_child"/>
+  <method render="1" name="set_has_frame" cid="gtk_button_set_has_frame"/>
+  <method render="1" name="set_icon_name" cid="gtk_button_set_icon_name"/>
+  <method render="1" name="set_label" cid="gtk_button_set_label"/>
+  <method render="1" name="set_use_underline" cid="gtk_button_set_use_underline"/>
+</class>

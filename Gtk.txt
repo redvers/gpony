@@ -10,8 +10,8 @@
   <class render="0" name="AppChooserButton" parent="Widget"/>
   <class render="0" name="AppChooserDialog" parent="Dialog"/>
   <class render="0" name="AppChooserWidget" parent="Widget"/>
-  <class render="0" name="Application" parent="Gio.Application"/>
-  <class render="0" name="ApplicationWindow" parent="Window"/>
+  <class render="1" name="Application" parent="Gio.Application"/>
+  <class render="1" name="ApplicationWindow" parent="Window"/>
   <class render="0" name="AspectFrame" parent="Widget"/>
   <class render="0" name="Assistant" parent="Window"/>
   <class render="0" name="AssistantPage" parent="GObject.Object"/>

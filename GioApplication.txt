@@ -1,0 +1,55 @@
+
+<class name="Application" cid="GApplication" parent="GObject.Object" returntype="GApplication*">
+  <constructor render="0" name="new" cid="g_application_new"/>
+  <function render="0" name="get_default" cid="g_application_get_default"/>
+  <function render="0" name="id_is_valid" cid="g_application_id_is_valid"/>
+  <virtual-method render="0" name="activate"/>
+  <virtual-method render="0" name="add_platform_data"/>
+  <virtual-method render="0" name="after_emit"/>
+  <virtual-method render="0" name="before_emit"/>
+  <virtual-method render="0" name="command_line"/>
+  <virtual-method render="0" name="dbus_register"/>
+  <virtual-method render="0" name="dbus_unregister"/>
+  <virtual-method render="0" name="handle_local_options"/>
+  <virtual-method render="0" name="local_command_line"/>
+  <virtual-method render="0" name="name_lost"/>
+  <virtual-method render="0" name="open"/>
+  <virtual-method render="0" name="quit_mainloop"/>
+  <virtual-method render="0" name="run_mainloop"/>
+  <virtual-method render="0" name="shutdown"/>
+  <virtual-method render="0" name="startup"/>
+  <method render="0" name="activate" cid="g_application_activate"/>
+  <method render="0" name="add_main_option" cid="g_application_add_main_option"/>
+  <method render="0" name="add_main_option_entries" cid="g_application_add_main_option_entries"/>
+  <method render="0" name="add_option_group" cid="g_application_add_option_group"/>
+  <method render="0" name="bind_busy_property" cid="g_application_bind_busy_property"/>
+  <method render="0" name="get_application_id" cid="g_application_get_application_id"/>
+  <method render="0" name="get_dbus_connection" cid="g_application_get_dbus_connection"/>
+  <method render="0" name="get_dbus_object_path" cid="g_application_get_dbus_object_path"/>
+  <method render="0" name="get_flags" cid="g_application_get_flags"/>
+  <method render="0" name="get_inactivity_timeout" cid="g_application_get_inactivity_timeout"/>
+  <method render="0" name="get_is_busy" cid="g_application_get_is_busy"/>
+  <method render="0" name="get_is_registered" cid="g_application_get_is_registered"/>
+  <method render="0" name="get_is_remote" cid="g_application_get_is_remote"/>
+  <method render="0" name="get_resource_base_path" cid="g_application_get_resource_base_path"/>
+  <method render="0" name="hold" cid="g_application_hold"/>
+  <method render="0" name="mark_busy" cid="g_application_mark_busy"/>
+  <method render="0" name="open" cid="g_application_open"/>
+  <method render="0" name="quit" cid="g_application_quit"/>
+  <method render="0" name="register" cid="g_application_register"/>
+  <method render="0" name="release" cid="g_application_release"/>
+  <method render="0" name="run" cid="g_application_run"/>
+  <method render="0" name="send_notification" cid="g_application_send_notification"/>
+  <method render="0" name="set_action_group" cid="g_application_set_action_group"/>
+  <method render="0" name="set_application_id" cid="g_application_set_application_id"/>
+  <method render="0" name="set_default" cid="g_application_set_default"/>
+  <method render="0" name="set_flags" cid="g_application_set_flags"/>
+  <method render="0" name="set_inactivity_timeout" cid="g_application_set_inactivity_timeout"/>
+  <method render="0" name="set_option_context_description" cid="g_application_set_option_context_description"/>
+  <method render="0" name="set_option_context_parameter_string" cid="g_application_set_option_context_parameter_string"/>
+  <method render="0" name="set_option_context_summary" cid="g_application_set_option_context_summary"/>
+  <method render="0" name="set_resource_base_path" cid="g_application_set_resource_base_path"/>
+  <method render="0" name="unbind_busy_property" cid="g_application_unbind_busy_property"/>
+  <method render="0" name="unmark_busy" cid="g_application_unmark_busy"/>
+  <method render="0" name="withdraw_notification" cid="g_application_withdraw_notification"/>
+</class>

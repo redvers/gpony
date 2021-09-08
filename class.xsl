@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="3.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:t="http://www.gtk.org/introspection/core/1.0" xmlns:c="http://www.gtk.org/introspection/c/1.0" xmlns:glib="http://www.gtk.org/introspection/glib/1.0">
 <xsl:param name="class" />
+<xsl:param name="ns" />
 <xsl:mode on-no-match="shallow-skip"/>
 <xsl:output method="text" indent="no"/>
 <xsl:strip-space elements="*"/>
-<xsl:template match="//t:repository/t:namespace/t:class[@name=$class]"> 
+<xsl:template match="//t:repository/t:namespace[@name=$ns]/t:class[@name=$class]"> 
 <xsl:message><xsl:value-of select="path()"/></xsl:message>
-<xsl:result-document href="{$class}.txt" method="text">
+<xsl:result-document href="{$ns}{$class}.txt" method="text">
 &lt;class name="<xsl:value-of select="@name"/>" cid="<xsl:value-of select="@c:type"/>" parent="<xsl:value-of select="@parent"/>" returntype="<xsl:value-of select="t:constructor[1]/t:return-value/t:type/@c:type"/>"&gt;
 <xsl:apply-templates select="t:constructor" mode="constructorList">
 <xsl:with-param name="class" select="$class"/>
