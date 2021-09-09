@@ -3,7 +3,7 @@
   <constructor render="1" name="new" cid="gtk_application_new"/>
   <virtual-method render="0" name="window_added"/>
   <virtual-method render="0" name="window_removed"/>
-  <method render="0" name="add_window" cid="gtk_application_add_window"/>
+  <method render="1" name="add_window" cid="gtk_application_add_window"/>
   <method render="0" name="get_accels_for_action" cid="gtk_application_get_accels_for_action"/>
   <method render="0" name="get_actions_for_accel" cid="gtk_application_get_actions_for_accel"/>
   <method render="0" name="get_active_window" cid="gtk_application_get_active_window"/>

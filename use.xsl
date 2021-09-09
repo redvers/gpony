@@ -28,8 +28,7 @@
 
 <xsl:template name="funparam">
 	<xsl:param name="param"/><xsl:variable name="useponytype"><xsl:call-template name="pony-typing"><xsl:with-param name="type" select="t:type/@c:type"/></xsl:call-template></xsl:variable>
-	<xsl:value-of select="@name"/>: <xsl:call-template name="pony-to-fun-typing"><xsl:with-param name="type" select="$useponytype"/></xsl:call-template>
-</xsl:template>
+	<xsl:value-of select="@name"/>: <xsl:call-template name="pony-to-fun-typing"><xsl:with-param name="type" select="$useponytype"/></xsl:call-template></xsl:template>
 
 <xsl:template name="useparams">
 <xsl:param name="p"/>
@@ -42,7 +41,7 @@
 <xsl:template name="useparam">
 <xsl:param name="param"/>
 <xsl:variable name="ptype"><xsl:call-template name="pony-typing"><xsl:with-param name="type" select="t:type/@c:type"/></xsl:call-template></xsl:variable>
-<xsl:value-of select="@name"/>: <xsl:value-of select="$ptype"/> <xsl:choose><xsl:when test="$ptype='Pointer[U8]'"> tag</xsl:when><xsl:when test="starts-with($ptype, 'Pointer[Gtk')"> val</xsl:when></xsl:choose>
+<xsl:value-of select="@name"/>: <xsl:value-of select="$ptype"/> <xsl:choose><xsl:when test="$ptype='Pointer[U8]'"> tag</xsl:when><xsl:when test="starts-with($ptype, 'Pointer[G')"> val</xsl:when></xsl:choose>
 </xsl:template>
 
 

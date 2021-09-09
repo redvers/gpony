@@ -10,7 +10,7 @@
 <xsl:choose>
 	<xsl:when test="$parent='Gio.Application'">GApplication</xsl:when>
 	<xsl:when test="$parent='GObject.Object'">GObject</xsl:when>
-	<xsl:when test="$parent='GObject.InitiallyUnowned'">Object</xsl:when>
+	<xsl:when test="$parent='GObject.InitiallyUnowned'">GObject</xsl:when>
 	<xsl:otherwise><xsl:value-of select="$ns"/><xsl:value-of select="$parent"/></xsl:otherwise>
 </xsl:choose>
 </xsl:template>
