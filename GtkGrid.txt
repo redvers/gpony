@@ -1,0 +1,26 @@
+
+<class name="Grid" cid="GtkGrid" parent="Widget" returntype="GtkWidget*">
+  <constructor render="1" name="new" cid="gtk_grid_new"/>
+  <method render="1" name="attach" cid="gtk_grid_attach"/>
+  <method render="1" name="attach_next_to" cid="gtk_grid_attach_next_to"/>
+  <method render="1" name="get_baseline_row" cid="gtk_grid_get_baseline_row"/>
+  <method render="1" name="get_child_at" cid="gtk_grid_get_child_at"/>
+  <method render="1" name="get_column_homogeneous" cid="gtk_grid_get_column_homogeneous"/>
+  <method render="1" name="get_column_spacing" cid="gtk_grid_get_column_spacing"/>
+  <method render="1" name="get_row_baseline_position" cid="gtk_grid_get_row_baseline_position"/>
+  <method render="1" name="get_row_homogeneous" cid="gtk_grid_get_row_homogeneous"/>
+  <method render="1" name="get_row_spacing" cid="gtk_grid_get_row_spacing"/>
+  <method render="1" name="insert_column" cid="gtk_grid_insert_column"/>
+  <method render="1" name="insert_next_to" cid="gtk_grid_insert_next_to"/>
+  <method render="1" name="insert_row" cid="gtk_grid_insert_row"/>
+  <method render="1" name="query_child" cid="gtk_grid_query_child"/>
+  <method render="1" name="remove" cid="gtk_grid_remove"/>
+  <method render="1" name="remove_column" cid="gtk_grid_remove_column"/>
+  <method render="1" name="remove_row" cid="gtk_grid_remove_row"/>
+  <method render="1" name="set_baseline_row" cid="gtk_grid_set_baseline_row"/>
+  <method render="1" name="set_column_homogeneous" cid="gtk_grid_set_column_homogeneous"/>
+  <method render="1" name="set_column_spacing" cid="gtk_grid_set_column_spacing"/>
+  <method render="1" name="set_row_baseline_position" cid="gtk_grid_set_row_baseline_position"/>
+  <method render="1" name="set_row_homogeneous" cid="gtk_grid_set_row_homogeneous"/>
+  <method render="1" name="set_row_spacing" cid="gtk_grid_set_row_spacing"/>
+</class>

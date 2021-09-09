@@ -110,7 +110,7 @@
   <class render="0" name="GestureStylus" parent="GestureSingle"/>
   <class render="0" name="GestureSwipe" parent="GestureSingle"/>
   <class render="0" name="GestureZoom" parent="Gesture"/>
-  <class render="0" name="Grid" parent="Widget"/>
+  <class render="1" name="Grid" parent="Widget"/>
   <class render="0" name="GridLayout" parent="LayoutManager"/>
   <class render="0" name="GridLayoutChild" parent="LayoutChild"/>
   <class render="0" name="GridView" parent="ListBase"/>

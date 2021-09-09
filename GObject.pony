@@ -6,7 +6,7 @@
   GObject:gpointer (Pointer[None])
 */
 
-type GObject is (GtkWindow | GtkWidget | GtkButton | GApplication | GtkApplication | GtkApplicationWindow)
+type GObject is (GtkWindow | GtkWidget | GtkButton | GApplication | GtkApplication | GtkApplicationWindow | GtkGrid)
 /*
 class val GObject is GObjectInterface
   var obj: Pointer[GObject] val
