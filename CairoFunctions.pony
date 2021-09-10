@@ -3317,10 +3317,8 @@ primitive CairoX
   Arguments:
     [PointerType size=64]->[Struct size=,fid: f307]
 */
-/*
   fun cairo_surface_destroy(surface: NullablePointer[Cairosurface] tag): None =>
     @cairo_surface_destroy(surface)
-*/
 
 
 /*

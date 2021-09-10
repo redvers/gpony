@@ -2902,7 +2902,7 @@ use @cairo_paint[None](cr: Pointer[Cairo] tag)
   Arguments:
     [PointerType size=64]->[Struct size=,fid: f307]
 */
-// use @cairo_surface_destroy[None](surface: NullablePointer[Cairosurface] tag)
+use @cairo_surface_destroy[None](surface: NullablePointer[Cairosurface] tag)
 
 
 

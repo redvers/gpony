@@ -11,94 +11,85 @@ actor Main
     env.out.print("oof")
 
 
-    let activate = @{(app: Pointer[GObject] val, data: Pointer[GObject] val): None =>
-										  Debug.out("UI Creation Callback! " + data.usize().string())
-										  Debug.out("UI Creation Callback! " + app.usize().string())
-                      var ppapp: GtkApplication = GtkApplication.createFromRef(data)
+    let activate = @{(app: Pointer[GObject] val, data: AppState): None =>
+                        var papp = GtkApplication.createFromRef(app)
+                        Debug.out(data.teststring)
+                        let draw_cb = @{(app: Pointer[GObject],
+                                         cairo_t: Pointer[Cairo],
+                                         width: I32,
+                                         height: I32,
+                                         data: Pointer[None]): None =>
+                          Debug.out("draw_cb size: " + width.string() + " " + height.string())
 
-                      try
-                        var q = ppapp.get_data[AppState]("test")?
+                        }
+                        let resize_cb = @{(widget: Pointer[GObject] val, w: I32, h: I32, data: AppState val): None =>
+                        @printf("appstateptr: %d\n".cstring(), data)
+                        Debug.out("resize_cb: " + data.teststring)
+                        if (not(data.cairosurface.is_none())) then
+                          CairoX.cairo_surface_destroy(data.cairosurface)
+                          data.cairosurface.none()
+                        end
 
-                      Debug.out("OOOOF:")
-                      Debug.out(q.teststring)
-                      else
-                        Debug.out("Nope")
-                      end
 
-                      let draw_cb = @{(app: Pointer[GObject],
-                                       cairo_t: Pointer[Cairo],
-                                       width: I32,
-                                       height: I32,
-                                       data: Pointer[None]): None =>
-                        Debug.out("draw_cb size: " + width.string() + " " + height.string())
-
-                      }
-                      let resize_cb = @{(app: Pointer[GObject] val, data: Pointer[GObject] val): None =>
-                        None
- //                       var papp = GtkApplication.createFromRef(app)
-//                        var appstate: NullablePointer[AppState] = papp.get_data("appstate")
-//                        if (appstate.is_none()) then
-//                          Debug.out("We have a null pointer")
- //                       end
-//                        Debug.out(appstate.teststring)
+   //                       var papp = GtkApplication.createFromRef(app)
+  //                        var appstate: NullablePointer[AppState] = papp.get_data("appstate")
+  //                        if (appstate.is_none()) then
+  //                          Debug.out("We have a null pointer")
+   //                       end
+  //                        Debug.out(appstate.teststring)
 
 
 
 
-                      }
-                      let drag_begin = @{(app: Pointer[GObject], data: Pointer[GObject] val): None =>
-                        Debug.out("drag_begin")
-                      }
-                      let drag_update = @{(app: Pointer[GObject], data: Pointer[GObject] val): None =>
-                        Debug.out("drag_update")
-                      }
-                      let drag_end = @{(app: Pointer[GObject], data: Pointer[GObject] val): None =>
-                        Debug.out("drag_end")
-                      }
-                      let pressed = @{(app: Pointer[GObject], data: Pointer[GObject] val): None =>
-                        Debug.out("pressed")
-                      }
+                        }
+                        let drag_begin = @{(app: Pointer[GObject], data: Pointer[GObject] val): None =>
+                          Debug.out("drag_begin")
+                        }
+                        let drag_update = @{(app: Pointer[GObject], data: Pointer[GObject] val): None =>
+                          Debug.out("drag_update")
+                        }
+                        let drag_end = @{(app: Pointer[GObject], data: Pointer[GObject] val): None =>
+                          Debug.out("drag_end")
+                        }
+                        let pressed = @{(app: Pointer[GObject], data: Pointer[GObject] val): None =>
+                          Debug.out("pressed")
+                        }
 
-                      var papp    = GtkApplication.createFromRef(app)
-                      var window  = GtkApplicationWindow.create(papp)
-                      window.set_title("Drawing Area")
+                        var window  = GtkApplicationWindow.create(papp)
+                        window.set_title("Drawing Area")
 
-                      var frame   = GtkFrame("")
-                      window.set_child(frame)
+                        var frame   = GtkFrame("")
+                        window.set_child(frame)
 
-                      var drawing_area = GtkDrawingArea
-                      drawing_area.set_draw_func(draw_cb, Pointer[None], Pointer[None])
-                      drawing_area.set_size_request(100,100)
-                      frame.set_child(drawing_area)
-                      drawing_area.signal_connect_after("resize", resize_cb, Pointer[GObject])
+                        var drawing_area = GtkDrawingArea
+                        drawing_area.set_size_request(100,100)
+                        frame.set_child(drawing_area)
+                        drawing_area.set_draw_func(draw_cb, Pointer[None], Pointer[None])
+                        @printf("appstateptr: %d\n".cstring(), data)
+                        drawing_area.signal_connect_after("resize", resize_cb, data)
 
-                      var drag = GtkGestureDrag
-                      drag.set_button(U32(1))  // GDK_BUTTON_PRIMARY
-                      drawing_area.add_controller(drag)
+                        var drag = GtkGestureDrag
+                        drag.set_button(U32(1))  // GDK_BUTTON_PRIMARY
+                        drawing_area.add_controller(drag)
 
-                      drag.signal_connect_data("drag-begin", drag_begin, drawing_area.getobj())
-                      drag.signal_connect_data("drag-update", drag_update, drawing_area.getobj())
-                      drag.signal_connect_data("drag-end", drag_end, drawing_area.getobj())
+                        drag.signal_connect_data("drag-begin", drag_begin, drawing_area)
+                        drag.signal_connect_data("drag-update", drag_update, drawing_area)
+                        drag.signal_connect_data("drag-end", drag_end, drawing_area)
 
-                      var press = GtkGestureClick
-                      press.set_button(U32(3)) // GDK_BUTTON_SECONDARY
+                        var press = GtkGestureClick
+                        press.set_button(U32(3)) // GDK_BUTTON_SECONDARY
+                        drawing_area.add_controller(press)
 
-                      drawing_area.add_controller(press)
-                      press.signal_connect_data("pressed", pressed, drawing_area.getobj())
-
-                      window.show()
-
+                        press.signal_connect_data("pressed", pressed, drawing_area)
+                        window.show()
 		}
 
     var appstate: AppState = AppState
-    var a: Array[AppState] = Array[AppState].create(USize(1)).>push(appstate)
-    var aptr: Pointer[AppState] tag = a.cpointer()
     var app = GtkApplication("me.infect.red", I32(0)) //G_APPLICATION_FLAGS_NONE
-    var obj: Pointer[GObject] val = app.getobj()
-    app.set_data[AppState]("test", aptr)
-	  Debug.out("UI Creation Callback! " + app.getobj().usize().string())
-		app.signal_connect_data("activate", activate, obj)
+		app.signal_connect_data("activate", activate, appstate)
     app.run(I32(0), None)
+
+
 
 
 class AppState

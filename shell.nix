@@ -10,5 +10,6 @@ pkgs.mkShell {
     libxml2
     libxslt
     gobject-introspection
+    manpages
   ];
 }
