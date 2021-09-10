@@ -15,10 +15,15 @@ actor Main
 										  Debug.out("UI Creation Callback! " + data.usize().string())
 										  Debug.out("UI Creation Callback! " + app.usize().string())
                       var ppapp: GtkApplication = GtkApplication.createFromRef(data)
-                      var q = ppapp.get_data("test")
 
-//                      Debug.out("OOOOF:")
-//                      Debug.out(q.teststring)
+                      try
+                        var q = ppapp.get_data[AppState]("test")?
+
+                      Debug.out("OOOOF:")
+                      Debug.out(q.teststring)
+                      else
+                        Debug.out("Nope")
+                      end
 
                       let draw_cb = @{(app: Pointer[GObject],
                                        cairo_t: Pointer[Cairo],
