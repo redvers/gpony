@@ -32,7 +32,7 @@
   <method render="0" name="activate_action" cid="gtk_widget_activate_action"/>
   <method render="0" name="activate_action_variant" cid="gtk_widget_activate_action_variant"/>
   <method render="0" name="activate_default" cid="gtk_widget_activate_default"/>
-  <method render="0" name="add_controller" cid="gtk_widget_add_controller"/>
+  <method render="1" name="add_controller" cid="gtk_widget_add_controller"/>
   <method render="0" name="add_css_class" cid="gtk_widget_add_css_class"/>
   <method render="0" name="add_mnemonic_label" cid="gtk_widget_add_mnemonic_label"/>
   <method render="0" name="add_tick_callback" cid="gtk_widget_add_tick_callback"/>
@@ -168,7 +168,7 @@
   <method render="0" name="set_parent" cid="gtk_widget_set_parent"/>
   <method render="0" name="set_receives_default" cid="gtk_widget_set_receives_default"/>
   <method render="0" name="set_sensitive" cid="gtk_widget_set_sensitive"/>
-  <method render="0" name="set_size_request" cid="gtk_widget_set_size_request"/>
+  <method render="1" name="set_size_request" cid="gtk_widget_set_size_request"/>
   <method render="0" name="set_state_flags" cid="gtk_widget_set_state_flags"/>
   <method render="0" name="set_tooltip_markup" cid="gtk_widget_set_tooltip_markup"/>
   <method render="0" name="set_tooltip_text" cid="gtk_widget_set_tooltip_text"/>

@@ -1,0 +1,20 @@
+
+<class name="Device" cid="GdkDevice" parent="GObject.Object" returntype="">
+  <method render="0" name="get_caps_lock_state" cid="gdk_device_get_caps_lock_state"/>
+  <method render="0" name="get_device_tool" cid="gdk_device_get_device_tool"/>
+  <method render="0" name="get_direction" cid="gdk_device_get_direction"/>
+  <method render="0" name="get_display" cid="gdk_device_get_display"/>
+  <method render="0" name="get_has_cursor" cid="gdk_device_get_has_cursor"/>
+  <method render="0" name="get_modifier_state" cid="gdk_device_get_modifier_state"/>
+  <method render="0" name="get_name" cid="gdk_device_get_name"/>
+  <method render="0" name="get_num_lock_state" cid="gdk_device_get_num_lock_state"/>
+  <method render="0" name="get_num_touches" cid="gdk_device_get_num_touches"/>
+  <method render="0" name="get_product_id" cid="gdk_device_get_product_id"/>
+  <method render="0" name="get_scroll_lock_state" cid="gdk_device_get_scroll_lock_state"/>
+  <method render="0" name="get_seat" cid="gdk_device_get_seat"/>
+  <method render="0" name="get_source" cid="gdk_device_get_source"/>
+  <method render="0" name="get_surface_at_position" cid="gdk_device_get_surface_at_position"/>
+  <method render="0" name="get_timestamp" cid="gdk_device_get_timestamp"/>
+  <method render="0" name="get_vendor_id" cid="gdk_device_get_vendor_id"/>
+  <method render="0" name="has_bidi_layouts" cid="gdk_device_has_bidi_layouts"/>
+</class>

@@ -11,14 +11,19 @@
 	<xsl:when test="$type='void'">None</xsl:when>
 	<xsl:when test="$type='gpointer'">Pointer[None]</xsl:when>
 	<xsl:when test="$type='int'">I32</xsl:when>
+	<xsl:when test="$type='float'">F32</xsl:when>
 	<xsl:when test="$type='guint'">U32</xsl:when>
 	<xsl:when test="$type='guint32'">U32</xsl:when>
 	<xsl:when test="$type='char'">U8</xsl:when>
 	<xsl:when test="$type='gchar'">U8</xsl:when>
 	<xsl:when test="$type='gboolean'">U8</xsl:when>
+	<xsl:when test="$type='double'">F64</xsl:when>
 	<xsl:when test="$type='GtkWidget*'">Pointer[GObject]</xsl:when>
 	<xsl:when test="$type='GtkWindow*'">Pointer[GObject]</xsl:when>
 	<xsl:when test="$type='GtkApplication*'">Pointer[GObject]</xsl:when>
+	<xsl:when test="$type='GtkEventController*'">Pointer[GObject]</xsl:when>
+	<xsl:when test="$type='GtkDrawingAreaDrawFunc'">Pointer[None]</xsl:when><!--callback-->
+	<xsl:when test="$type='GDestroyNotify'">Pointer[None]</xsl:when><!--callback-->
 	<xsl:when test="starts-with($type, 'const')"><xsl:call-template name="pony-typing"><xsl:with-param name="type" select="substring($type, 7, string-length($type) - 1)"/></xsl:call-template></xsl:when>
 	<xsl:when test="ends-with($type, '*')">Pointer[<xsl:call-template name="pony-typing"><xsl:with-param name="type" select="substring($type, 1, string-length($type) - 1)"/></xsl:call-template>]</xsl:when>
 	<xsl:otherwise><xsl:value-of select="$type"/></xsl:otherwise>

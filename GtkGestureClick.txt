@@ -1,0 +1,4 @@
+
+<class name="GestureClick" cid="GtkGestureClick" parent="GestureSingle" returntype="GtkGesture*">
+  <constructor render="1" name="new" cid="gtk_gesture_click_new"/>
+</class>

@@ -1,0 +1,23 @@
+
+<class name="Event" cid="GdkEvent" parent="" returntype="">
+  <method render="0" name="_get_angle" cid="gdk_events_get_angle"/>
+  <method render="0" name="_get_center" cid="gdk_events_get_center"/>
+  <method render="0" name="_get_distance" cid="gdk_events_get_distance"/>
+  <method render="0" name="get_axes" cid="gdk_event_get_axes"/>
+  <method render="0" name="get_axis" cid="gdk_event_get_axis"/>
+  <method render="0" name="get_device" cid="gdk_event_get_device"/>
+  <method render="0" name="get_device_tool" cid="gdk_event_get_device_tool"/>
+  <method render="0" name="get_display" cid="gdk_event_get_display"/>
+  <method render="0" name="get_event_sequence" cid="gdk_event_get_event_sequence"/>
+  <method render="0" name="get_event_type" cid="gdk_event_get_event_type"/>
+  <method render="0" name="get_history" cid="gdk_event_get_history"/>
+  <method render="0" name="get_modifier_state" cid="gdk_event_get_modifier_state"/>
+  <method render="0" name="get_pointer_emulated" cid="gdk_event_get_pointer_emulated"/>
+  <method render="0" name="get_position" cid="gdk_event_get_position"/>
+  <method render="0" name="get_seat" cid="gdk_event_get_seat"/>
+  <method render="0" name="get_surface" cid="gdk_event_get_surface"/>
+  <method render="0" name="get_time" cid="gdk_event_get_time"/>
+  <method render="0" name="ref" cid="gdk_event_ref"/>
+  <method render="0" name="triggers_context_menu" cid="gdk_event_triggers_context_menu"/>
+  <method render="0" name="unref" cid="gdk_event_unref"/>
+</class>

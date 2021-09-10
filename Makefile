@@ -3,6 +3,15 @@ all:
 	./gpony
 
 buildclass:
+	saxon-he src.xml buildclass.xsl ns=Gtk class=GestureClick
+	saxon-he src.xml buildclass.xsl ns=Gdk class=Device
+	saxon-he src.xml buildclass.xsl ns=Gdk class=Event
+	saxon-he src.xml buildclass.xsl ns=Gtk class=EventController
+	saxon-he src.xml buildclass.xsl ns=Gtk class=Gesture
+	saxon-he src.xml buildclass.xsl ns=Gtk class=GestureSingle
+	saxon-he src.xml buildclass.xsl ns=Gtk class=GestureDrag
+	saxon-he src.xml buildclass.xsl ns=Gtk class=DrawingArea
+	saxon-he src.xml buildclass.xsl ns=Gtk class=Frame
 	saxon-he src.xml buildclass.xsl ns=Gtk class=Grid
 	saxon-he src.xml buildclass.xsl ns=Gtk class=ApplicationWindow
 	saxon-he src.xml buildclass.xsl ns=Gtk class=Application
@@ -10,9 +19,18 @@ buildclass:
 	saxon-he src.xml buildclass.xsl ns=Gtk class=Window
 	saxon-he src.xml buildclass.xsl ns=Gtk class=Button
 	saxon-he src.xml buildclass.xsl ns=Gtk class=Widget 
-#	saxon-he src.xml buildclass.xsl ns=GObject class=Object ## abstract
+	saxon-he src.xml buildclass.xsl ns=GObject class=Object ## abstract
 
 class:
+	saxon-he src.xml class.xsl ns=Gtk class=GestureClick
+#	saxon-he src.xml class.xsl ns=Gdk class=Device
+#	saxon-he src.xml class.xsl ns=Gdk class=Event
+#	saxon-he src.xml class.xsl ns=Gtk class=EventController
+#	saxon-he src.xml class.xsl ns=Gtk class=Gesture
+#	saxon-he src.xml class.xsl ns=Gtk class=GestureSingle
+#	saxon-he src.xml class.xsl ns=Gtk class=GestureDrag
+#	saxon-he src.xml class.xsl ns=Gtk class=DrawingArea
+#	saxon-he src.xml class.xsl ns=Gtk class=Frame
 #	saxon-he src.xml class.xsl ns=Gtk class=Grid
 #	saxon-he src.xml class.xsl ns=Gtk class=Window
 #	saxon-he src.xml class.xsl ns=Gtk class=Widget  ## ABSTRACT

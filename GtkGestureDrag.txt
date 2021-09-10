@@ -1,0 +1,6 @@
+
+<class name="GestureDrag" cid="GtkGestureDrag" parent="GestureSingle" returntype="GtkGesture*">
+  <constructor render="1" name="new" cid="gtk_gesture_drag_new"/>
+  <method render="1" name="get_offset" cid="gtk_gesture_drag_get_offset"/>
+  <method render="1" name="get_start_point" cid="gtk_gesture_drag_get_start_point"/>
+</class>

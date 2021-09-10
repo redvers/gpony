@@ -101,7 +101,7 @@
   <class render="0" name="Frame" parent="Widget"/>
   <class render="0" name="GLArea" parent="Widget"/>
   <class render="0" name="Gesture" parent="EventController"/>
-  <class render="0" name="GestureClick" parent="GestureSingle"/>
+  <class render="1" name="GestureClick" parent="GestureSingle"/>
   <class render="0" name="GestureDrag" parent="GestureSingle"/>
   <class render="0" name="GestureLongPress" parent="GestureSingle"/>
   <class render="0" name="GesturePan" parent="GestureDrag"/>

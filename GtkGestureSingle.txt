@@ -1,0 +1,11 @@
+
+<class name="GestureSingle" cid="GtkGestureSingle" parent="Gesture" returntype="">
+  <method render="1" name="get_button" cid="gtk_gesture_single_get_button"/>
+  <method render="1" name="get_current_button" cid="gtk_gesture_single_get_current_button"/>
+  <method render="0" name="get_current_sequence" cid="gtk_gesture_single_get_current_sequence"/>
+  <method render="1" name="get_exclusive" cid="gtk_gesture_single_get_exclusive"/>
+  <method render="1" name="get_touch_only" cid="gtk_gesture_single_get_touch_only"/>
+  <method render="1" name="set_button" cid="gtk_gesture_single_set_button"/>
+  <method render="1" name="set_exclusive" cid="gtk_gesture_single_set_exclusive"/>
+  <method render="1" name="set_touch_only" cid="gtk_gesture_single_set_touch_only"/>
+</class>

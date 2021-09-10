@@ -1,0 +1,15 @@
+
+<class name="EventController" cid="GtkEventController" parent="GObject.Object" returntype="">
+  <method render="1" name="get_current_event" cid="gtk_event_controller_get_current_event"/>
+  <method render="1" name="get_current_event_device" cid="gtk_event_controller_get_current_event_device"/>
+  <method render="0" name="get_current_event_state" cid="gtk_event_controller_get_current_event_state"/>
+  <method render="1" name="get_current_event_time" cid="gtk_event_controller_get_current_event_time"/>
+  <method render="0" name="get_name" cid="gtk_event_controller_get_name"/>
+  <method render="0" name="get_propagation_limit" cid="gtk_event_controller_get_propagation_limit"/>
+  <method render="0" name="get_propagation_phase" cid="gtk_event_controller_get_propagation_phase"/>
+  <method render="1" name="get_widget" cid="gtk_event_controller_get_widget"/>
+  <method render="1" name="reset" cid="gtk_event_controller_reset"/>
+  <method render="0" name="set_name" cid="gtk_event_controller_set_name"/>
+  <method render="0" name="set_propagation_limit" cid="gtk_event_controller_set_propagation_limit"/>
+  <method render="0" name="set_propagation_phase" cid="gtk_event_controller_set_propagation_phase"/>
+</class>

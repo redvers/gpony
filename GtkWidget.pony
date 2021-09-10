@@ -1,3 +1,4 @@
+use @gtk_widget_add_controller[None](myself: Pointer[GObject] val, controller: Pointer[GObject] val)
 use @gtk_widget_get_height[I32](myself: Pointer[GObject] val)
 use @gtk_widget_get_name[Pointer[U8]](myself: Pointer[GObject] val)
 use @gtk_widget_get_next_sibling[Pointer[GObject]](myself: Pointer[GObject] val)
@@ -10,6 +11,7 @@ use @gtk_widget_is_drawable[U8](myself: Pointer[GObject] val)
 use @gtk_widget_set_halign[None](myself: Pointer[GObject] val, align: GtkAlign)
 use @gtk_widget_set_hexpand[None](myself: Pointer[GObject] val, expand: U8)
 use @gtk_widget_set_name[None](myself: Pointer[GObject] val, name: Pointer[U8] tag)
+use @gtk_widget_set_size_request[None](myself: Pointer[GObject] val, width: I32, height: I32)
 use @gtk_widget_set_valign[None](myself: Pointer[GObject] val, align: GtkAlign)
 use @gtk_widget_set_vexpand[None](myself: Pointer[GObject] val, expand: U8)
 use @gtk_widget_set_visible[None](myself: Pointer[GObject] val, visible: U8)
@@ -32,6 +34,14 @@ class val GtkWidget is (GtkWidgetInterface & GObjectInterface & GInterface & Gtk
 interface GtkWidgetInterface
   fun getobj(): Pointer[GObject] val
 
+
+/*
+  C Function Name: gtk_widget_add_controller
+  Returns: void (None)
+  */
+
+  fun add_controller(controller: GObject): None =>
+      @gtk_widget_add_controller(getobj(), controller.getobj())
 
 /*
   C Function Name: gtk_widget_get_height
@@ -128,6 +138,14 @@ interface GtkWidgetInterface
 
   fun set_name(name: String): None =>
       @gtk_widget_set_name(getobj(), name.cstring())
+
+/*
+  C Function Name: gtk_widget_set_size_request
+  Returns: void (None)
+  */
+
+  fun set_size_request(width: I32, height: I32): None =>
+      @gtk_widget_set_size_request(getobj(), width, height)
 
 /*
   C Function Name: gtk_widget_set_valign

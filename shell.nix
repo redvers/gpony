@@ -9,5 +9,6 @@ pkgs.mkShell {
     gtk4
     libxml2
     libxslt
+    gobject-introspection
   ];
 }

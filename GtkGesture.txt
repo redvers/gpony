@@ -1,0 +1,20 @@
+
+<class name="Gesture" cid="GtkGesture" parent="EventController" returntype="">
+  <method render="0" name="get_bounding_box" cid="gtk_gesture_get_bounding_box"/>
+  <method render="0" name="get_bounding_box_center" cid="gtk_gesture_get_bounding_box_center"/>
+  <method render="0" name="get_device" cid="gtk_gesture_get_device"/>
+  <method render="0" name="get_group" cid="gtk_gesture_get_group"/>
+  <method render="0" name="get_last_event" cid="gtk_gesture_get_last_event"/>
+  <method render="0" name="get_last_updated_sequence" cid="gtk_gesture_get_last_updated_sequence"/>
+  <method render="0" name="get_point" cid="gtk_gesture_get_point"/>
+  <method render="0" name="get_sequence_state" cid="gtk_gesture_get_sequence_state"/>
+  <method render="0" name="get_sequences" cid="gtk_gesture_get_sequences"/>
+  <method render="0" name="group" cid="gtk_gesture_group"/>
+  <method render="0" name="handles_sequence" cid="gtk_gesture_handles_sequence"/>
+  <method render="0" name="is_active" cid="gtk_gesture_is_active"/>
+  <method render="0" name="is_grouped_with" cid="gtk_gesture_is_grouped_with"/>
+  <method render="0" name="is_recognized" cid="gtk_gesture_is_recognized"/>
+  <method render="0" name="set_sequence_state" cid="gtk_gesture_set_sequence_state"/>
+  <method render="0" name="set_state" cid="gtk_gesture_set_state"/>
+  <method render="0" name="ungroup" cid="gtk_gesture_ungroup"/>
+</class>
