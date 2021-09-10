@@ -1,0 +1,27 @@
+
+<ns="Gtk">
+  <interface render="0" name="Accessible" parent=""/>
+  <interface render="0" name="Actionable" parent=""/>
+  <interface render="0" name="AppChooser" parent=""/>
+  <interface render="0" name="Buildable" parent=""/>
+  <interface render="0" name="BuilderScope" parent=""/>
+  <interface render="0" name="CellEditable" parent=""/>
+  <interface render="0" name="CellLayout" parent=""/>
+  <interface render="0" name="ColorChooser" parent=""/>
+  <interface render="0" name="ConstraintTarget" parent=""/>
+  <interface render="0" name="Editable" parent=""/>
+  <interface render="0" name="FileChooser" parent=""/>
+  <interface render="0" name="FontChooser" parent=""/>
+  <interface render="1" name="Native" parent=""/>
+  <interface render="0" name="Orientable" parent=""/>
+  <interface render="0" name="PrintOperationPreview" parent=""/>
+  <interface render="0" name="Root" parent=""/>
+  <interface render="0" name="Scrollable" parent=""/>
+  <interface render="0" name="SelectionModel" parent=""/>
+  <interface render="0" name="ShortcutManager" parent=""/>
+  <interface render="0" name="StyleProvider" parent=""/>
+  <interface render="0" name="TreeDragDest" parent=""/>
+  <interface render="0" name="TreeDragSource" parent=""/>
+  <interface render="0" name="TreeModel" parent=""/>
+  <interface render="0" name="TreeSortable" parent=""/>
+</ns>

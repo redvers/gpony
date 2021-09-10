@@ -1,0 +1,9 @@
+
+<interface name="Native" cid="GtkNative" parent="" returntype="">
+  <function render="1" name="get_for_surface" cid="gtk_native_get_for_surface"/>
+  <method render="1" name="get_renderer" cid="gtk_native_get_renderer"/>
+  <method render="1" name="get_surface" cid="gtk_native_get_surface"/>
+  <method render="1" name="get_surface_transform" cid="gtk_native_get_surface_transform"/>
+  <method render="1" name="realize" cid="gtk_native_realize"/>
+  <method render="1" name="unrealize" cid="gtk_native_unrealize"/>
+</interface>

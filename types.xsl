@@ -18,6 +18,8 @@
 	<xsl:when test="$type='gchar'">U8</xsl:when>
 	<xsl:when test="$type='gboolean'">U8</xsl:when>
 	<xsl:when test="$type='double'">F64</xsl:when>
+	<xsl:when test="$type='GskRenderer*'">Pointer[GObject]</xsl:when>
+	<xsl:when test="$type='GdkSurface*'">Pointer[GObject]</xsl:when>
 	<xsl:when test="$type='GtkWidget*'">Pointer[GObject]</xsl:when>
 	<xsl:when test="$type='GtkWindow*'">Pointer[GObject]</xsl:when>
 	<xsl:when test="$type='GtkApplication*'">Pointer[GObject]</xsl:when>
