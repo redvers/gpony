@@ -15,7 +15,7 @@
 
 <xsl:template match="/gpony/t:repository/t:namespace[@name=$ns]"> 
 <xsl:variable name="root" select="."/>
-<xsl:variable name="filename" select="concat($ns, $class, '.txt')"/>
+<xsl:variable name="filename" select="concat('../txt/', $ns, $class, '.txt')"/>
 <xsl:variable name="fi" select="document($filename)"/>
 <xsl:variable name="pparent"><xsl:call-template name="pony-parent"><xsl:with-param name="parent" select="$fi/class/@parent"/><xsl:with-param name="ns" select="$ns"/></xsl:call-template></xsl:variable>
 <xsl:variable name="pret"><xsl:call-template name="pony-typing"><xsl:with-param name="type" select="$fi/class/@returntype"/></xsl:call-template></xsl:variable>

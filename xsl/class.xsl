@@ -7,7 +7,7 @@
 <xsl:strip-space elements="*"/>
 <xsl:template match="//t:repository/t:namespace[@name=$ns]/t:class[@name=$class]"> 
 <xsl:message><xsl:value-of select="path()"/></xsl:message>
-<xsl:result-document href="{$ns}{$class}.txt" method="text">
+<xsl:result-document href="txt/{$ns}{$class}.txt" method="text">
 &lt;class name="<xsl:value-of select="@name"/>" cid="<xsl:value-of select="@c:type"/>" parent="<xsl:value-of select="@parent"/>" returntype="<xsl:value-of select="t:constructor[1]/t:return-value/t:type/@c:type"/>"&gt;
 <xsl:apply-templates select="t:constructor" mode="constructorList">
 <xsl:with-param name="class" select="$class"/>
