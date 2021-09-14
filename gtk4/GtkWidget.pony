@@ -1,21 +1,21 @@
-use @gtk_widget_add_controller[None](myself: Pointer[GObject] val, controller: Pointer[GObject] val)
-use @gtk_widget_get_height[I32](myself: Pointer[GObject] val)
-use @gtk_widget_get_name[Pointer[U8]](myself: Pointer[GObject] val)
-use @gtk_widget_get_next_sibling[Pointer[GObject]](myself: Pointer[GObject] val)
-use @gtk_widget_get_parent[Pointer[GObject]](myself: Pointer[GObject] val)
-use @gtk_widget_get_visible[U8](myself: Pointer[GObject] val)
-use @gtk_widget_get_width[I32](myself: Pointer[GObject] val)
-use @gtk_widget_has_focus[U8](myself: Pointer[GObject] val)
-use @gtk_widget_hide[None](myself: Pointer[GObject] val)
-use @gtk_widget_is_drawable[U8](myself: Pointer[GObject] val)
-use @gtk_widget_set_halign[None](myself: Pointer[GObject] val, align: GtkAlign)
-use @gtk_widget_set_hexpand[None](myself: Pointer[GObject] val, expand: U8)
-use @gtk_widget_set_name[None](myself: Pointer[GObject] val, name: Pointer[U8] tag)
-use @gtk_widget_set_size_request[None](myself: Pointer[GObject] val, width: I32, height: I32)
-use @gtk_widget_set_valign[None](myself: Pointer[GObject] val, align: GtkAlign)
-use @gtk_widget_set_vexpand[None](myself: Pointer[GObject] val, expand: U8)
-use @gtk_widget_set_visible[None](myself: Pointer[GObject] val, visible: U8)
-use @gtk_widget_show[None](myself: Pointer[GObject] val)
+use @gtk_widget_add_controller[None](myself: Pointer[GObjectREF] val, controller: Pointer[GObjectREF] val)
+use @gtk_widget_get_height[I32](myself: Pointer[GObjectREF] val)
+use @gtk_widget_get_name[Pointer[U8]](myself: Pointer[GObjectREF] val)
+use @gtk_widget_get_next_sibling[Pointer[GObjectREF]](myself: Pointer[GObjectREF] val)
+use @gtk_widget_get_parent[Pointer[GObjectREF]](myself: Pointer[GObjectREF] val)
+use @gtk_widget_get_visible[U8](myself: Pointer[GObjectREF] val)
+use @gtk_widget_get_width[I32](myself: Pointer[GObjectREF] val)
+use @gtk_widget_has_focus[U8](myself: Pointer[GObjectREF] val)
+use @gtk_widget_hide[None](myself: Pointer[GObjectREF] val)
+use @gtk_widget_is_drawable[U8](myself: Pointer[GObjectREF] val)
+use @gtk_widget_set_halign[None](myself: Pointer[GObjectREF] val, align: GtkAlign)
+use @gtk_widget_set_hexpand[None](myself: Pointer[GObjectREF] val, expand: U8)
+use @gtk_widget_set_name[None](myself: Pointer[GObjectREF] val, name: Pointer[U8] tag)
+use @gtk_widget_set_size_request[None](myself: Pointer[GObjectREF] val, width: I32, height: I32)
+use @gtk_widget_set_valign[None](myself: Pointer[GObjectREF] val, align: GtkAlign)
+use @gtk_widget_set_vexpand[None](myself: Pointer[GObjectREF] val, expand: U8)
+use @gtk_widget_set_visible[None](myself: Pointer[GObjectREF] val, visible: U8)
+use @gtk_widget_show[None](myself: Pointer[GObjectREF] val)
 
 /*
   Class:  Widget
@@ -25,13 +25,13 @@ use @gtk_widget_show[None](myself: Pointer[GObject] val)
 */
 
 class val GtkWidget is (GtkWidgetInterface & GObjectInterface)
-  var obj: Pointer[GObject] val
-  fun getobj(): Pointer[GObject] val => obj
+  var obj: Pointer[GObjectREF] val
+  fun getobj(): Pointer[GObjectREF] val => obj
 
-  new val createFromRef(oref: Pointer[GObject] val) =>
+  new val createFromRef(oref: Pointer[GObjectREF] val) =>
     obj = oref
 interface GtkWidgetInterface is (GObjectInterface)
-  fun getobj(): Pointer[GObject] val
+  fun getobj(): Pointer[GObjectREF] val
 
 
 /*
@@ -39,7 +39,7 @@ interface GtkWidgetInterface is (GObjectInterface)
   Returns: void (None)
   */
 
-  fun add_controller(controller: GObject): None =>
+  fun add_controller(controller: GObjectREF): None =>
       @gtk_widget_add_controller(getobj(), controller.getobj())
 
 /*
@@ -60,18 +60,18 @@ interface GtkWidgetInterface is (GObjectInterface)
 
 /*
   C Function Name: gtk_widget_get_next_sibling
-  Returns: GtkWidget* (Pointer[GObject])
+  Returns: GtkWidget* (Pointer[GObjectREF])
   */
 
-  fun get_next_sibling(): Pointer[GObject] =>
+  fun get_next_sibling(): Pointer[GObjectREF] =>
       @gtk_widget_get_next_sibling(getobj())
 
 /*
   C Function Name: gtk_widget_get_parent
-  Returns: GtkWidget* (Pointer[GObject])
+  Returns: GtkWidget* (Pointer[GObjectREF])
   */
 
-  fun get_parent(): Pointer[GObject] =>
+  fun get_parent(): Pointer[GObjectREF] =>
       @gtk_widget_get_parent(getobj())
 
 /*

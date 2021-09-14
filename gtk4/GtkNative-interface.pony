@@ -1,28 +1,28 @@
-use @gtk_native_get_renderer[Pointer[GObject]](myself: Pointer[GObject] val)
-use @gtk_native_get_surface[Pointer[GObject]](myself: Pointer[GObject] val)
-use @gtk_native_get_surface_transform[None](myself: Pointer[GObject] val, x: Pointer[F64], y: Pointer[F64])
-use @gtk_native_realize[None](myself: Pointer[GObject] val)
-use @gtk_native_unrealize[None](myself: Pointer[GObject] val)
+use @gtk_native_get_renderer[Pointer[GObjectREF]](myself: Pointer[GObjectREF] val)
+use @gtk_native_get_surface[Pointer[GObjectREF]](myself: Pointer[GObjectREF] val)
+use @gtk_native_get_surface_transform[None](myself: Pointer[GObjectREF] val, x: Pointer[F64], y: Pointer[F64])
+use @gtk_native_realize[None](myself: Pointer[GObjectREF] val)
+use @gtk_native_unrealize[None](myself: Pointer[GObjectREF] val)
 
 
 interface Interface
-  fun getobj(): Pointer[GObject] val
+  fun getobj(): Pointer[GObjectREF] val
 
 
 /*
   C Function Name: gtk_native_get_renderer
-  Returns: GskRenderer* (Pointer[GObject])
+  Returns: GskRenderer* (Pointer[GObjectREF])
   */
 
-  fun get_renderer(): Pointer[GObject] =>
+  fun get_renderer(): Pointer[GObjectREF] =>
       @gtk_native_get_renderer(getobj())
 
 /*
   C Function Name: gtk_native_get_surface
-  Returns: GdkSurface* (Pointer[GObject])
+  Returns: GdkSurface* (Pointer[GObjectREF])
   */
 
-  fun get_surface(): Pointer[GObject] =>
+  fun get_surface(): Pointer[GObjectREF] =>
       @gtk_native_get_surface(getobj())
 
 /*

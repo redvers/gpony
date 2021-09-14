@@ -20,12 +20,12 @@
 	<xsl:when test="$type='double'">F64</xsl:when>
 	<xsl:when test="$type='GCallback'">Pointer[None]</xsl:when>
 	<xsl:when test="$type='GClosureNotify'">Pointer[None]</xsl:when>
-	<xsl:when test="$type='GskRenderer*'">Pointer[GObject]</xsl:when>
-	<xsl:when test="$type='GdkSurface*'">Pointer[GObject]</xsl:when>
-	<xsl:when test="$type='GtkWidget*'">Pointer[GObject]</xsl:when>
-	<xsl:when test="$type='GtkWindow*'">Pointer[GObject]</xsl:when>
-	<xsl:when test="$type='GtkApplication*'">Pointer[GObject]</xsl:when>
-	<xsl:when test="$type='GtkEventController*'">Pointer[GObject]</xsl:when>
+	<xsl:when test="$type='GskRenderer*'">Pointer[GObjectREF]</xsl:when>
+	<xsl:when test="$type='GdkSurface*'">Pointer[GObjectREF]</xsl:when>
+	<xsl:when test="$type='GtkWidget*'">Pointer[GObjectREF]</xsl:when>
+	<xsl:when test="$type='GtkWindow*'">Pointer[GObjectREF]</xsl:when>
+	<xsl:when test="$type='GtkApplication*'">Pointer[GObjectREF]</xsl:when>
+	<xsl:when test="$type='GtkEventController*'">Pointer[GObjectREF]</xsl:when>
 	<xsl:when test="$type='GtkDrawingAreaDrawFunc'">Pointer[None]</xsl:when><!--callback-->
 	<xsl:when test="$type='GDestroyNotify'">Pointer[None]</xsl:when><!--callback-->
 	<xsl:when test="starts-with($type, 'const')"><xsl:call-template name="pony-typing"><xsl:with-param name="type" select="substring($type, 7, string-length($type) - 1)"/></xsl:call-template></xsl:when>
@@ -47,7 +47,7 @@
 <xsl:param name="type"/>
 <xsl:choose>
 	<xsl:when test="$type='Pointer[U8]'">.cstring()</xsl:when>
-	<xsl:when test="$type='Pointer[GObject]'">.getobj()</xsl:when>
+	<xsl:when test="$type='Pointer[GObjectREF]'">.getobj()</xsl:when>
 	<xsl:otherwise></xsl:otherwise>
 </xsl:choose>
 </xsl:template>

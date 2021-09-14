@@ -13,5 +13,5 @@ class val GObject is (GObjectInterface)
     obj = oref
 */
 interface GObjectInterface is GInterface
-  fun getobj(): Pointer[GObject] val
+  fun getobj(): Pointer[GObjectREF] val
 

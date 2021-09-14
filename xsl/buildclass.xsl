@@ -32,16 +32,16 @@
 
 <xsl:choose><xsl:when test="$fi/class/@parent=''">class val <xsl:value-of select="$fi/class/@cid"/> is (<xsl:value-of select="$fi/class/@cid"/>Interface)</xsl:when>
 <xsl:otherwise>class val <xsl:value-of select="$fi/class/@cid"/> is (<xsl:value-of select="$fi/class/@cid"/>Interface &#38; <xsl:value-of select="$pparent"/>Interface)</xsl:otherwise></xsl:choose>
-  var obj: Pointer[GObject] val
-  fun getobj(): Pointer[GObject] val => obj
+  var obj: Pointer[GObjectREF] val
+  fun getobj(): Pointer[GObjectREF] val => obj
 
-  new val createFromRef(oref: Pointer[GObject] val) =>
+  new val createFromRef(oref: Pointer[GObjectREF] val) =>
     obj = oref
 <xsl:apply-templates select="$fi/class/constructor[@render='1']" mode="constructorFn"><xsl:with-param name="root" select="$root"/></xsl:apply-templates>
 
 <xsl:choose><xsl:when test="$fi/class/@parent=''">interface <xsl:value-of select="$fi/class/@cid"/>Interface</xsl:when>
 <xsl:otherwise>interface <xsl:value-of select="$fi/class/@cid"/>Interface is (<xsl:value-of select="$pparent"/>Interface)</xsl:otherwise></xsl:choose>
-  fun getobj(): Pointer[GObject] val
+  fun getobj(): Pointer[GObjectREF] val
 
 <xsl:apply-templates select="$fi/class/method[@render='1']" mode="methodFn"><xsl:with-param name="root" select="$root"/></xsl:apply-templates>
 </xsl:result-document>

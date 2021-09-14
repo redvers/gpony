@@ -1,10 +1,10 @@
-use @gtk_gesture_single_get_button[U32](myself: Pointer[GObject] val)
-use @gtk_gesture_single_get_current_button[U32](myself: Pointer[GObject] val)
-use @gtk_gesture_single_get_exclusive[U8](myself: Pointer[GObject] val)
-use @gtk_gesture_single_get_touch_only[U8](myself: Pointer[GObject] val)
-use @gtk_gesture_single_set_button[None](myself: Pointer[GObject] val, button: U32)
-use @gtk_gesture_single_set_exclusive[None](myself: Pointer[GObject] val, exclusive: U8)
-use @gtk_gesture_single_set_touch_only[None](myself: Pointer[GObject] val, touch_only: U8)
+use @gtk_gesture_single_get_button[U32](myself: Pointer[GObjectREF] val)
+use @gtk_gesture_single_get_current_button[U32](myself: Pointer[GObjectREF] val)
+use @gtk_gesture_single_get_exclusive[U8](myself: Pointer[GObjectREF] val)
+use @gtk_gesture_single_get_touch_only[U8](myself: Pointer[GObjectREF] val)
+use @gtk_gesture_single_set_button[None](myself: Pointer[GObjectREF] val, button: U32)
+use @gtk_gesture_single_set_exclusive[None](myself: Pointer[GObjectREF] val, exclusive: U8)
+use @gtk_gesture_single_set_touch_only[None](myself: Pointer[GObjectREF] val, touch_only: U8)
 
 /*
   Class:  GestureSingle
@@ -14,13 +14,13 @@ use @gtk_gesture_single_set_touch_only[None](myself: Pointer[GObject] val, touch
 */
 
 class val GtkGestureSingle is (GtkGestureSingleInterface & GtkGestureInterface)
-  var obj: Pointer[GObject] val
-  fun getobj(): Pointer[GObject] val => obj
+  var obj: Pointer[GObjectREF] val
+  fun getobj(): Pointer[GObjectREF] val => obj
 
-  new val createFromRef(oref: Pointer[GObject] val) =>
+  new val createFromRef(oref: Pointer[GObjectREF] val) =>
     obj = oref
 interface GtkGestureSingleInterface is (GtkGestureInterface)
-  fun getobj(): Pointer[GObject] val
+  fun getobj(): Pointer[GObjectREF] val
 
 
 /*

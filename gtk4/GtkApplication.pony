@@ -1,29 +1,29 @@
-use @gtk_application_new[Pointer[GObject] val](application_id: Pointer[U8] tag, flags: GApplicationFlags)
-use @gtk_application_add_window[None](myself: Pointer[GObject] val, window: Pointer[GObject] val)
+use @gtk_application_new[Pointer[GObjectREF] val](application_id: Pointer[U8] tag, flags: GApplicationFlags)
+use @gtk_application_add_window[None](myself: Pointer[GObjectREF] val, window: Pointer[GObjectREF] val)
 
 /*
   Class:  Application
   CName:  GtkApplication
   Parent: Gio.Application (GApplication)
-  GObject:GtkApplication* (Pointer[GObject])
+  GObject:GtkApplication* (Pointer[GObjectREF])
 */
 
 class val GtkApplication is (GtkApplicationInterface & GApplicationInterface)
-  var obj: Pointer[GObject] val
-  fun getobj(): Pointer[GObject] val => obj
+  var obj: Pointer[GObjectREF] val
+  fun getobj(): Pointer[GObjectREF] val => obj
 
-  new val createFromRef(oref: Pointer[GObject] val) =>
+  new val createFromRef(oref: Pointer[GObjectREF] val) =>
     obj = oref
 
 /*
   C Function Name: gtk_application_new
-  Returns: GtkApplication* (Pointer[GObject])
+  Returns: GtkApplication* (Pointer[GObjectREF])
   */
 
     new val create(application_id: String, flags: GApplicationFlags) =>
       obj = @gtk_application_new(application_id.cstring(), flags)
 interface GtkApplicationInterface is (GApplicationInterface)
-  fun getobj(): Pointer[GObject] val
+  fun getobj(): Pointer[GObjectREF] val
 
 
 /*
@@ -31,5 +31,5 @@ interface GtkApplicationInterface is (GApplicationInterface)
   Returns: void (None)
   */
 
-  fun add_window(window: GObject): None =>
+  fun add_window(window: GObjectREF): None =>
       @gtk_application_add_window(getobj(), window.getobj())

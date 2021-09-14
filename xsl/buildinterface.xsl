@@ -15,16 +15,16 @@
 
 <xsl:template match="/gpony/t:repository/t:namespace[@name=$ns]"> 
 <xsl:variable name="root" select="."/>
-<xsl:variable name="filename" select="concat($ns, $interface, '-interface.txt')"/>
+<xsl:variable name="filename" select="concat('../txt/', $ns, $interface, '-interface.txt')"/>
 <xsl:variable name="fi" select="document($filename)"/>
 <xsl:variable name="pparent"><xsl:call-template name="pony-parent"><xsl:with-param name="parent" select="$fi/interface/@parent"/><xsl:with-param name="ns" select="$ns"/></xsl:call-template></xsl:variable>
 <xsl:variable name="pret"><xsl:call-template name="pony-typing"><xsl:with-param name="type" select="$fi/interface/@returntype"/></xsl:call-template></xsl:variable>
-<xsl:result-document href="{$fi/interface/@cid}-interface.pony" method="text">
+<xsl:result-document href="gtk4/{$fi/interface/@cid}-interface.pony" method="text">
 <!-- Use Statements -->
 <xsl:apply-templates select="$fi/interface/method[@render='1']" mode="methodUse"><xsl:with-param name="root" select="$root"/></xsl:apply-templates>
 
 interface <xsl:value-of select="$fi/class/@cid"/>Interface
-  fun getobj(): Pointer[GObject] val
+  fun getobj(): Pointer[GObjectREF] val
 
 <xsl:apply-templates select="$fi/interface/method[@render='1']" mode="methodFn"><xsl:with-param name="root" select="$root"/></xsl:apply-templates>
 </xsl:result-document>

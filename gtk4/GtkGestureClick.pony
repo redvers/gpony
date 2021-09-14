@@ -1,4 +1,4 @@
-use @gtk_gesture_click_new[Pointer[GObject] val]()
+use @gtk_gesture_click_new[Pointer[GObjectREF] val]()
 
 /*
   Class:  GestureClick
@@ -8,10 +8,10 @@ use @gtk_gesture_click_new[Pointer[GObject] val]()
 */
 
 class val GtkGestureClick is (GtkGestureClickInterface & GtkGestureSingleInterface)
-  var obj: Pointer[GObject] val
-  fun getobj(): Pointer[GObject] val => obj
+  var obj: Pointer[GObjectREF] val
+  fun getobj(): Pointer[GObjectREF] val => obj
 
-  new val createFromRef(oref: Pointer[GObject] val) =>
+  new val createFromRef(oref: Pointer[GObjectREF] val) =>
     obj = oref
 
 /*
@@ -22,5 +22,5 @@ class val GtkGestureClick is (GtkGestureClickInterface & GtkGestureSingleInterfa
     new val create() =>
       obj = @gtk_gesture_click_new()
 interface GtkGestureClickInterface is (GtkGestureSingleInterface)
-  fun getobj(): Pointer[GObject] val
+  fun getobj(): Pointer[GObjectREF] val
 

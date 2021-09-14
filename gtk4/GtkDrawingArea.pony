@@ -1,33 +1,33 @@
-use @gtk_drawing_area_new[Pointer[GObject] val]()
-use @gtk_drawing_area_get_content_height[I32](myself: Pointer[GObject] val)
-use @gtk_drawing_area_get_content_width[I32](myself: Pointer[GObject] val)
-use @gtk_drawing_area_set_content_height[None](myself: Pointer[GObject] val, height: I32)
-use @gtk_drawing_area_set_content_width[None](myself: Pointer[GObject] val, width: I32)
-use @gtk_drawing_area_set_draw_func[None](myself: Pointer[GObject] val, draw_func: Pointer[None], user_data: Any, destroy: Pointer[None])
+use @gtk_drawing_area_new[Pointer[GObjectREF] val]()
+use @gtk_drawing_area_get_content_height[I32](myself: Pointer[GObjectREF] val)
+use @gtk_drawing_area_get_content_width[I32](myself: Pointer[GObjectREF] val)
+use @gtk_drawing_area_set_content_height[None](myself: Pointer[GObjectREF] val, height: I32)
+use @gtk_drawing_area_set_content_width[None](myself: Pointer[GObjectREF] val, width: I32)
+use @gtk_drawing_area_set_draw_func[None](myself: Pointer[GObjectREF] val, draw_func: Pointer[None], user_data: Any, destroy: Pointer[None])
 
 /*
   Class:  DrawingArea
   CName:  GtkDrawingArea
   Parent: Widget (GtkWidget)
-  GObject:GtkWidget* (Pointer[GObject])
+  GObject:GtkWidget* (Pointer[GObjectREF])
 */
 
 class val GtkDrawingArea is (GtkDrawingAreaInterface & GtkWidgetInterface)
-  var obj: Pointer[GObject] val
-  fun getobj(): Pointer[GObject] val => obj
+  var obj: Pointer[GObjectREF] val
+  fun getobj(): Pointer[GObjectREF] val => obj
 
-  new val createFromRef(oref: Pointer[GObject] val) =>
+  new val createFromRef(oref: Pointer[GObjectREF] val) =>
     obj = oref
 
 /*
   C Function Name: gtk_drawing_area_new
-  Returns: GtkWidget* (Pointer[GObject])
+  Returns: GtkWidget* (Pointer[GObjectREF])
   */
 
     new val create() =>
       obj = @gtk_drawing_area_new()
 interface GtkDrawingAreaInterface is (GtkWidgetInterface)
-  fun getobj(): Pointer[GObject] val
+  fun getobj(): Pointer[GObjectREF] val
 
 
 /*

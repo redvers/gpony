@@ -7,7 +7,7 @@
 <xsl:template match="function" mode="functionUse">
 <xsl:param name="root" />
 <xsl:variable name="cid" select="@cid"/>
-<xsl:variable name="args" select="$root//t:function[@c:identifier=$cid]/t:parameters/t:parameter"/>use @<xsl:value-of select="$cid"/>[<xsl:call-template name="pony-typing"><xsl:with-param name="type" select="$root//t:function[@c:identifier=$cid]/t:return-value/t:type/@c:type"/></xsl:call-template>](<xsl:variable name="up"><xsl:call-template name="useparams"><xsl:with-param name="p" select="$args"/></xsl:call-template></xsl:variable><xsl:if test="$up!=''"><xsl:value-of select="$up"/></xsl:if>)
+<xsl:variable name="args" select="$root//t:function[@c:identifier=$cid]/t:parameters/*"/>use @<xsl:value-of select="$cid"/>[<xsl:call-template name="pony-typing"><xsl:with-param name="type" select="$root//t:function[@c:identifier=$cid]/t:return-value/t:type/@c:type"/></xsl:call-template>](<xsl:variable name="up"><xsl:call-template name="useparams"><xsl:with-param name="p" select="$args"/></xsl:call-template></xsl:variable><xsl:if test="$up!=''"><xsl:value-of select="$up"/></xsl:if>)
 </xsl:template>
 
 <xsl:template match="function" mode="functionFn">
@@ -17,8 +17,8 @@
   Returns: <xsl:value-of select="$root//t:function[@c:identifier=$cid]/t:return-value/t:type/@c:type"/> (<xsl:variable name="retpony"><xsl:call-template name="pony-typing"><xsl:with-param name="type" select="$root//t:function[@c:identifier=$cid]/t:return-value/t:type/@c:type"/></xsl:call-template></xsl:variable><xsl:value-of select="$retpony"/>)
   */
 
-  fun <xsl:value-of select="@name"/>(<xsl:call-template name="funparams"><xsl:with-param name="p" select="$root//t:function[@c:identifier=$cid]/t:parameters/t:parameter"/></xsl:call-template>): <xsl:value-of select="$retpony"/> =>
-  <xsl:variable name="args" select="$root//t:function[@c:identifier=$cid]/t:parameters/t:parameter"/>    @<xsl:value-of select="@cid"/>(getobj()<xsl:variable name="cargs"><xsl:call-template name="funffiparms"><xsl:with-param name="p" select="$args"/></xsl:call-template></xsl:variable><xsl:if test="$cargs!=''">, <xsl:value-of select="$cargs"/></xsl:if>)
+  fun <xsl:value-of select="@name"/>(<xsl:call-template name="funparams"><xsl:with-param name="p" select="$root//t:function[@c:identifier=$cid]/t:parameters/*"/></xsl:call-template>): <xsl:value-of select="$retpony"/> =>
+  <xsl:variable name="args" select="$root//t:function[@c:identifier=$cid]/t:parameters/*"/>     @<xsl:value-of select="@cid"/>(<xsl:variable name="cargs"><xsl:call-template name="funffiparms"><xsl:with-param name="p" select="$args"/></xsl:call-template></xsl:variable><xsl:if test="$cargs!=''"><xsl:value-of select="$cargs"/></xsl:if>)
 </xsl:template>
 
 

@@ -7,7 +7,7 @@
 <xsl:template match="method" mode="methodUse">
 <xsl:param name="root" />
 <xsl:variable name="cid" select="@cid"/>
-<xsl:variable name="args" select="$root//t:method[@c:identifier=$cid]/t:parameters/t:parameter"/>use @<xsl:value-of select="$cid"/>[<xsl:call-template name="pony-typing"><xsl:with-param name="type" select="$root//t:method[@c:identifier=$cid]/t:return-value/t:type/@c:type"/></xsl:call-template>](myself: Pointer[GObject] val<xsl:variable name="up"><xsl:call-template name="useparams"><xsl:with-param name="p" select="$args"/></xsl:call-template></xsl:variable><xsl:if test="$up!=''">, <xsl:value-of select="$up"/></xsl:if>)
+<xsl:variable name="args" select="$root//t:method[@c:identifier=$cid]/t:parameters/t:parameter"/>use @<xsl:value-of select="$cid"/>[<xsl:call-template name="pony-typing"><xsl:with-param name="type" select="$root//t:method[@c:identifier=$cid]/t:return-value/t:type/@c:type"/></xsl:call-template>](myself: Pointer[GObjectREF] val<xsl:variable name="up"><xsl:call-template name="useparams"><xsl:with-param name="p" select="$args"/></xsl:call-template></xsl:variable><xsl:if test="$up!=''">, <xsl:value-of select="$up"/></xsl:if>)
 </xsl:template>
 
 <xsl:template match="method" mode="methodFn">
@@ -21,26 +21,5 @@
   <xsl:variable name="args" select="$root//t:method[@c:identifier=$cid]/t:parameters/t:parameter"/>    @<xsl:value-of select="@cid"/>(getobj()<xsl:variable name="cargs"><xsl:call-template name="funffiparms"><xsl:with-param name="p" select="$args"/></xsl:call-template></xsl:variable><xsl:if test="$cargs!=''">, <xsl:value-of select="$cargs"/></xsl:if>)
 </xsl:template>
 
-
-
-
-<!--
-<xsl:template match="method" mode="methodFn">
-<xsl:param name="root" />
-<xsl:variable name="cid" select="@cid"/>
-<xsl:variable name="returntype" select="$root//t:method[@c:identifier=$cid]/t:return-value/t:type/@c:type"/>
-<xsl:variable name="instname" select="$root//t:method[@c:identifier=$cid]/t:parameters/t:instance-parameter/@name"/>
-<xsl:variable name="paramcomment"><xsl:apply-templates select="$root//t:method[@c:identifier=$cid]/t:parameters/t:parameter" mode="comment"/></xsl:variable>
-/*
-  C Function Name: <xsl:value-of select="$cid"/>
-  Returns:         <xsl:value-of select="$returntype"/> (<xsl:call-template name="pony-typing"><xsl:with-param name="type" select="$returntype"/></xsl:call-template>)
-  Instance Param:  <xsl:value-of select="$instname"/>
-  Params:          <xsl:value-of select="$paramcomment"/>
-  */
-
-    fun <xsl:value-of select="@name"/>() =>
-      None // That'll do for now
-</xsl:template>
--->
 </xsl:stylesheet>
 

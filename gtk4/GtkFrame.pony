@@ -1,44 +1,44 @@
-use @gtk_frame_new[Pointer[GObject] val](label: Pointer[U8] tag)
-use @gtk_frame_get_child[Pointer[GObject]](myself: Pointer[GObject] val)
-use @gtk_frame_get_label[Pointer[U8]](myself: Pointer[GObject] val)
-use @gtk_frame_get_label_align[F32](myself: Pointer[GObject] val)
-use @gtk_frame_get_label_widget[Pointer[GObject]](myself: Pointer[GObject] val)
-use @gtk_frame_set_child[None](myself: Pointer[GObject] val, child: Pointer[GObject] val)
-use @gtk_frame_set_label[None](myself: Pointer[GObject] val, label: Pointer[U8] tag)
-use @gtk_frame_set_label_align[None](myself: Pointer[GObject] val, xalign: F32)
-use @gtk_frame_set_label_widget[None](myself: Pointer[GObject] val, label_widget: Pointer[GObject] val)
+use @gtk_frame_new[Pointer[GObjectREF] val](label: Pointer[U8] tag)
+use @gtk_frame_get_child[Pointer[GObjectREF]](myself: Pointer[GObjectREF] val)
+use @gtk_frame_get_label[Pointer[U8]](myself: Pointer[GObjectREF] val)
+use @gtk_frame_get_label_align[F32](myself: Pointer[GObjectREF] val)
+use @gtk_frame_get_label_widget[Pointer[GObjectREF]](myself: Pointer[GObjectREF] val)
+use @gtk_frame_set_child[None](myself: Pointer[GObjectREF] val, child: Pointer[GObjectREF] val)
+use @gtk_frame_set_label[None](myself: Pointer[GObjectREF] val, label: Pointer[U8] tag)
+use @gtk_frame_set_label_align[None](myself: Pointer[GObjectREF] val, xalign: F32)
+use @gtk_frame_set_label_widget[None](myself: Pointer[GObjectREF] val, label_widget: Pointer[GObjectREF] val)
 
 /*
   Class:  Frame
   CName:  GtkFrame
   Parent: Widget (GtkWidget)
-  GObject:GtkWidget* (Pointer[GObject])
+  GObject:GtkWidget* (Pointer[GObjectREF])
 */
 
 class val GtkFrame is (GtkFrameInterface & GtkWidgetInterface)
-  var obj: Pointer[GObject] val
-  fun getobj(): Pointer[GObject] val => obj
+  var obj: Pointer[GObjectREF] val
+  fun getobj(): Pointer[GObjectREF] val => obj
 
-  new val createFromRef(oref: Pointer[GObject] val) =>
+  new val createFromRef(oref: Pointer[GObjectREF] val) =>
     obj = oref
 
 /*
   C Function Name: gtk_frame_new
-  Returns: GtkWidget* (Pointer[GObject])
+  Returns: GtkWidget* (Pointer[GObjectREF])
   */
 
     new val create(label: String) =>
       obj = @gtk_frame_new(label.cstring())
 interface GtkFrameInterface is (GtkWidgetInterface)
-  fun getobj(): Pointer[GObject] val
+  fun getobj(): Pointer[GObjectREF] val
 
 
 /*
   C Function Name: gtk_frame_get_child
-  Returns: GtkWidget* (Pointer[GObject])
+  Returns: GtkWidget* (Pointer[GObjectREF])
   */
 
-  fun get_child(): Pointer[GObject] =>
+  fun get_child(): Pointer[GObjectREF] =>
       @gtk_frame_get_child(getobj())
 
 /*
@@ -59,10 +59,10 @@ interface GtkFrameInterface is (GtkWidgetInterface)
 
 /*
   C Function Name: gtk_frame_get_label_widget
-  Returns: GtkWidget* (Pointer[GObject])
+  Returns: GtkWidget* (Pointer[GObjectREF])
   */
 
-  fun get_label_widget(): Pointer[GObject] =>
+  fun get_label_widget(): Pointer[GObjectREF] =>
       @gtk_frame_get_label_widget(getobj())
 
 /*
@@ -70,7 +70,7 @@ interface GtkFrameInterface is (GtkWidgetInterface)
   Returns: void (None)
   */
 
-  fun set_child(child: GObject): None =>
+  fun set_child(child: GObjectREF): None =>
       @gtk_frame_set_child(getobj(), child.getobj())
 
 /*
@@ -94,5 +94,5 @@ interface GtkFrameInterface is (GtkWidgetInterface)
   Returns: void (None)
   */
 
-  fun set_label_widget(label_widget: GObject): None =>
+  fun set_label_widget(label_widget: GObjectREF): None =>
       @gtk_frame_set_label_widget(getobj(), label_widget.getobj())

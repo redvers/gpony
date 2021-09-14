@@ -6,5 +6,5 @@ type GtkPositionType is I32
 type GtkBaselinePosition is I32
 type GType is U64
 
-type GObject is (GtkWindow | GtkWidget | GtkButton | GApplication | GtkApplication | GtkApplicationWindow | GtkGrid | GtkFrame | GtkDrawingArea | GtkGestureDrag | GtkEventController | GtkGestureClick)
+type GObjectREF is (GtkWindow | GtkWidget | GtkButton | GApplication | GtkApplication | GtkApplicationWindow | GtkGrid | GtkFrame | GtkDrawingArea | GtkGestureDrag | GtkEventController | GtkGestureClick)
 

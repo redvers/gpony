@@ -14,10 +14,10 @@ actor Main
     env.out.print("oof")
 
 
-    let activate = @{(app: Pointer[GObject] val, data: AppState): None =>
+    let activate = @{(app: Pointer[GObjectREF] val, data: AppState): None =>
                         var papp = GtkApplication.createFromRef(app)
                         Debug.out(data.teststring)
-                        let draw_cb = @{(app: Pointer[GObject],
+                        let draw_cb = @{(app: Pointer[GObjectREF],
                                          cairo_t: Pointer[Cairo],
                                          width: I32,
                                          height: I32,
@@ -25,7 +25,7 @@ actor Main
                           Debug.out("draw_cb size: " + width.string() + " " + height.string())
 
                         }
-                        let resize_cb = @{(widget: Pointer[GObject] val, w: I32, h: I32, data: AppState val): None =>
+                        let resize_cb = @{(widget: Pointer[GObjectREF] val, w: I32, h: I32, data: AppState val): None =>
                         @printf("appstateptr: %d\n".cstring(), data)
                         Debug.out("resize_cb: " + data.teststring)
                         if (not(data.cairosurface.is_none())) then
@@ -45,16 +45,16 @@ actor Main
 
 
                         }
-                        let drag_begin = @{(app: Pointer[GObject], data: Pointer[GObject] val): None =>
+                        let drag_begin = @{(app: Pointer[GObjectREF], data: Pointer[GObjectREF] val): None =>
                           Debug.out("drag_begin")
                         }
-                        let drag_update = @{(app: Pointer[GObject], data: Pointer[GObject] val): None =>
+                        let drag_update = @{(app: Pointer[GObjectREF], data: Pointer[GObjectREF] val): None =>
                           Debug.out("drag_update")
                         }
-                        let drag_end = @{(app: Pointer[GObject], data: Pointer[GObject] val): None =>
+                        let drag_end = @{(app: Pointer[GObjectREF], data: Pointer[GObjectREF] val): None =>
                           Debug.out("drag_end")
                         }
-                        let pressed = @{(app: Pointer[GObject], data: Pointer[GObject] val): None =>
+                        let pressed = @{(app: Pointer[GObjectREF], data: Pointer[GObjectREF] val): None =>
                           Debug.out("pressed")
                         }
 

@@ -24,8 +24,8 @@
 <xsl:apply-templates select="$fi/base/function[@render='1']" mode="functionUse"><xsl:with-param name="root" select="$root"/></xsl:apply-templates>
 
 interface <xsl:value-of select="$fi/base/@cid"/>Interface
-  var obj: Pointer[GObject] val
-  fun getobj(): Pointer[GObject] val => obj
+  var obj: Pointer[GObjectREF] val
+  fun getobj(): Pointer[GObjectREF] val => obj
 
 <xsl:apply-templates select="$fi/base/function[@render='1']" mode="functionFn"><xsl:with-param name="root" select="$root"/></xsl:apply-templates>
 <!--</xsl:result-document>

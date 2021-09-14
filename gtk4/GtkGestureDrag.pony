@@ -1,6 +1,6 @@
-use @gtk_gesture_drag_new[Pointer[GObject] val]()
-use @gtk_gesture_drag_get_offset[U8](myself: Pointer[GObject] val, x: Pointer[F64], y: Pointer[F64])
-use @gtk_gesture_drag_get_start_point[U8](myself: Pointer[GObject] val, x: Pointer[F64], y: Pointer[F64])
+use @gtk_gesture_drag_new[Pointer[GObjectREF] val]()
+use @gtk_gesture_drag_get_offset[U8](myself: Pointer[GObjectREF] val, x: Pointer[F64], y: Pointer[F64])
+use @gtk_gesture_drag_get_start_point[U8](myself: Pointer[GObjectREF] val, x: Pointer[F64], y: Pointer[F64])
 
 /*
   Class:  GestureDrag
@@ -10,10 +10,10 @@ use @gtk_gesture_drag_get_start_point[U8](myself: Pointer[GObject] val, x: Point
 */
 
 class val GtkGestureDrag is (GtkGestureDragInterface & GtkGestureSingleInterface)
-  var obj: Pointer[GObject] val
-  fun getobj(): Pointer[GObject] val => obj
+  var obj: Pointer[GObjectREF] val
+  fun getobj(): Pointer[GObjectREF] val => obj
 
-  new val createFromRef(oref: Pointer[GObject] val) =>
+  new val createFromRef(oref: Pointer[GObjectREF] val) =>
     obj = oref
 
 /*
@@ -24,7 +24,7 @@ class val GtkGestureDrag is (GtkGestureDragInterface & GtkGestureSingleInterface
     new val create() =>
       obj = @gtk_gesture_drag_new()
 interface GtkGestureDragInterface is (GtkGestureSingleInterface)
-  fun getobj(): Pointer[GObject] val
+  fun getobj(): Pointer[GObjectREF] val
 
 
 /*

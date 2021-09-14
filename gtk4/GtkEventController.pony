@@ -1,8 +1,8 @@
-use @gtk_event_controller_get_current_event[Pointer[GdkEvent]](myself: Pointer[GObject] val)
-use @gtk_event_controller_get_current_event_device[Pointer[GdkDevice]](myself: Pointer[GObject] val)
-use @gtk_event_controller_get_current_event_time[U32](myself: Pointer[GObject] val)
-use @gtk_event_controller_get_widget[Pointer[GObject]](myself: Pointer[GObject] val)
-use @gtk_event_controller_reset[None](myself: Pointer[GObject] val)
+use @gtk_event_controller_get_current_event[Pointer[GdkEvent]](myself: Pointer[GObjectREF] val)
+use @gtk_event_controller_get_current_event_device[Pointer[GdkDevice]](myself: Pointer[GObjectREF] val)
+use @gtk_event_controller_get_current_event_time[U32](myself: Pointer[GObjectREF] val)
+use @gtk_event_controller_get_widget[Pointer[GObjectREF]](myself: Pointer[GObjectREF] val)
+use @gtk_event_controller_reset[None](myself: Pointer[GObjectREF] val)
 
 /*
   Class:  EventController
@@ -12,13 +12,13 @@ use @gtk_event_controller_reset[None](myself: Pointer[GObject] val)
 */
 
 class val GtkEventController is (GtkEventControllerInterface & GObjectInterface)
-  var obj: Pointer[GObject] val
-  fun getobj(): Pointer[GObject] val => obj
+  var obj: Pointer[GObjectREF] val
+  fun getobj(): Pointer[GObjectREF] val => obj
 
-  new val createFromRef(oref: Pointer[GObject] val) =>
+  new val createFromRef(oref: Pointer[GObjectREF] val) =>
     obj = oref
 interface GtkEventControllerInterface is (GObjectInterface)
-  fun getobj(): Pointer[GObject] val
+  fun getobj(): Pointer[GObjectREF] val
 
 
 /*
@@ -47,10 +47,10 @@ interface GtkEventControllerInterface is (GObjectInterface)
 
 /*
   C Function Name: gtk_event_controller_get_widget
-  Returns: GtkWidget* (Pointer[GObject])
+  Returns: GtkWidget* (Pointer[GObjectREF])
   */
 
-  fun get_widget(): Pointer[GObject] =>
+  fun get_widget(): Pointer[GObjectREF] =>
       @gtk_event_controller_get_widget(getobj())
 
 /*

@@ -1,35 +1,35 @@
-use @gtk_button_new[Pointer[GObject] val]()
-use @gtk_button_new_from_icon_name[Pointer[GObject] val](icon_name: Pointer[U8] tag)
-use @gtk_button_new_with_label[Pointer[GObject] val](label: Pointer[U8] tag)
-use @gtk_button_new_with_mnemonic[Pointer[GObject] val](label: Pointer[U8] tag)
-use @gtk_button_get_child[Pointer[GObject]](myself: Pointer[GObject] val)
-use @gtk_button_get_has_frame[U8](myself: Pointer[GObject] val)
-use @gtk_button_get_icon_name[Pointer[U8]](myself: Pointer[GObject] val)
-use @gtk_button_get_label[Pointer[U8]](myself: Pointer[GObject] val)
-use @gtk_button_get_use_underline[U8](myself: Pointer[GObject] val)
-use @gtk_button_set_child[None](myself: Pointer[GObject] val, child: Pointer[GObject] val)
-use @gtk_button_set_has_frame[None](myself: Pointer[GObject] val, has_frame: U8)
-use @gtk_button_set_icon_name[None](myself: Pointer[GObject] val, icon_name: Pointer[U8] tag)
-use @gtk_button_set_label[None](myself: Pointer[GObject] val, label: Pointer[U8] tag)
-use @gtk_button_set_use_underline[None](myself: Pointer[GObject] val, use_underline: U8)
+use @gtk_button_new[Pointer[GObjectREF] val]()
+use @gtk_button_new_from_icon_name[Pointer[GObjectREF] val](icon_name: Pointer[U8] tag)
+use @gtk_button_new_with_label[Pointer[GObjectREF] val](label: Pointer[U8] tag)
+use @gtk_button_new_with_mnemonic[Pointer[GObjectREF] val](label: Pointer[U8] tag)
+use @gtk_button_get_child[Pointer[GObjectREF]](myself: Pointer[GObjectREF] val)
+use @gtk_button_get_has_frame[U8](myself: Pointer[GObjectREF] val)
+use @gtk_button_get_icon_name[Pointer[U8]](myself: Pointer[GObjectREF] val)
+use @gtk_button_get_label[Pointer[U8]](myself: Pointer[GObjectREF] val)
+use @gtk_button_get_use_underline[U8](myself: Pointer[GObjectREF] val)
+use @gtk_button_set_child[None](myself: Pointer[GObjectREF] val, child: Pointer[GObjectREF] val)
+use @gtk_button_set_has_frame[None](myself: Pointer[GObjectREF] val, has_frame: U8)
+use @gtk_button_set_icon_name[None](myself: Pointer[GObjectREF] val, icon_name: Pointer[U8] tag)
+use @gtk_button_set_label[None](myself: Pointer[GObjectREF] val, label: Pointer[U8] tag)
+use @gtk_button_set_use_underline[None](myself: Pointer[GObjectREF] val, use_underline: U8)
 
 /*
   Class:  Button
   CName:  GtkButton
   Parent: Widget (GtkWidget)
-  GObject:GtkWidget* (Pointer[GObject])
+  GObject:GtkWidget* (Pointer[GObjectREF])
 */
 
 class val GtkButton is (GtkButtonInterface & GtkWidgetInterface)
-  var obj: Pointer[GObject] val
-  fun getobj(): Pointer[GObject] val => obj
+  var obj: Pointer[GObjectREF] val
+  fun getobj(): Pointer[GObjectREF] val => obj
 
-  new val createFromRef(oref: Pointer[GObject] val) =>
+  new val createFromRef(oref: Pointer[GObjectREF] val) =>
     obj = oref
 
 /*
   C Function Name: gtk_button_new
-  Returns: GtkWidget* (Pointer[GObject])
+  Returns: GtkWidget* (Pointer[GObjectREF])
   */
 
     new val create() =>
@@ -37,7 +37,7 @@ class val GtkButton is (GtkButtonInterface & GtkWidgetInterface)
 
 /*
   C Function Name: gtk_button_new_from_icon_name
-  Returns: GtkWidget* (Pointer[GObject])
+  Returns: GtkWidget* (Pointer[GObjectREF])
   */
 
     new val new_from_icon_name(icon_name: String) =>
@@ -45,7 +45,7 @@ class val GtkButton is (GtkButtonInterface & GtkWidgetInterface)
 
 /*
   C Function Name: gtk_button_new_with_label
-  Returns: GtkWidget* (Pointer[GObject])
+  Returns: GtkWidget* (Pointer[GObjectREF])
   */
 
     new val new_with_label(label: String) =>
@@ -53,21 +53,21 @@ class val GtkButton is (GtkButtonInterface & GtkWidgetInterface)
 
 /*
   C Function Name: gtk_button_new_with_mnemonic
-  Returns: GtkWidget* (Pointer[GObject])
+  Returns: GtkWidget* (Pointer[GObjectREF])
   */
 
     new val new_with_mnemonic(label: String) =>
       obj = @gtk_button_new_with_mnemonic(label.cstring())
 interface GtkButtonInterface is (GtkWidgetInterface)
-  fun getobj(): Pointer[GObject] val
+  fun getobj(): Pointer[GObjectREF] val
 
 
 /*
   C Function Name: gtk_button_get_child
-  Returns: GtkWidget* (Pointer[GObject])
+  Returns: GtkWidget* (Pointer[GObjectREF])
   */
 
-  fun get_child(): Pointer[GObject] =>
+  fun get_child(): Pointer[GObjectREF] =>
       @gtk_button_get_child(getobj())
 
 /*
@@ -107,7 +107,7 @@ interface GtkButtonInterface is (GtkWidgetInterface)
   Returns: void (None)
   */
 
-  fun set_child(child: GObject): None =>
+  fun set_child(child: GObjectREF): None =>
       @gtk_button_set_child(getobj(), child.getobj())
 
 /*
