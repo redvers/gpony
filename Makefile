@@ -29,11 +29,18 @@ buildclass:
 #	saxon-he xml/src.xml xsl/buildclass.xsl ns=Gtk class=BoxLayout
 #	saxon-he xml/src.xml xsl/buildclass.xsl ns=Gtk class=LayoutManager
 
-	saxon-he xml/src.xml xsl/buildclass.xsl ns=Gtk class=Builder
+#	saxon-he xml/src.xml xsl/buildclass.xsl ns=Gtk class=Builder
 #	saxon-he xml/src.xml xsl/buildclass.xsl ns=Gtk class=BuilderScope
-	saxon-he xml/src.xml xsl/buildclass.xsl ns=Gtk class=BuilderCScope
-	saxon-he xml/src.xml xsl/buildclass.xsl ns=Gtk class=BuilderListItemFactory
-	saxon-he xml/src.xml xsl/buildclass.xsl ns=Gtk class=ListItemFactory
+#	saxon-he xml/src.xml xsl/buildclass.xsl ns=Gtk class=BuilderCScope
+#	saxon-he xml/src.xml xsl/buildclass.xsl ns=Gtk class=BuilderListItemFactory
+#	saxon-he xml/src.xml xsl/buildclass.xsl ns=Gtk class=Calendar
+
+	saxon-he xml/src.xml xsl/buildclass.xsl ns=Gtk class=CellView
+	saxon-he xml/src.xml xsl/buildclass.xsl ns=Gtk class=CenterBox
+	saxon-he xml/src.xml xsl/buildclass.xsl ns=Gtk class=CenterLayout
+	saxon-he xml/src.xml xsl/buildclass.xsl ns=Gtk class=CheckButton
+
+#	saxon-he xml/src.xml xsl/buildclass.xsl ns=Gtk class=ListItemFactory
 #	saxon-he xml/src.xml xsl/buildclass.xsl ns=Gtk class=ShortcutAction
 #	saxon-he xml/src.xml xsl/buildclass.xsl ns=Gtk class=Dialog
 #	saxon-he xml/src.xml xsl/buildclass.xsl ns=Gtk class=Adjustment
@@ -77,11 +84,16 @@ class:
 
 #	saxon-he xml/src.xml xsl/class.xsl ns=Gtk class=Builder
 #	saxon-he xml/src.xml xsl/class.xsl ns=Gtk class=BuilderCScope
-	saxon-he xml/src.xml xsl/class.xsl ns=Gtk class=BuilderScope
+#	saxon-he xml/src.xml xsl/class.xsl ns=Gtk class=BuilderScope
 #	saxon-he xml/src.xml xsl/class.xsl ns=Gtk class=BuilderListItemFactory
+#	saxon-he xml/src.xml xsl/class.xsl ns=Gtk class=Calendar
+#
+	saxon-he xml/src.xml xsl/class.xsl ns=Gtk class=CellView
+	saxon-he xml/src.xml xsl/class.xsl ns=Gtk class=CenterBox
+	saxon-he xml/src.xml xsl/class.xsl ns=Gtk class=CenterLayout
+	saxon-he xml/src.xml xsl/class.xsl ns=Gtk class=CheckButton
+#
 #	saxon-he xml/src.xml xsl/class.xsl ns=Gtk class=ListItemFactory
-#
-#
 #	saxon-he xml/src.xml xsl/class.xsl ns=Gtk class=LayoutManager
 #	saxon-he xml/src.xml xsl/class.xsl ns=Gtk class=ShortcutAction
 #	saxon-he xml/src.xml xsl/class.xsl ns=Gtk class=Dialog

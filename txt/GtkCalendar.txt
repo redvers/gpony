@@ -1,0 +1,16 @@
+
+<class name="Calendar" cid="GtkCalendar" parent="Widget" returntype="GtkWidget*">
+  <constructor render="1" name="new" cid="gtk_calendar_new"/>
+  <method render="1" name="clear_marks" cid="gtk_calendar_clear_marks"/>
+  <method render="0" name="get_date" cid="gtk_calendar_get_date"/>
+  <method render="1" name="get_day_is_marked" cid="gtk_calendar_get_day_is_marked"/>
+  <method render="1" name="get_show_day_names" cid="gtk_calendar_get_show_day_names"/>
+  <method render="1" name="get_show_heading" cid="gtk_calendar_get_show_heading"/>
+  <method render="1" name="get_show_week_numbers" cid="gtk_calendar_get_show_week_numbers"/>
+  <method render="1" name="mark_day" cid="gtk_calendar_mark_day"/>
+  <method render="0" name="select_day" cid="gtk_calendar_select_day"/>
+  <method render="1" name="set_show_day_names" cid="gtk_calendar_set_show_day_names"/>
+  <method render="1" name="set_show_heading" cid="gtk_calendar_set_show_heading"/>
+  <method render="1" name="set_show_week_numbers" cid="gtk_calendar_set_show_week_numbers"/>
+  <method render="1" name="unmark_day" cid="gtk_calendar_unmark_day"/>
+</class>

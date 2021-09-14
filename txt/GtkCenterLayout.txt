@@ -1,0 +1,14 @@
+
+<class name="CenterLayout" cid="GtkCenterLayout" parent="LayoutManager" returntype="GtkLayoutManager*">
+  <constructor render="0" name="new" cid="gtk_center_layout_new"/>
+  <method render="0" name="get_baseline_position" cid="gtk_center_layout_get_baseline_position"/>
+  <method render="0" name="get_center_widget" cid="gtk_center_layout_get_center_widget"/>
+  <method render="0" name="get_end_widget" cid="gtk_center_layout_get_end_widget"/>
+  <method render="0" name="get_orientation" cid="gtk_center_layout_get_orientation"/>
+  <method render="0" name="get_start_widget" cid="gtk_center_layout_get_start_widget"/>
+  <method render="0" name="set_baseline_position" cid="gtk_center_layout_set_baseline_position"/>
+  <method render="0" name="set_center_widget" cid="gtk_center_layout_set_center_widget"/>
+  <method render="0" name="set_end_widget" cid="gtk_center_layout_set_end_widget"/>
+  <method render="0" name="set_orientation" cid="gtk_center_layout_set_orientation"/>
+  <method render="0" name="set_start_widget" cid="gtk_center_layout_set_start_widget"/>
+</class>

@@ -25,7 +25,7 @@
   <class render="0" name="BuilderListItemFactory" parent="ListItemFactory"/>
   <class render="1" name="Button" parent="Widget"/>
   <class render="0" name="CClosureExpression" parent="Expression"/>
-  <class render="0" name="Calendar" parent="Widget"/>
+  <class render="1" name="Calendar" parent="Widget"/>
   <class render="0" name="CallbackAction" parent="ShortcutAction"/>
   <class render="0" name="CellArea" parent="GObject.InitiallyUnowned"/>
   <class render="0" name="CellAreaBox" parent="CellArea"/>
@@ -39,10 +39,10 @@
   <class render="0" name="CellRendererSpinner" parent="CellRenderer"/>
   <class render="0" name="CellRendererText" parent="CellRenderer"/>
   <class render="0" name="CellRendererToggle" parent="CellRenderer"/>
-  <class render="0" name="CellView" parent="Widget"/>
-  <class render="0" name="CenterBox" parent="Widget"/>
-  <class render="0" name="CenterLayout" parent="LayoutManager"/>
-  <class render="0" name="CheckButton" parent="Widget"/>
+  <class render="1" name="CellView" parent="Widget"/>
+  <class render="1" name="CenterBox" parent="Widget"/>
+  <class render="1" name="CenterLayout" parent="LayoutManager"/>
+  <class render="1" name="CheckButton" parent="Widget"/>
   <class render="0" name="ClosureExpression" parent="Expression"/>
   <class render="0" name="ColorButton" parent="Widget"/>
   <class render="0" name="ColorChooserDialog" parent="Dialog"/>

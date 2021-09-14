@@ -1,0 +1,16 @@
+
+<class name="CellView" cid="GtkCellView" parent="Widget" returntype="GtkWidget*">
+  <constructor render="1" name="new" cid="gtk_cell_view_new"/>
+  <constructor render="0" name="new_with_context" cid="gtk_cell_view_new_with_context"/>
+  <constructor render="1" name="new_with_markup" cid="gtk_cell_view_new_with_markup"/>
+  <constructor render="1" name="new_with_text" cid="gtk_cell_view_new_with_text"/>
+  <constructor render="0" name="new_with_texture" cid="gtk_cell_view_new_with_texture"/>
+  <method render="0" name="get_displayed_row" cid="gtk_cell_view_get_displayed_row"/>
+  <method render="0" name="get_draw_sensitive" cid="gtk_cell_view_get_draw_sensitive"/>
+  <method render="1" name="get_fit_model" cid="gtk_cell_view_get_fit_model"/>
+  <method render="0" name="get_model" cid="gtk_cell_view_get_model"/>
+  <method render="0" name="set_displayed_row" cid="gtk_cell_view_set_displayed_row"/>
+  <method render="0" name="set_draw_sensitive" cid="gtk_cell_view_set_draw_sensitive"/>
+  <method render="0" name="set_fit_model" cid="gtk_cell_view_set_fit_model"/>
+  <method render="0" name="set_model" cid="gtk_cell_view_set_model"/>
+</class>

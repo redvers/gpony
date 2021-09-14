@@ -1,0 +1,12 @@
+
+<class name="CenterBox" cid="GtkCenterBox" parent="Widget" returntype="GtkWidget*">
+  <constructor render="0" name="new" cid="gtk_center_box_new"/>
+  <method render="0" name="get_baseline_position" cid="gtk_center_box_get_baseline_position"/>
+  <method render="0" name="get_center_widget" cid="gtk_center_box_get_center_widget"/>
+  <method render="0" name="get_end_widget" cid="gtk_center_box_get_end_widget"/>
+  <method render="0" name="get_start_widget" cid="gtk_center_box_get_start_widget"/>
+  <method render="0" name="set_baseline_position" cid="gtk_center_box_set_baseline_position"/>
+  <method render="0" name="set_center_widget" cid="gtk_center_box_set_center_widget"/>
+  <method render="0" name="set_end_widget" cid="gtk_center_box_set_end_widget"/>
+  <method render="0" name="set_start_widget" cid="gtk_center_box_set_start_widget"/>
+</class>

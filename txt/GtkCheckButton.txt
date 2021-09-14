@@ -1,0 +1,17 @@
+
+<class name="CheckButton" cid="GtkCheckButton" parent="Widget" returntype="GtkWidget*">
+  <constructor render="0" name="new" cid="gtk_check_button_new"/>
+  <constructor render="0" name="new_with_label" cid="gtk_check_button_new_with_label"/>
+  <constructor render="0" name="new_with_mnemonic" cid="gtk_check_button_new_with_mnemonic"/>
+  <virtual-method render="0" name="activate"/>
+  <virtual-method render="0" name="toggled"/>
+  <method render="0" name="get_active" cid="gtk_check_button_get_active"/>
+  <method render="0" name="get_inconsistent" cid="gtk_check_button_get_inconsistent"/>
+  <method render="0" name="get_label" cid="gtk_check_button_get_label"/>
+  <method render="0" name="get_use_underline" cid="gtk_check_button_get_use_underline"/>
+  <method render="0" name="set_active" cid="gtk_check_button_set_active"/>
+  <method render="0" name="set_group" cid="gtk_check_button_set_group"/>
+  <method render="0" name="set_inconsistent" cid="gtk_check_button_set_inconsistent"/>
+  <method render="0" name="set_label" cid="gtk_check_button_set_label"/>
+  <method render="0" name="set_use_underline" cid="gtk_check_button_set_use_underline"/>
+</class>
