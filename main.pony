@@ -67,7 +67,7 @@ actor Main
                         var drawing_area = GtkDrawingArea
                         drawing_area.set_size_request(100,100)
                         frame.set_child(drawing_area)
-                        drawing_area.set_draw_func(draw_cb, Pointer[None], Pointer[None])
+                        drawing_area.set_draw_func(draw_cb, None, Pointer[None])
                         @printf("appstateptr: %d\n".cstring(), data)
                         drawing_area.signal_connect_after("resize", resize_cb, data)
 

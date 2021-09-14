@@ -3,7 +3,7 @@ use @gtk_drawing_area_get_content_height[I32](myself: Pointer[GObject] val)
 use @gtk_drawing_area_get_content_width[I32](myself: Pointer[GObject] val)
 use @gtk_drawing_area_set_content_height[None](myself: Pointer[GObject] val, height: I32)
 use @gtk_drawing_area_set_content_width[None](myself: Pointer[GObject] val, width: I32)
-use @gtk_drawing_area_set_draw_func[None](myself: Pointer[GObject] val, draw_func: Pointer[None], user_data: Pointer[None], destroy: Pointer[None])
+use @gtk_drawing_area_set_draw_func[None](myself: Pointer[GObject] val, draw_func: Pointer[None], user_data: Any, destroy: Pointer[None])
 
 /*
   Class:  DrawingArea
@@ -12,7 +12,7 @@ use @gtk_drawing_area_set_draw_func[None](myself: Pointer[GObject] val, draw_fun
   GObject:GtkWidget* (Pointer[GObject])
 */
 
-class val GtkDrawingArea is (GtkDrawingAreaInterface & GtkWidgetInterface & GInterface & GtkWidgetInterface)
+class val GtkDrawingArea is (GtkDrawingAreaInterface & GtkWidgetInterface)
   var obj: Pointer[GObject] val
   fun getobj(): Pointer[GObject] val => obj
 
@@ -26,8 +26,7 @@ class val GtkDrawingArea is (GtkDrawingAreaInterface & GtkWidgetInterface & GInt
 
     new val create() =>
       obj = @gtk_drawing_area_new()
-
-interface GtkDrawingAreaInterface
+interface GtkDrawingAreaInterface is (GtkWidgetInterface)
   fun getobj(): Pointer[GObject] val
 
 
@@ -68,5 +67,5 @@ interface GtkDrawingAreaInterface
   Returns: void (None)
   */
 
-  fun set_draw_func(draw_func: Pointer[None], user_data: Pointer[None], destroy: Pointer[None]): None =>
+  fun set_draw_func(draw_func: Pointer[None], user_data: Any, destroy: Pointer[None]): None =>
       @gtk_drawing_area_set_draw_func(getobj(), draw_func, user_data, destroy)

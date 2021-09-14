@@ -9,24 +9,32 @@ buildinterface:
 interface:
 	saxon-he xml/src.xml xsl/interface.xsl ns=Gtk interface=Native
 
+buildless:
+	saxon-he xml/src.xml xsl/buildlessclass.xsl ns=GObject
+
+base:
+#	saxon-he xml/src.xml xsl/base.xsl ns=Gtk
+#	saxon-he xml/src.xml xsl/base.xsl ns=GLib
+#	saxon-he xml/src.xml xsl/base.xsl ns=GObject
+
 buildclass:
 	saxon-he xml/src.xml xsl/buildclass.xsl ns=Gtk class=GestureClick
-#	saxon-he xml/src.xml xsl/buildclass.xsl ns=Gdk class=Device
-#	saxon-he xml/src.xml xsl/buildclass.xsl ns=Gdk class=Event
-#	saxon-he xml/src.xml xsl/buildclass.xsl ns=Gtk class=EventController
-#	saxon-he xml/src.xml xsl/buildclass.xsl ns=Gtk class=Gesture
-#	saxon-he xml/src.xml xsl/buildclass.xsl ns=Gtk class=GestureSingle
-#	saxon-he xml/src.xml xsl/buildclass.xsl ns=Gtk class=GestureDrag
-#	saxon-he xml/src.xml xsl/buildclass.xsl ns=Gtk class=DrawingArea
-#	saxon-he xml/src.xml xsl/buildclass.xsl ns=Gtk class=Frame
-#	saxon-he xml/src.xml xsl/buildclass.xsl ns=Gtk class=Grid
-#	saxon-he xml/src.xml xsl/buildclass.xsl ns=Gtk class=ApplicationWindow
-#	saxon-he xml/src.xml xsl/buildclass.xsl ns=Gtk class=Application
-#	saxon-he xml/src.xml xsl/buildclass.xsl ns=Gio class=Application
-#	saxon-he xml/src.xml xsl/buildclass.xsl ns=Gtk class=Window
-#	saxon-he xml/src.xml xsl/buildclass.xsl ns=Gtk class=Button
-#	saxon-he xml/src.xml xsl/buildclass.xsl ns=Gtk class=Widget 
-#	saxon-he xml/src.xml xsl/buildclass.xsl ns=GObject class=Object ## abstract
+	saxon-he xml/src.xml xsl/buildclass.xsl ns=Gdk class=Device
+	saxon-he xml/src.xml xsl/buildclass.xsl ns=Gdk class=Event
+	saxon-he xml/src.xml xsl/buildclass.xsl ns=Gtk class=EventController
+	saxon-he xml/src.xml xsl/buildclass.xsl ns=Gtk class=Gesture
+	saxon-he xml/src.xml xsl/buildclass.xsl ns=Gtk class=GestureSingle
+	saxon-he xml/src.xml xsl/buildclass.xsl ns=Gtk class=GestureDrag
+	saxon-he xml/src.xml xsl/buildclass.xsl ns=Gtk class=DrawingArea
+	saxon-he xml/src.xml xsl/buildclass.xsl ns=Gtk class=Frame
+	saxon-he xml/src.xml xsl/buildclass.xsl ns=Gtk class=Grid
+	saxon-he xml/src.xml xsl/buildclass.xsl ns=Gtk class=ApplicationWindow
+	saxon-he xml/src.xml xsl/buildclass.xsl ns=Gtk class=Application
+	saxon-he xml/src.xml xsl/buildclass.xsl ns=Gio class=Application
+	saxon-he xml/src.xml xsl/buildclass.xsl ns=Gtk class=Window
+	saxon-he xml/src.xml xsl/buildclass.xsl ns=Gtk class=Button
+	saxon-he xml/src.xml xsl/buildclass.xsl ns=Gtk class=Widget 
+	saxon-he xml/src.xml xsl/buildclass.xsl ns=GObject class=Object ## abstract
 #
 class:
 	saxon-he xml/src.xml xsl/class.xsl ns=Gtk class=GestureClick

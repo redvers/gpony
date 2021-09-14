@@ -7,7 +7,7 @@ use @gtk_application_window_new[Pointer[GObject] val](application: Pointer[GObje
   GObject:GtkWidget* (Pointer[GObject])
 */
 
-class val GtkApplicationWindow is (GtkApplicationWindowInterface & GtkWindowInterface & GInterface & GtkWidgetInterface)
+class val GtkApplicationWindow is (GtkApplicationWindowInterface & GtkWindowInterface)
   var obj: Pointer[GObject] val
   fun getobj(): Pointer[GObject] val => obj
 
@@ -21,7 +21,6 @@ class val GtkApplicationWindow is (GtkApplicationWindowInterface & GtkWindowInte
 
     new val create(application: GObject) =>
       obj = @gtk_application_window_new(application.getobj())
-
-interface GtkApplicationWindowInterface
+interface GtkApplicationWindowInterface is (GtkWindowInterface)
   fun getobj(): Pointer[GObject] val
 

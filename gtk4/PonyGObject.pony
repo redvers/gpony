@@ -1,4 +1,4 @@
-use @g_object_new[Pointer[GObject] val](object_type: GType, first_property_name: Pointer[U8] tag, ...)
+//use @g_object_new[Pointer[GObject] val](object_type: GType, first_property_name: Pointer[U8] tag, ...)
 
 type GApplicationFlags is I32
 type GtkAlign is I32

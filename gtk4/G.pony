@@ -1,4 +1,3 @@
-
 use @printf[I32](...)
 use @g_signal_connect_data[U64](instance: Pointer[None], detailedsignal: Pointer[U8] tag, chandler: Pointer[None], data: Any, destroydata: Pointer[None], connectflags: I32)
 use @g_object_set_data[None](instance: Pointer[None], key: Pointer[U8] tag, data: Any tag)
@@ -27,5 +26,4 @@ interface GInterface
 //    var q: Array[Any ref] = Array[Any ref].from_cpointer(t, USize(1))
 //    q.apply(0)? as A
 //
-
 

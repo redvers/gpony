@@ -9,7 +9,7 @@
 <xsl:choose>
 	<xsl:when test="$type=''">Pointer[None]</xsl:when>
 	<xsl:when test="$type='void'">None</xsl:when>
-	<xsl:when test="$type='gpointer'">Pointer[None]</xsl:when>
+	<xsl:when test="$type='gpointer'">Any</xsl:when>
 	<xsl:when test="$type='int'">I32</xsl:when>
 	<xsl:when test="$type='float'">F32</xsl:when>
 	<xsl:when test="$type='guint'">U32</xsl:when>
@@ -18,6 +18,8 @@
 	<xsl:when test="$type='gchar'">U8</xsl:when>
 	<xsl:when test="$type='gboolean'">U8</xsl:when>
 	<xsl:when test="$type='double'">F64</xsl:when>
+	<xsl:when test="$type='GCallback'">Pointer[None]</xsl:when>
+	<xsl:when test="$type='GClosureNotify'">Pointer[None]</xsl:when>
 	<xsl:when test="$type='GskRenderer*'">Pointer[GObject]</xsl:when>
 	<xsl:when test="$type='GdkSurface*'">Pointer[GObject]</xsl:when>
 	<xsl:when test="$type='GtkWidget*'">Pointer[GObject]</xsl:when>

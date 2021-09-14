@@ -19,7 +19,7 @@
 <xsl:variable name="fi" select="document($filename)"/>
 <xsl:variable name="pparent"><xsl:call-template name="pony-parent"><xsl:with-param name="parent" select="$fi/class/@parent"/><xsl:with-param name="ns" select="$ns"/></xsl:call-template></xsl:variable>
 <xsl:variable name="pret"><xsl:call-template name="pony-typing"><xsl:with-param name="type" select="$fi/class/@returntype"/></xsl:call-template></xsl:variable>
-<xsl:result-document href="{$fi/class/@cid}.pony" method="text">
+<xsl:result-document href="gtk4/{$fi/class/@cid}.pony" method="text">
 <!-- Use Statements -->
 <xsl:apply-templates select="$fi/class/constructor[@render='1']" mode="constructorUse"><xsl:with-param name="root" select="$root"/></xsl:apply-templates>
 <xsl:apply-templates select="$fi/class/method[@render='1']" mode="methodUse"><xsl:with-param name="root" select="$root"/></xsl:apply-templates>
@@ -30,15 +30,17 @@
   GObject:<xsl:value-of select="$fi/class/@returntype"/> (<xsl:value-of select="$pret"/>)
 */
 
-<xsl:choose><xsl:when test="$fi/class/@parent=''">class val <xsl:value-of select="$fi/class/@cid"/> is (<xsl:value-of select="$fi/class/@cid"/>Interface &#38; GInterface &#38; GtkWidgetInterface)</xsl:when>
-<xsl:otherwise>class val <xsl:value-of select="$fi/class/@cid"/> is (<xsl:value-of select="$fi/class/@cid"/>Interface &#38; <xsl:value-of select="$pparent"/>Interface &#38; GInterface &#38; GtkWidgetInterface)</xsl:otherwise></xsl:choose>
+<xsl:choose><xsl:when test="$fi/class/@parent=''">class val <xsl:value-of select="$fi/class/@cid"/> is (<xsl:value-of select="$fi/class/@cid"/>Interface)</xsl:when>
+<xsl:otherwise>class val <xsl:value-of select="$fi/class/@cid"/> is (<xsl:value-of select="$fi/class/@cid"/>Interface &#38; <xsl:value-of select="$pparent"/>Interface)</xsl:otherwise></xsl:choose>
   var obj: Pointer[GObject] val
   fun getobj(): Pointer[GObject] val => obj
 
   new val createFromRef(oref: Pointer[GObject] val) =>
     obj = oref
 <xsl:apply-templates select="$fi/class/constructor[@render='1']" mode="constructorFn"><xsl:with-param name="root" select="$root"/></xsl:apply-templates>
-interface <xsl:value-of select="$fi/class/@cid"/>Interface
+
+<xsl:choose><xsl:when test="$fi/class/@parent=''">interface <xsl:value-of select="$fi/class/@cid"/>Interface</xsl:when>
+<xsl:otherwise>interface <xsl:value-of select="$fi/class/@cid"/>Interface is (<xsl:value-of select="$pparent"/>Interface)</xsl:otherwise></xsl:choose>
   fun getobj(): Pointer[GObject] val
 
 <xsl:apply-templates select="$fi/class/method[@render='1']" mode="methodFn"><xsl:with-param name="root" select="$root"/></xsl:apply-templates>

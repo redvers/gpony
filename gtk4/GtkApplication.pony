@@ -8,7 +8,7 @@ use @gtk_application_add_window[None](myself: Pointer[GObject] val, window: Poin
   GObject:GtkApplication* (Pointer[GObject])
 */
 
-class val GtkApplication is (GtkApplicationInterface & GApplicationInterface & GInterface & GtkWidgetInterface)
+class val GtkApplication is (GtkApplicationInterface & GApplicationInterface)
   var obj: Pointer[GObject] val
   fun getobj(): Pointer[GObject] val => obj
 
@@ -22,8 +22,7 @@ class val GtkApplication is (GtkApplicationInterface & GApplicationInterface & G
 
     new val create(application_id: String, flags: GApplicationFlags) =>
       obj = @gtk_application_new(application_id.cstring(), flags)
-
-interface GtkApplicationInterface
+interface GtkApplicationInterface is (GApplicationInterface)
   fun getobj(): Pointer[GObject] val
 
 

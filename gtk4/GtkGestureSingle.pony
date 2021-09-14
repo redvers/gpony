@@ -13,14 +13,13 @@ use @gtk_gesture_single_set_touch_only[None](myself: Pointer[GObject] val, touch
   GObject: (Pointer[None])
 */
 
-class val GtkGestureSingle is (GtkGestureSingleInterface & GtkGestureInterface & GInterface & GtkWidgetInterface)
+class val GtkGestureSingle is (GtkGestureSingleInterface & GtkGestureInterface)
   var obj: Pointer[GObject] val
   fun getobj(): Pointer[GObject] val => obj
 
   new val createFromRef(oref: Pointer[GObject] val) =>
     obj = oref
-
-interface GtkGestureSingleInterface
+interface GtkGestureSingleInterface is (GtkGestureInterface)
   fun getobj(): Pointer[GObject] val
 
 

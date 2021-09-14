@@ -22,7 +22,7 @@ use @gtk_window_unminimize[None](myself: Pointer[GObject] val)
   GObject:GtkWidget* (Pointer[GObject])
 */
 
-class val GtkWindow is (GtkWindowInterface & GtkWidgetInterface & GInterface & GtkWidgetInterface)
+class val GtkWindow is (GtkWindowInterface & GtkWidgetInterface)
   var obj: Pointer[GObject] val
   fun getobj(): Pointer[GObject] val => obj
 
@@ -36,8 +36,7 @@ class val GtkWindow is (GtkWindowInterface & GtkWidgetInterface & GInterface & G
 
     new val create() =>
       obj = @gtk_window_new()
-
-interface GtkWindowInterface
+interface GtkWindowInterface is (GtkWidgetInterface)
   fun getobj(): Pointer[GObject] val
 
 

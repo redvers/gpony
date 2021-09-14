@@ -29,7 +29,7 @@ use @gtk_grid_set_row_spacing[None](myself: Pointer[GObject] val, spacing: U32)
   GObject:GtkWidget* (Pointer[GObject])
 */
 
-class val GtkGrid is (GtkGridInterface & GtkWidgetInterface & GInterface & GtkWidgetInterface)
+class val GtkGrid is (GtkGridInterface & GtkWidgetInterface)
   var obj: Pointer[GObject] val
   fun getobj(): Pointer[GObject] val => obj
 
@@ -43,8 +43,7 @@ class val GtkGrid is (GtkGridInterface & GtkWidgetInterface & GInterface & GtkWi
 
     new val create() =>
       obj = @gtk_grid_new()
-
-interface GtkGridInterface
+interface GtkGridInterface is (GtkWidgetInterface)
   fun getobj(): Pointer[GObject] val
 
 

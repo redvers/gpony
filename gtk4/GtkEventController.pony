@@ -11,14 +11,13 @@ use @gtk_event_controller_reset[None](myself: Pointer[GObject] val)
   GObject: (Pointer[None])
 */
 
-class val GtkEventController is (GtkEventControllerInterface & GObjectInterface & GInterface & GtkWidgetInterface)
+class val GtkEventController is (GtkEventControllerInterface & GObjectInterface)
   var obj: Pointer[GObject] val
   fun getobj(): Pointer[GObject] val => obj
 
   new val createFromRef(oref: Pointer[GObject] val) =>
     obj = oref
-
-interface GtkEventControllerInterface
+interface GtkEventControllerInterface is (GObjectInterface)
   fun getobj(): Pointer[GObject] val
 
 

@@ -7,7 +7,7 @@ use @gtk_gesture_click_new[Pointer[GObject] val]()
   GObject:GtkGesture* (Pointer[GtkGesture])
 */
 
-class val GtkGestureClick is (GtkGestureClickInterface & GtkGestureSingleInterface & GInterface & GtkWidgetInterface)
+class val GtkGestureClick is (GtkGestureClickInterface & GtkGestureSingleInterface)
   var obj: Pointer[GObject] val
   fun getobj(): Pointer[GObject] val => obj
 
@@ -21,7 +21,6 @@ class val GtkGestureClick is (GtkGestureClickInterface & GtkGestureSingleInterfa
 
     new val create() =>
       obj = @gtk_gesture_click_new()
-
-interface GtkGestureClickInterface
+interface GtkGestureClickInterface is (GtkGestureSingleInterface)
   fun getobj(): Pointer[GObject] val
 

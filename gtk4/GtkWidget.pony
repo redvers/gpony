@@ -24,14 +24,13 @@ use @gtk_widget_show[None](myself: Pointer[GObject] val)
   GObject: (Pointer[None])
 */
 
-class val GtkWidget is (GtkWidgetInterface & GObjectInterface & GInterface & GtkWidgetInterface)
+class val GtkWidget is (GtkWidgetInterface & GObjectInterface)
   var obj: Pointer[GObject] val
   fun getobj(): Pointer[GObject] val => obj
 
   new val createFromRef(oref: Pointer[GObject] val) =>
     obj = oref
-
-interface GtkWidgetInterface
+interface GtkWidgetInterface is (GObjectInterface)
   fun getobj(): Pointer[GObject] val
 
 

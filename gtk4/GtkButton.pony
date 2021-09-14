@@ -20,7 +20,7 @@ use @gtk_button_set_use_underline[None](myself: Pointer[GObject] val, use_underl
   GObject:GtkWidget* (Pointer[GObject])
 */
 
-class val GtkButton is (GtkButtonInterface & GtkWidgetInterface & GInterface & GtkWidgetInterface)
+class val GtkButton is (GtkButtonInterface & GtkWidgetInterface)
   var obj: Pointer[GObject] val
   fun getobj(): Pointer[GObject] val => obj
 
@@ -58,8 +58,7 @@ class val GtkButton is (GtkButtonInterface & GtkWidgetInterface & GInterface & G
 
     new val new_with_mnemonic(label: String) =>
       obj = @gtk_button_new_with_mnemonic(label.cstring())
-
-interface GtkButtonInterface
+interface GtkButtonInterface is (GtkWidgetInterface)
   fun getobj(): Pointer[GObject] val
 
 

@@ -9,7 +9,7 @@ use @gtk_gesture_drag_get_start_point[U8](myself: Pointer[GObject] val, x: Point
   GObject:GtkGesture* (Pointer[GtkGesture])
 */
 
-class val GtkGestureDrag is (GtkGestureDragInterface & GtkGestureSingleInterface & GInterface & GtkWidgetInterface)
+class val GtkGestureDrag is (GtkGestureDragInterface & GtkGestureSingleInterface)
   var obj: Pointer[GObject] val
   fun getobj(): Pointer[GObject] val => obj
 
@@ -23,8 +23,7 @@ class val GtkGestureDrag is (GtkGestureDragInterface & GtkGestureSingleInterface
 
     new val create() =>
       obj = @gtk_gesture_drag_new()
-
-interface GtkGestureDragInterface
+interface GtkGestureDragInterface is (GtkGestureSingleInterface)
   fun getobj(): Pointer[GObject] val
 
 

@@ -15,7 +15,7 @@ use @gtk_frame_set_label_widget[None](myself: Pointer[GObject] val, label_widget
   GObject:GtkWidget* (Pointer[GObject])
 */
 
-class val GtkFrame is (GtkFrameInterface & GtkWidgetInterface & GInterface & GtkWidgetInterface)
+class val GtkFrame is (GtkFrameInterface & GtkWidgetInterface)
   var obj: Pointer[GObject] val
   fun getobj(): Pointer[GObject] val => obj
 
@@ -29,8 +29,7 @@ class val GtkFrame is (GtkFrameInterface & GtkWidgetInterface & GInterface & Gtk
 
     new val create(label: String) =>
       obj = @gtk_frame_new(label.cstring())
-
-interface GtkFrameInterface
+interface GtkFrameInterface is (GtkWidgetInterface)
   fun getobj(): Pointer[GObject] val
 
 
