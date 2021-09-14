@@ -1,10 +1,13 @@
+use "gtk4"
 use "debug"
 
-type GApplicationFlags is I32
-type GtkAlign is I32
-type GtkPositionType is I32
-type GtkBaselinePosition is I32
-type GType is U64
+use @printf[I32](...)
+
+//type GApplicationFlags is I32
+//type GtkAlign is I32
+//type GtkPositionType is I32
+//type GtkBaselinePosition is I32
+//type GType is U64
 
 actor Main
   new create(env: Env) =>
