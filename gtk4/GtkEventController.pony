@@ -8,7 +8,7 @@ use @gtk_event_controller_reset[None](myself: Pointer[GObjectREF] val)
   Class:  EventController
   CName:  GtkEventController
   Parent: GObject.Object (GObject)
-  GObject: (Pointer[None])
+  GObject: (Any)
 */
 
 class val GtkEventController is (GtkEventControllerInterface & GObjectInterface)

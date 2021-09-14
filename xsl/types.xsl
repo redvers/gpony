@@ -7,7 +7,7 @@
 <xsl:template name="pony-typing">
 <xsl:param name="type"/>
 <xsl:choose>
-	<xsl:when test="$type=''">Pointer[None]</xsl:when>
+	<xsl:when test="$type=''">Any</xsl:when>
 	<xsl:when test="$type='void'">None</xsl:when>
 	<xsl:when test="$type='gpointer'">Any</xsl:when>
 	<xsl:when test="$type='int'">I32</xsl:when>

@@ -3,7 +3,7 @@
   Class:  Gesture
   CName:  GtkGesture
   Parent: EventController (GtkEventController)
-  GObject: (Pointer[None])
+  GObject: (Any)
 */
 
 class val GtkGesture is (GtkGestureInterface & GtkEventControllerInterface)

@@ -10,7 +10,7 @@ use @gtk_gesture_single_set_touch_only[None](myself: Pointer[GObjectREF] val, to
   Class:  GestureSingle
   CName:  GtkGestureSingle
   Parent: Gesture (GtkGesture)
-  GObject: (Pointer[None])
+  GObject: (Any)
 */
 
 class val GtkGestureSingle is (GtkGestureSingleInterface & GtkGestureInterface)

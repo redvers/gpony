@@ -3,7 +3,7 @@
   Class:  Device
   CName:  GdkDevice
   Parent: GObject.Object (GObject)
-  GObject: (Pointer[None])
+  GObject: (Any)
 */
 
 class val GdkDevice is (GdkDeviceInterface & GObjectInterface)

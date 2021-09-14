@@ -21,7 +21,7 @@ use @gtk_widget_show[None](myself: Pointer[GObjectREF] val)
   Class:  Widget
   CName:  GtkWidget
   Parent: GObject.InitiallyUnowned (GObject)
-  GObject: (Pointer[None])
+  GObject: (Any)
 */
 
 class val GtkWidget is (GtkWidgetInterface & GObjectInterface)

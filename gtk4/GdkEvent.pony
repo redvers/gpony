@@ -3,7 +3,7 @@
   Class:  Event
   CName:  GdkEvent
   Parent:  (Gdk)
-  GObject: (Pointer[None])
+  GObject: (Any)
 */
 
 class val GdkEvent is (GdkEventInterface)
