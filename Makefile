@@ -34,7 +34,7 @@ buildclass:
 	saxon-he xml/src.xml xsl/buildclass.xsl ns=Gtk class=Window
 	saxon-he xml/src.xml xsl/buildclass.xsl ns=Gtk class=Button
 	saxon-he xml/src.xml xsl/buildclass.xsl ns=Gtk class=Widget 
-#	saxon-he xml/src.xml xsl/buildclass.xsl ns=GObject class=Object ## abstract
+	saxon-he xml/src.xml xsl/buildclass.xsl ns=GObject class=Object ## abstract
 #
 class:
 	saxon-he xml/src.xml xsl/class.xsl ns=Gtk class=GestureClick
