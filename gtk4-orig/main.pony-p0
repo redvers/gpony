@@ -1,0 +1,21 @@
+use "debug"
+
+type GApplicationFlags is I32
+
+actor Main
+  new create(env: Env) =>
+    env.out.print("oof")
+
+    let callback = @{(app: Pointer[GtkWidget] val, data: Pointer[None]): None =>
+										  Debug.out("UI Creation Callback!")
+                      var papp: GtkApplication val = GtkApplication.createFromRef(app)
+                      var window: GtkApplicationWindow val = GtkApplicationWindow.create(papp)
+                      window.set_title("Hello Window")
+                      window.set_default_size(200, 200)
+                      window.show()
+										}
+
+    var app: GtkApplication = GtkApplication("me.infect.red", I32(0)) //G_APPLICATION_FLAGS_NONE
+		app.signal_connect_data("activate", callback, Pointer[U8])
+    var status: I32 = app.run(I32(0), Pointer[None])
+

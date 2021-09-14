@@ -1,0 +1,16 @@
+<ponymap>
+  <map name="guint8" ponytype="U8" ponydefault="U8(0)"/>
+  <map name="guint16" ponytype="U16" ponydefault="U16(0)"/>
+  <map name="void" ponytype="None" ponydefault="None"/>
+  <map name="int" ponytype="I32" ponydefault="I32(0)"/>
+  <map name="gint32" ponytype="I32" ponydefault="I32(0)"/>
+  <map name="gint64" ponytype="I64" ponydefault="I64(0)"/>
+  <map name="gsize" ponytype="ISize" ponydefault="ISize(0)"/>
+  <map name="guint32" ponytype="U32" ponydefault="U32(0)"/>
+  <map name="char" ponytype="U8" ponydefault="U8(0)"/>
+  <map name="gchar**" ponytype="Pointer[Pointer[U8]]" ponydefault="Pointer[Pointer[U8]]"/>
+
+
+
+  <map name="unsigned char" ponytype="U8" ponydefault="U8(0)"/>
+</ponymap>
