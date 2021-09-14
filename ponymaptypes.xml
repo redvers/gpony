@@ -12,5 +12,6 @@
 
 
 
+  <map name="unsigned int" ponytype="U32" ponydefault="I32(0)"/>
   <map name="unsigned char" ponytype="U8" ponydefault="U8(0)"/>
 </ponymap>

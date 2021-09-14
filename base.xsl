@@ -10,22 +10,40 @@
 
 <xsl:template match="/t:repository/t:namespace"> 
 <xsl:variable name="castxml" select="document($castxmlfile)"></xsl:variable>
-<!--<xsl:result-document href="txt/{$ns}-base.txt" method="text">-->
-type GBoolean is I32
-
-type GConstPointer is Pointer[None] tag
-type GPointer is Pointer[None] tag
-
+<!-- <xsl:result-document href="txt/{$ns}-base.txt" method="text"> -->
 
 // Aliases
 <xsl:apply-templates select="t:alias"></xsl:apply-templates>
 
 // Enums
 <xsl:apply-templates select="t:enumeration"></xsl:apply-templates>
+
+// Flags
+<xsl:apply-templates select="t:bitfield"></xsl:apply-templates>
+
+// Structs
+<xsl:apply-templates select="t:record"></xsl:apply-templates>
+
+// Callbacks
+<xsl:apply-templates select="t:callback"></xsl:apply-templates>
+
 </xsl:template>
 
-<xsl:template match="t:enumeration">primitive <xsl:variable name="enumname" select="@c:type"/><xsl:value-of select="@c:type"/>
-	<xsl:variable name="ctype" select="$maptypes/types/type[@name=$enumname]"/>
+<xsl:template match="t:callback">type <xsl:value-of select="@c:type"/><xsl:text> is Pointer[None] // TBD
+</xsl:text>
+</xsl:template>
+
+<xsl:template match="t:record">struct <xsl:value-of select="@c:type"/><xsl:text>
+</xsl:text>
+
+</xsl:template>
+<xsl:template match="t:bitfield">type <xsl:value-of select="@c:type"/> is U32<xsl:text>
+</xsl:text>
+<!-- <xsl:template match="t:bitfield">type <xsl:variable name="flagname" select="@c:type"/><xsl:value-of select="@c:type"/> is <xsl:variable name="ctype" select="$maptypes/types/type[@name=$flagname]/@ctype"/> <xsl:call-template name="fundamentalToPony"><xsl:with-param name="name" select="$ctype"/><xsl:with-param name="ponymaptypes" select="$ponymaptypes"/></xsl:call-template><xsl:text> -->
+</xsl:template>
+
+<xsl:template match="t:enumeration">type <xsl:variable name="enumname" select="@c:type"/><xsl:value-of select="@c:type"/> is <xsl:variable name="ctype" select="$maptypes/types/type[@name=$enumname]/@ctype"/> <xsl:call-template name="fundamentalToPony"><xsl:with-param name="name" select="$ctype"/><xsl:with-param name="ponymaptypes" select="$ponymaptypes"/></xsl:call-template><xsl:text>
+</xsl:text>
 
 </xsl:template>
 
@@ -38,7 +56,7 @@ type GPointer is Pointer[None] tag
 <xsl:template name="fundamentalToPony">
 <xsl:param name="name"/>
 <xsl:param name="ponymaptypes"/>
-<xsl:value-of select="$ponymaptypes/ponymap/map[@name=$name]/@ponytype"/> // <xsl:value-of select="$name"/></xsl:template>
+<xsl:variable name="ponytype" select="$ponymaptypes/ponymap/map[@name=$name]/@ponytype"/><xsl:choose><xsl:when test="not($ponytype)"><xsl:value-of select="$name"/></xsl:when><xsl:otherwise><xsl:value-of select="$ponytype"/></xsl:otherwise></xsl:choose> // <xsl:value-of select="$name"/></xsl:template>
 
 <xsl:template match="text()"></xsl:template>
 </xsl:stylesheet>
