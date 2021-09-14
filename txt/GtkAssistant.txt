@@ -1,0 +1,27 @@
+
+<class name="Assistant" cid="GtkAssistant" parent="Window" returntype="GtkWidget*">
+  <constructor render="1" name="new" cid="gtk_assistant_new"/>
+  <method render="1" name="add_action_widget" cid="gtk_assistant_add_action_widget"/>
+  <method render="1" name="append_page" cid="gtk_assistant_append_page"/>
+  <method render="1" name="commit" cid="gtk_assistant_commit"/>
+  <method render="1" name="get_current_page" cid="gtk_assistant_get_current_page"/>
+  <method render="1" name="get_n_pages" cid="gtk_assistant_get_n_pages"/>
+  <method render="1" name="get_nth_page" cid="gtk_assistant_get_nth_page"/>
+  <method render="1" name="get_page" cid="gtk_assistant_get_page"/>
+  <method render="1" name="get_page_complete" cid="gtk_assistant_get_page_complete"/>
+  <method render="1" name="get_page_title" cid="gtk_assistant_get_page_title"/>
+  <method render="1" name="get_page_type" cid="gtk_assistant_get_page_type"/>
+  <method render="0" name="get_pages" cid="gtk_assistant_get_pages"/>
+  <method render="1" name="insert_page" cid="gtk_assistant_insert_page"/>
+  <method render="1" name="next_page" cid="gtk_assistant_next_page"/>
+  <method render="1" name="prepend_page" cid="gtk_assistant_prepend_page"/>
+  <method render="1" name="previous_page" cid="gtk_assistant_previous_page"/>
+  <method render="1" name="remove_action_widget" cid="gtk_assistant_remove_action_widget"/>
+  <method render="1" name="remove_page" cid="gtk_assistant_remove_page"/>
+  <method render="1" name="set_current_page" cid="gtk_assistant_set_current_page"/>
+  <method render="0" name="set_forward_page_func" cid="gtk_assistant_set_forward_page_func"/>
+  <method render="1" name="set_page_complete" cid="gtk_assistant_set_page_complete"/>
+  <method render="1" name="set_page_title" cid="gtk_assistant_set_page_title"/>
+  <method render="1" name="set_page_type" cid="gtk_assistant_set_page_type"/>
+  <method render="1" name="update_buttons_state" cid="gtk_assistant_update_buttons_state"/>
+</class>

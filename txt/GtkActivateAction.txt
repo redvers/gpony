@@ -1,0 +1,4 @@
+
+<class name="ActivateAction" cid="GtkActivateAction" parent="ShortcutAction" returntype="">
+  <function render="1" name="get" cid="gtk_activate_action_get"/>
+</class>

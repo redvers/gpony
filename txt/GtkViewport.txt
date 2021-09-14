@@ -1,0 +1,8 @@
+
+<class name="Viewport" cid="GtkViewport" parent="Widget" returntype="GtkWidget*">
+  <constructor render="1" name="new" cid="gtk_viewport_new"/>
+  <method render="0" name="get_child" cid="gtk_viewport_get_child"/>
+  <method render="0" name="get_scroll_to_focus" cid="gtk_viewport_get_scroll_to_focus"/>
+  <method render="0" name="set_child" cid="gtk_viewport_set_child"/>
+  <method render="0" name="set_scroll_to_focus" cid="gtk_viewport_set_scroll_to_focus"/>
+</class>

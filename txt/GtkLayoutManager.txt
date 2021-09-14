@@ -1,0 +1,15 @@
+
+<class name="LayoutManager" cid="GtkLayoutManager" parent="GObject.Object" returntype="">
+  <virtual-method render="0" name="allocate"/>
+  <virtual-method render="0" name="create_layout_child"/>
+  <virtual-method render="0" name="get_request_mode"/>
+  <virtual-method render="0" name="measure"/>
+  <virtual-method render="0" name="root"/>
+  <virtual-method render="0" name="unroot"/>
+  <method render="1" name="allocate" cid="gtk_layout_manager_allocate"/>
+  <method render="1" name="get_layout_child" cid="gtk_layout_manager_get_layout_child"/>
+  <method render="1" name="get_request_mode" cid="gtk_layout_manager_get_request_mode"/>
+  <method render="1" name="get_widget" cid="gtk_layout_manager_get_widget"/>
+  <method render="1" name="layout_changed" cid="gtk_layout_manager_layout_changed"/>
+  <method render="1" name="measure" cid="gtk_layout_manager_measure"/>
+</class>

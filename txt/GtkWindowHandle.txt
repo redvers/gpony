@@ -1,0 +1,6 @@
+
+<class name="WindowHandle" cid="GtkWindowHandle" parent="Widget" returntype="GtkWidget*">
+  <constructor render="1" name="new" cid="gtk_window_handle_new"/>
+  <method render="1" name="get_child" cid="gtk_window_handle_get_child"/>
+  <method render="1" name="set_child" cid="gtk_window_handle_set_child"/>
+</class>

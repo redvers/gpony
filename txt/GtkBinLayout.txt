@@ -1,0 +1,4 @@
+
+<class name="BinLayout" cid="GtkBinLayout" parent="LayoutManager" returntype="GtkLayoutManager*">
+  <constructor render="1" name="new" cid="gtk_bin_layout_new"/>
+</class>

@@ -13,6 +13,7 @@
 	<xsl:when test="$type='int'">I32</xsl:when>
 	<xsl:when test="$type='float'">F32</xsl:when>
 	<xsl:when test="$type='guint'">U32</xsl:when>
+	<xsl:when test="$type='gssize'">ISize</xsl:when>
 	<xsl:when test="$type='guint32'">U32</xsl:when>
 	<xsl:when test="$type='char'">U8</xsl:when>
 	<xsl:when test="$type='gchar'">U8</xsl:when>
@@ -20,6 +21,8 @@
 	<xsl:when test="$type='double'">F64</xsl:when>
 	<xsl:when test="$type='GCallback'">Pointer[None]</xsl:when>
 	<xsl:when test="$type='GClosureNotify'">Pointer[None]</xsl:when>
+	<xsl:when test="$type='GtkLayoutChild*'">Pointer[GObjectREF]</xsl:when>
+	<xsl:when test="$type='GtkAdjustment*'">Pointer[GObjectREF]</xsl:when>
 	<xsl:when test="$type='GskRenderer*'">Pointer[GObjectREF]</xsl:when>
 	<xsl:when test="$type='GdkSurface*'">Pointer[GObjectREF]</xsl:when>
 	<xsl:when test="$type='GtkWidget*'">Pointer[GObjectREF]</xsl:when>

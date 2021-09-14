@@ -1,10 +1,10 @@
 
 <ns="Gtk">
   <class render="0" name="ATContext" parent="GObject.Object"/>
-  <class render="0" name="AboutDialog" parent="Window"/>
-  <class render="0" name="ActionBar" parent="Widget"/>
+  <class render="1" name="AboutDialog" parent="Window"/>
+  <class render="1" name="ActionBar" parent="Widget"/>
   <class render="0" name="ActivateAction" parent="ShortcutAction"/>
-  <class render="0" name="Adjustment" parent="GObject.InitiallyUnowned"/>
+  <class render="1" name="Adjustment" parent="GObject.InitiallyUnowned"/>
   <class render="0" name="AlternativeTrigger" parent="ShortcutTrigger"/>
   <class render="0" name="AnyFilter" parent="MultiFilter"/>
   <class render="0" name="AppChooserButton" parent="Widget"/>
@@ -12,14 +12,14 @@
   <class render="0" name="AppChooserWidget" parent="Widget"/>
   <class render="1" name="Application" parent="Gio.Application"/>
   <class render="1" name="ApplicationWindow" parent="Window"/>
-  <class render="0" name="AspectFrame" parent="Widget"/>
-  <class render="0" name="Assistant" parent="Window"/>
-  <class render="0" name="AssistantPage" parent="GObject.Object"/>
-  <class render="0" name="BinLayout" parent="LayoutManager"/>
+  <class render="1" name="AspectFrame" parent="Widget"/>
+  <class render="1" name="Assistant" parent="Window"/>
+  <class render="1" name="AssistantPage" parent="GObject.Object"/>
+  <class render="1" name="BinLayout" parent="LayoutManager"/>
   <class render="0" name="BookmarkList" parent="GObject.Object"/>
   <class render="0" name="BoolFilter" parent="Filter"/>
-  <class render="0" name="Box" parent="Widget"/>
-  <class render="0" name="BoxLayout" parent="LayoutManager"/>
+  <class render="1" name="Box" parent="Widget"/>
+  <class render="1" name="BoxLayout" parent="LayoutManager"/>
   <class render="0" name="Builder" parent="GObject.Object"/>
   <class render="0" name="BuilderCScope" parent="GObject.Object"/>
   <class render="0" name="BuilderListItemFactory" parent="ListItemFactory"/>
@@ -126,14 +126,14 @@
   <class render="0" name="KeyvalTrigger" parent="ShortcutTrigger"/>
   <class render="0" name="Label" parent="Widget"/>
   <class render="0" name="LayoutChild" parent="GObject.Object"/>
-  <class render="0" name="LayoutManager" parent="GObject.Object"/>
+  <class render="1" name="LayoutManager" parent="GObject.Object"/>
   <class render="0" name="LevelBar" parent="Widget"/>
   <class render="0" name="LinkButton" parent="Button"/>
   <class render="0" name="ListBase" parent="Widget"/>
   <class render="0" name="ListBox" parent="Widget"/>
   <class render="0" name="ListBoxRow" parent="Widget"/>
   <class render="0" name="ListItem" parent="GObject.Object"/>
-  <class render="0" name="ListItemFactory" parent="GObject.Object"/>
+  <class render="1" name="ListItemFactory" parent="GObject.Object"/>
   <class render="0" name="ListStore" parent="GObject.Object"/>
   <class render="0" name="ListView" parent="ListBase"/>
   <class render="0" name="LockButton" parent="Button"/>
@@ -184,7 +184,7 @@
   <class render="0" name="RecentManager" parent="GObject.Object"/>
   <class render="0" name="Revealer" parent="Widget"/>
   <class render="0" name="Scale" parent="Range"/>
-  <class render="0" name="ScaleButton" parent="Widget"/>
+  <class render="1" name="ScaleButton" parent="Widget"/>
   <class render="0" name="Scrollbar" parent="Widget"/>
   <class render="0" name="ScrolledWindow" parent="Widget"/>
   <class render="0" name="SearchBar" parent="Widget"/>
@@ -241,13 +241,13 @@
   <class render="0" name="TreeStore" parent="GObject.Object"/>
   <class render="0" name="TreeView" parent="Widget"/>
   <class render="0" name="TreeViewColumn" parent="GObject.InitiallyUnowned"/>
-  <class render="0" name="Video" parent="Widget"/>
-  <class render="0" name="Viewport" parent="Widget"/>
-  <class render="0" name="VolumeButton" parent="ScaleButton"/>
-  <class render="0" name="Widget" parent="GObject.InitiallyUnowned"/>
-  <class render="0" name="WidgetPaintable" parent="GObject.Object"/>
+  <class render="1" name="Video" parent="Widget"/>
+  <class render="1" name="Viewport" parent="Widget"/>
+  <class render="1" name="VolumeButton" parent="ScaleButton"/>
+  <class render="1" name="Widget" parent="GObject.InitiallyUnowned"/>
+  <class render="1" name="WidgetPaintable" parent="GObject.Object"/>
   <class render="1" name="Window" parent="Widget"/>
-  <class render="0" name="WindowControls" parent="Widget"/>
-  <class render="0" name="WindowGroup" parent="GObject.Object"/>
-  <class render="0" name="WindowHandle" parent="Widget"/>
+  <class render="1" name="WindowControls" parent="Widget"/>
+  <class render="1" name="WindowGroup" parent="GObject.Object"/>
+  <class render="1" name="WindowHandle" parent="Widget"/>
 </ns>

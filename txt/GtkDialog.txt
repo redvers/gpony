@@ -1,0 +1,17 @@
+
+<class name="Dialog" cid="GtkDialog" parent="Window" returntype="GtkWidget*">
+  <constructor render="1" name="new" cid="gtk_dialog_new"/>
+  <constructor render="0" name="new_with_buttons" cid="gtk_dialog_new_with_buttons"/>
+  <virtual-method render="0" name="close"/>
+  <virtual-method render="0" name="response"/>
+  <method render="0" name="add_action_widget" cid="gtk_dialog_add_action_widget"/>
+  <method render="1" name="add_button" cid="gtk_dialog_add_button"/>
+  <method render="0" name="add_buttons" cid="gtk_dialog_add_buttons"/>
+  <method render="0" name="get_content_area" cid="gtk_dialog_get_content_area"/>
+  <method render="0" name="get_header_bar" cid="gtk_dialog_get_header_bar"/>
+  <method render="0" name="get_response_for_widget" cid="gtk_dialog_get_response_for_widget"/>
+  <method render="0" name="get_widget_for_response" cid="gtk_dialog_get_widget_for_response"/>
+  <method render="0" name="response" cid="gtk_dialog_response"/>
+  <method render="0" name="set_default_response" cid="gtk_dialog_set_default_response"/>
+  <method render="0" name="set_response_sensitive" cid="gtk_dialog_set_response_sensitive"/>
+</class>

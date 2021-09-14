@@ -1,0 +1,7 @@
+
+<class name="BuilderCScope" cid="GtkBuilderCScope" parent="GObject.Object" returntype="GtkBuilderScope*">
+  <constructor render="1" name="new" cid="gtk_builder_cscope_new"/>
+  <method render="0" name="add_callback_symbol" cid="gtk_builder_cscope_add_callback_symbol"/>
+  <method render="0" name="add_callback_symbols" cid="gtk_builder_cscope_add_callback_symbols"/>
+  <method render="0" name="lookup_callback_symbol" cid="gtk_builder_cscope_lookup_callback_symbol"/>
+</class>

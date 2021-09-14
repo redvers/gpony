@@ -1,0 +1,8 @@
+
+<class name="BuilderListItemFactory" cid="GtkBuilderListItemFactory" parent="ListItemFactory" returntype="GtkListItemFactory*">
+  <constructor render="0" name="new_from_bytes" cid="gtk_builder_list_item_factory_new_from_bytes"/>
+  <constructor render="0" name="new_from_resource" cid="gtk_builder_list_item_factory_new_from_resource"/>
+  <method render="0" name="get_bytes" cid="gtk_builder_list_item_factory_get_bytes"/>
+  <method render="0" name="get_resource" cid="gtk_builder_list_item_factory_get_resource"/>
+  <method render="0" name="get_scope" cid="gtk_builder_list_item_factory_get_scope"/>
+</class>

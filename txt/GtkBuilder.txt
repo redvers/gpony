@@ -1,0 +1,27 @@
+
+<class name="Builder" cid="GtkBuilder" parent="GObject.Object" returntype="GtkBuilder*">
+  <constructor render="1" name="new" cid="gtk_builder_new"/>
+  <constructor render="1" name="new_from_file" cid="gtk_builder_new_from_file"/>
+  <constructor render="1" name="new_from_resource" cid="gtk_builder_new_from_resource"/>
+  <constructor render="1" name="new_from_string" cid="gtk_builder_new_from_string"/>
+  <method render="1" name="add_from_file" cid="gtk_builder_add_from_file"/>
+  <method render="1" name="add_from_resource" cid="gtk_builder_add_from_resource"/>
+  <method render="1" name="add_from_string" cid="gtk_builder_add_from_string"/>
+  <method render="0" name="add_objects_from_file" cid="gtk_builder_add_objects_from_file"/>
+  <method render="0" name="add_objects_from_resource" cid="gtk_builder_add_objects_from_resource"/>
+  <method render="0" name="add_objects_from_string" cid="gtk_builder_add_objects_from_string"/>
+  <method render="0" name="create_closure" cid="gtk_builder_create_closure"/>
+  <method render="0" name="expose_object" cid="gtk_builder_expose_object"/>
+  <method render="0" name="extend_with_template" cid="gtk_builder_extend_with_template"/>
+  <method render="1" name="get_current_object" cid="gtk_builder_get_current_object"/>
+  <method render="1" name="get_object" cid="gtk_builder_get_object"/>
+  <method render="0" name="get_objects" cid="gtk_builder_get_objects"/>
+  <method render="0" name="get_scope" cid="gtk_builder_get_scope"/>
+  <method render="1" name="get_translation_domain" cid="gtk_builder_get_translation_domain"/>
+  <method render="1" name="get_type_from_name" cid="gtk_builder_get_type_from_name"/>
+  <method render="0" name="set_current_object" cid="gtk_builder_set_current_object"/>
+  <method render="0" name="set_scope" cid="gtk_builder_set_scope"/>
+  <method render="1" name="set_translation_domain" cid="gtk_builder_set_translation_domain"/>
+  <method render="0" name="value_from_string" cid="gtk_builder_value_from_string"/>
+  <method render="0" name="value_from_string_type" cid="gtk_builder_value_from_string_type"/>
+</class>

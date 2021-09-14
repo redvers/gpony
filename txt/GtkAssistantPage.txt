@@ -1,0 +1,4 @@
+
+<class name="AssistantPage" cid="GtkAssistantPage" parent="GObject.Object" returntype="">
+  <method render="1" name="get_child" cid="gtk_assistant_page_get_child"/>
+</class>

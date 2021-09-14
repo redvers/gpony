@@ -1,0 +1,7 @@
+
+<class name="ShortcutAction" cid="GtkShortcutAction" parent="GObject.Object" returntype="GtkShortcutAction*">
+  <constructor render="1" name="parse_string" cid="gtk_shortcut_action_parse_string"/>
+  <method render="0" name="activate" cid="gtk_shortcut_action_activate"/>
+  <method render="0" name="print" cid="gtk_shortcut_action_print"/>
+  <method render="0" name="to_string" cid="gtk_shortcut_action_to_string"/>
+</class>

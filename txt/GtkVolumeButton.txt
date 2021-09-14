@@ -1,0 +1,4 @@
+
+<class name="VolumeButton" cid="GtkVolumeButton" parent="ScaleButton" returntype="GtkWidget*">
+  <constructor render="1" name="new" cid="gtk_volume_button_new"/>
+</class>

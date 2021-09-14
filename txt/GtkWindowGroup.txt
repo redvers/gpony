@@ -1,0 +1,7 @@
+
+<class name="WindowGroup" cid="GtkWindowGroup" parent="GObject.Object" returntype="GtkWindowGroup*">
+  <constructor render="1" name="new" cid="gtk_window_group_new"/>
+  <method render="1" name="add_window" cid="gtk_window_group_add_window"/>
+  <method render="0" name="list_windows" cid="gtk_window_group_list_windows"/>
+  <method render="1" name="remove_window" cid="gtk_window_group_remove_window"/>
+</class>

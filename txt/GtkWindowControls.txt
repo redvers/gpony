@@ -1,0 +1,9 @@
+
+<class name="WindowControls" cid="GtkWindowControls" parent="Widget" returntype="GtkWidget*">
+  <constructor render="1" name="new" cid="gtk_window_controls_new"/>
+  <method render="0" name="get_decoration_layout" cid="gtk_window_controls_get_decoration_layout"/>
+  <method render="0" name="get_empty" cid="gtk_window_controls_get_empty"/>
+  <method render="0" name="get_side" cid="gtk_window_controls_get_side"/>
+  <method render="0" name="set_decoration_layout" cid="gtk_window_controls_set_decoration_layout"/>
+  <method render="0" name="set_side" cid="gtk_window_controls_set_side"/>
+</class>

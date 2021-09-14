@@ -1,0 +1,21 @@
+
+<class name="Adjustment" cid="GtkAdjustment" parent="GObject.InitiallyUnowned" returntype="GtkAdjustment*">
+  <constructor render="0" name="new" cid="gtk_adjustment_new"/>
+  <virtual-method render="0" name="changed"/>
+  <virtual-method render="0" name="value_changed"/>
+  <method render="0" name="clamp_page" cid="gtk_adjustment_clamp_page"/>
+  <method render="0" name="configure" cid="gtk_adjustment_configure"/>
+  <method render="0" name="get_lower" cid="gtk_adjustment_get_lower"/>
+  <method render="0" name="get_minimum_increment" cid="gtk_adjustment_get_minimum_increment"/>
+  <method render="0" name="get_page_increment" cid="gtk_adjustment_get_page_increment"/>
+  <method render="0" name="get_page_size" cid="gtk_adjustment_get_page_size"/>
+  <method render="0" name="get_step_increment" cid="gtk_adjustment_get_step_increment"/>
+  <method render="0" name="get_upper" cid="gtk_adjustment_get_upper"/>
+  <method render="0" name="get_value" cid="gtk_adjustment_get_value"/>
+  <method render="0" name="set_lower" cid="gtk_adjustment_set_lower"/>
+  <method render="0" name="set_page_increment" cid="gtk_adjustment_set_page_increment"/>
+  <method render="0" name="set_page_size" cid="gtk_adjustment_set_page_size"/>
+  <method render="0" name="set_step_increment" cid="gtk_adjustment_set_step_increment"/>
+  <method render="0" name="set_upper" cid="gtk_adjustment_set_upper"/>
+  <method render="0" name="set_value" cid="gtk_adjustment_set_value"/>
+</class>

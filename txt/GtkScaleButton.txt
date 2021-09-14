@@ -1,0 +1,13 @@
+
+<class name="ScaleButton" cid="GtkScaleButton" parent="Widget" returntype="GtkWidget*">
+  <constructor render="0" name="new" cid="gtk_scale_button_new"/>
+  <virtual-method render="0" name="value_changed"/>
+  <method render="0" name="get_adjustment" cid="gtk_scale_button_get_adjustment"/>
+  <method render="0" name="get_minus_button" cid="gtk_scale_button_get_minus_button"/>
+  <method render="0" name="get_plus_button" cid="gtk_scale_button_get_plus_button"/>
+  <method render="0" name="get_popup" cid="gtk_scale_button_get_popup"/>
+  <method render="0" name="get_value" cid="gtk_scale_button_get_value"/>
+  <method render="0" name="set_adjustment" cid="gtk_scale_button_set_adjustment"/>
+  <method render="0" name="set_icons" cid="gtk_scale_button_set_icons"/>
+  <method render="0" name="set_value" cid="gtk_scale_button_set_value"/>
+</class>

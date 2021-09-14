@@ -1,0 +1,11 @@
+
+<class name="ActionBar" cid="GtkActionBar" parent="Widget" returntype="GtkWidget*">
+  <constructor render="1" name="new" cid="gtk_action_bar_new"/>
+  <method render="1" name="get_center_widget" cid="gtk_action_bar_get_center_widget"/>
+  <method render="1" name="get_revealed" cid="gtk_action_bar_get_revealed"/>
+  <method render="1" name="pack_end" cid="gtk_action_bar_pack_end"/>
+  <method render="1" name="pack_start" cid="gtk_action_bar_pack_start"/>
+  <method render="1" name="remove" cid="gtk_action_bar_remove"/>
+  <method render="1" name="set_center_widget" cid="gtk_action_bar_set_center_widget"/>
+  <method render="1" name="set_revealed" cid="gtk_action_bar_set_revealed"/>
+</class>

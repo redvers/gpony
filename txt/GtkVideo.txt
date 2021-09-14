@@ -1,0 +1,18 @@
+
+<class name="Video" cid="GtkVideo" parent="Widget" returntype="GtkWidget*">
+  <constructor render="1" name="new" cid="gtk_video_new"/>
+  <constructor render="0" name="new_for_file" cid="gtk_video_new_for_file"/>
+  <constructor render="0" name="new_for_filename" cid="gtk_video_new_for_filename"/>
+  <constructor render="0" name="new_for_media_stream" cid="gtk_video_new_for_media_stream"/>
+  <constructor render="0" name="new_for_resource" cid="gtk_video_new_for_resource"/>
+  <method render="0" name="get_autoplay" cid="gtk_video_get_autoplay"/>
+  <method render="0" name="get_file" cid="gtk_video_get_file"/>
+  <method render="0" name="get_loop" cid="gtk_video_get_loop"/>
+  <method render="0" name="get_media_stream" cid="gtk_video_get_media_stream"/>
+  <method render="0" name="set_autoplay" cid="gtk_video_set_autoplay"/>
+  <method render="0" name="set_file" cid="gtk_video_set_file"/>
+  <method render="0" name="set_filename" cid="gtk_video_set_filename"/>
+  <method render="0" name="set_loop" cid="gtk_video_set_loop"/>
+  <method render="0" name="set_media_stream" cid="gtk_video_set_media_stream"/>
+  <method render="0" name="set_resource" cid="gtk_video_set_resource"/>
+</class>

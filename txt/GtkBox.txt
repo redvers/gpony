@@ -1,0 +1,15 @@
+
+<class name="Box" cid="GtkBox" parent="Widget" returntype="GtkWidget*">
+  <constructor render="1" name="new" cid="gtk_box_new"/>
+  <method render="1" name="append" cid="gtk_box_append"/>
+  <method render="1" name="get_baseline_position" cid="gtk_box_get_baseline_position"/>
+  <method render="1" name="get_homogeneous" cid="gtk_box_get_homogeneous"/>
+  <method render="1" name="get_spacing" cid="gtk_box_get_spacing"/>
+  <method render="1" name="insert_child_after" cid="gtk_box_insert_child_after"/>
+  <method render="1" name="prepend" cid="gtk_box_prepend"/>
+  <method render="1" name="remove" cid="gtk_box_remove"/>
+  <method render="1" name="reorder_child_after" cid="gtk_box_reorder_child_after"/>
+  <method render="1" name="set_baseline_position" cid="gtk_box_set_baseline_position"/>
+  <method render="1" name="set_homogeneous" cid="gtk_box_set_homogeneous"/>
+  <method render="1" name="set_spacing" cid="gtk_box_set_spacing"/>
+</class>

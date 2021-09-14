@@ -1,0 +1,6 @@
+
+<class name="WidgetPaintable" cid="GtkWidgetPaintable" parent="GObject.Object" returntype="GdkPaintable*">
+  <constructor render="1" name="new" cid="gtk_widget_paintable_new"/>
+  <method render="1" name="get_widget" cid="gtk_widget_paintable_get_widget"/>
+  <method render="1" name="set_widget" cid="gtk_widget_paintable_set_widget"/>
+</class>

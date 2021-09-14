@@ -1,0 +1,37 @@
+
+<class name="AboutDialog" cid="GtkAboutDialog" parent="Window" returntype="GtkWidget*">
+  <constructor render="1" name="new" cid="gtk_about_dialog_new"/>
+  <method render="0" name="add_credit_section" cid="gtk_about_dialog_add_credit_section"/>
+  <method render="0" name="get_artists" cid="gtk_about_dialog_get_artists"/>
+  <method render="0" name="get_authors" cid="gtk_about_dialog_get_authors"/>
+  <method render="0" name="get_comments" cid="gtk_about_dialog_get_comments"/>
+  <method render="0" name="get_copyright" cid="gtk_about_dialog_get_copyright"/>
+  <method render="0" name="get_documenters" cid="gtk_about_dialog_get_documenters"/>
+  <method render="0" name="get_license" cid="gtk_about_dialog_get_license"/>
+  <method render="0" name="get_license_type" cid="gtk_about_dialog_get_license_type"/>
+  <method render="0" name="get_logo" cid="gtk_about_dialog_get_logo"/>
+  <method render="0" name="get_logo_icon_name" cid="gtk_about_dialog_get_logo_icon_name"/>
+  <method render="1" name="get_program_name" cid="gtk_about_dialog_get_program_name"/>
+  <method render="1" name="get_system_information" cid="gtk_about_dialog_get_system_information"/>
+  <method render="0" name="get_translator_credits" cid="gtk_about_dialog_get_translator_credits"/>
+  <method render="1" name="get_version" cid="gtk_about_dialog_get_version"/>
+  <method render="1" name="get_website" cid="gtk_about_dialog_get_website"/>
+  <method render="1" name="get_website_label" cid="gtk_about_dialog_get_website_label"/>
+  <method render="0" name="get_wrap_license" cid="gtk_about_dialog_get_wrap_license"/>
+  <method render="0" name="set_artists" cid="gtk_about_dialog_set_artists"/>
+  <method render="0" name="set_authors" cid="gtk_about_dialog_set_authors"/>
+  <method render="0" name="set_comments" cid="gtk_about_dialog_set_comments"/>
+  <method render="1" name="set_copyright" cid="gtk_about_dialog_set_copyright"/>
+  <method render="0" name="set_documenters" cid="gtk_about_dialog_set_documenters"/>
+  <method render="1" name="set_license" cid="gtk_about_dialog_set_license"/>
+  <method render="0" name="set_license_type" cid="gtk_about_dialog_set_license_type"/>
+  <method render="0" name="set_logo" cid="gtk_about_dialog_set_logo"/>
+  <method render="0" name="set_logo_icon_name" cid="gtk_about_dialog_set_logo_icon_name"/>
+  <method render="1" name="set_program_name" cid="gtk_about_dialog_set_program_name"/>
+  <method render="1" name="set_system_information" cid="gtk_about_dialog_set_system_information"/>
+  <method render="0" name="set_translator_credits" cid="gtk_about_dialog_set_translator_credits"/>
+  <method render="1" name="set_version" cid="gtk_about_dialog_set_version"/>
+  <method render="1" name="set_website" cid="gtk_about_dialog_set_website"/>
+  <method render="1" name="set_website_label" cid="gtk_about_dialog_set_website_label"/>
+  <method render="0" name="set_wrap_license" cid="gtk_about_dialog_set_wrap_license"/>
+</class>
