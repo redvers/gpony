@@ -5,6 +5,7 @@
 <xsl:mode on-no-match="shallow-skip"/>
 <xsl:output method="text" indent="no"/>
 <xsl:strip-space elements="*"/>
+       <!--<xsl:include href="types.xsl"/>-->
 <xsl:variable name="maptypes" select="document('xml/maptypes.xml')"/>
 <xsl:variable name="ponymaptypes" select="document('ponymaptypes.xml')"/>
 
@@ -33,10 +34,25 @@
 </xsl:text>
 </xsl:template>
 
-<xsl:template match="t:record">struct <xsl:value-of select="@c:type"/><xsl:text>
-</xsl:text>
 
+<xsl:template match="t:record">struct <xsl:variable name="ctype" select="@c:type"/><xsl:value-of select="$ctype"/><xsl:text>
+</xsl:text>
+<xsl:call-template name="recordmethods"><xsl:with-param name="method" select="//t:record[@c:type=$ctype]/t:method"/></xsl:call-template>
 </xsl:template>
+
+<xsl:template name="recordmethods">
+<xsl:param name="method"/>
+<xsl:for-each select="$method">
+<xsl:call-template name="recordmethod"><xsl:with-param name="rmnode" select="."/></xsl:call-template>
+</xsl:for-each>
+</xsl:template>
+
+<xsl:template name="recordmethod">
+<xsl:param name="rmnode"/>
+<xsl:text>  fun </xsl:text><xsl:value-of select="$rmnode/@c:identifier"/>[<xsl:call-template name="fundamentalToPony"><xsl:with-param name="name" select="$rmnode/t:return-value/t:type/@c:type"/><xsl:with-param name="ponymaptypes" select="$ponymaptypes"/></xsl:call-template>]
+</xsl:template>
+
+
 <xsl:template match="t:bitfield">type <xsl:value-of select="@c:type"/> is U32<xsl:text>
 </xsl:text>
 <!-- <xsl:template match="t:bitfield">type <xsl:variable name="flagname" select="@c:type"/><xsl:value-of select="@c:type"/> is <xsl:variable name="ctype" select="$maptypes/types/type[@name=$flagname]/@ctype"/> <xsl:call-template name="fundamentalToPony"><xsl:with-param name="name" select="$ctype"/><xsl:with-param name="ponymaptypes" select="$ponymaptypes"/></xsl:call-template><xsl:text> -->
@@ -56,7 +72,7 @@
 <xsl:template name="fundamentalToPony">
 <xsl:param name="name"/>
 <xsl:param name="ponymaptypes"/>
-<xsl:variable name="ponytype" select="$ponymaptypes/ponymap/map[@name=$name]/@ponytype"/><xsl:choose><xsl:when test="not($ponytype)"><xsl:value-of select="$name"/></xsl:when><xsl:otherwise><xsl:value-of select="$ponytype"/></xsl:otherwise></xsl:choose> // <xsl:value-of select="$name"/></xsl:template>
+<xsl:variable name="ponytype" select="$ponymaptypes/ponymap/map[@name=$name]/@ponytype"/><xsl:choose><xsl:when test="not($ponytype)"><xsl:value-of select="$name"/></xsl:when><xsl:otherwise><xsl:value-of select="$ponytype"/></xsl:otherwise></xsl:choose></xsl:template>
 
 <xsl:template match="text()"></xsl:template>
 </xsl:stylesheet>
