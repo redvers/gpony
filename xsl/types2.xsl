@@ -11,6 +11,18 @@
 	<xsl:when test="$type='void'">None</xsl:when>
 	<xsl:when test="$type='gpointer'">Any</xsl:when>
 	<xsl:when test="$type='int'">I32</xsl:when>
+	<xsl:when test="$type='gsize'">ISize</xsl:when>
+	<xsl:when test="$type='gint'">I32</xsl:when>
+	<xsl:when test="$type='gint8'">I8</xsl:when>
+	<xsl:when test="$type='gint16'">I16</xsl:when>
+	<xsl:when test="$type='gint32'">I32</xsl:when>
+	<xsl:when test="$type='gint64'">I64</xsl:when>
+	<xsl:when test="$type='time_t'">I64</xsl:when>
+	<xsl:when test="$type='gdouble'">F64</xsl:when>
+	<xsl:when test="$type='guint8'">U8</xsl:when>
+	<xsl:when test="$type='guint16'">U16</xsl:when>
+	<xsl:when test="$type='guint32'">U32</xsl:when>
+	<xsl:when test="$type='guint64'">U64</xsl:when>
 	<xsl:when test="$type='float'">F32</xsl:when>
 	<xsl:when test="$type='guint'">U32</xsl:when>
 	<xsl:when test="$type='gssize'">ISize</xsl:when>
@@ -18,19 +30,8 @@
 	<xsl:when test="$type='char'">U8</xsl:when>
 	<xsl:when test="$type='gchar'">U8</xsl:when>
 	<xsl:when test="$type='gboolean'">U8</xsl:when>
+	<xsl:when test="$type='gconstpointer'">Pointer[None]</xsl:when>
 	<xsl:when test="$type='double'">F64</xsl:when>
-	<xsl:when test="$type='GCallback'">Pointer[None]</xsl:when>
-	<xsl:when test="$type='GClosureNotify'">Pointer[None]</xsl:when>
-	<xsl:when test="$type='GtkLayoutChild*'">Pointer[GObjectREF]</xsl:when>
-	<xsl:when test="$type='GtkAdjustment*'">Pointer[GObjectREF]</xsl:when>
-	<xsl:when test="$type='GskRenderer*'">Pointer[GObjectREF]</xsl:when>
-	<xsl:when test="$type='GdkSurface*'">Pointer[GObjectREF]</xsl:when>
-	<xsl:when test="$type='GtkWidget*'">Pointer[GObjectREF]</xsl:when>
-	<xsl:when test="$type='GtkWindow*'">Pointer[GObjectREF]</xsl:when>
-	<xsl:when test="$type='GtkApplication*'">Pointer[GObjectREF]</xsl:when>
-	<xsl:when test="$type='GtkEventController*'">Pointer[GObjectREF]</xsl:when>
-	<xsl:when test="$type='GtkDrawingAreaDrawFunc'">Pointer[None]</xsl:when><!--callback-->
-	<xsl:when test="$type='GDestroyNotify'">Pointer[None]</xsl:when><!--callback-->
 	<xsl:when test="starts-with($type, 'const')"><xsl:call-template name="pony-typing"><xsl:with-param name="type" select="substring($type, 7, string-length($type) - 1)"/></xsl:call-template></xsl:when>
 	<xsl:when test="ends-with($type, '*')">Pointer[<xsl:call-template name="pony-typing"><xsl:with-param name="type" select="substring($type, 1, string-length($type) - 1)"/></xsl:call-template>]</xsl:when>
 	<xsl:otherwise><xsl:value-of select="$type"/></xsl:otherwise>

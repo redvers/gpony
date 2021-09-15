@@ -5,7 +5,7 @@
 <xsl:mode on-no-match="shallow-skip"/>
 <xsl:output method="text" indent="no"/>
 <xsl:strip-space elements="*"/>
-       <!--<xsl:include href="types.xsl"/>-->
+<xsl:include href="xsl/types2.xsl"/>
 <xsl:variable name="maptypes" select="document('xml/maptypes.xml')"/>
 <xsl:variable name="ponymaptypes" select="document('ponymaptypes.xml')"/>
 
@@ -49,7 +49,7 @@
 
 <xsl:template name="recordmethod">
 <xsl:param name="rmnode"/>
-<xsl:text>  fun </xsl:text><xsl:value-of select="$rmnode/@c:identifier"/>[<xsl:call-template name="fundamentalToPony"><xsl:with-param name="name" select="$rmnode/t:return-value/t:type/@c:type"/><xsl:with-param name="ponymaptypes" select="$ponymaptypes"/></xsl:call-template>]
+<xsl:text>  fun </xsl:text><xsl:value-of select="$rmnode/@c:identifier"/>(): <xsl:call-template name="pony-typing"><xsl:with-param name="type" select="$rmnode/t:return-value/t:type/@c:type"/></xsl:call-template> => None
 </xsl:template>
 
 

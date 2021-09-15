@@ -1,5 +1,5 @@
 glib:
-	saxon-he GLib-2.0.gir base.xsl # > glib-types.pony
+	saxon-he GLib-2.0.gir base.xsl > glib-types.pony
 #	saxon-he gir/GObject-2.0.gir base.xsl  > gobject-types.pony
 #	saxon-he gir/Gio-2.0.gir base.xsl  > gio-types.pony
 #	saxon-he gir/Gtk-4.0.gir base.xsl  > gtk4-types.pony
